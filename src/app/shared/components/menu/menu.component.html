@@ -1,0 +1,68 @@
+<div class="br-menu active">
+  <div class="menu-container">
+    <div class="row">
+      <div class="col-sm-4 col-lg-3">
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-close">
+              <button
+                class="br-button circle"
+                type="button"
+                aria-label="Fechar o menu"
+                data-dismiss="menu"
+                (click)="onCloseMenu.emit()"
+              >
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="menu-title">
+              <img src="assets/govbr-logo-large.png" alt="logo" />
+            </div>
+          </div>
+          <nav class="menu-body">
+            <div class="menu-folder">
+              <a class="menu-item" href="javascript: void(0)"><span class="content">Início</span></a>
+              <ul>
+                <li>
+                  <a class="menu-item" (click)="onCloseMenu.emit()" routerLink="/">
+                    <mat-icon class="icon">home</mat-icon>
+                    <span class="content">Home</span>
+                  </a>
+                </li>
+                <ng-container *ngFor="let item of itens">
+                  <li
+                    *ngIf="
+                      item.exibicao == SEMPRE ||
+                      (item.exibicao == LOGADO && user != null) ||
+                      (item.exibicao == NAO_LOGADO && user == null)
+                    "
+                  >
+                    <a class="menu-item" (click)="onCloseMenu.emit()" [routerLink]="item.rota">
+                      <mat-icon class="icon">{{ item.icone }}</mat-icon>
+                      <span class="content">{{ item.texto }}</span>
+                    </a>
+                  </li>
+                </ng-container>
+                <li *ngIf="user">
+                  <a class="menu-item" (click)="onCloseMenu.emit(); logout()">
+                    <mat-icon class="icon">exit_to_app</mat-icon>
+                    <span class="content">LogOut</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="menu-footer">
+            <div class="menu-info">
+              <div class="text-center text-down-01">
+                Todo o conteúdo deste site está publicado sob a licença
+                <strong>Creative Commons Atribuição-SemDerivações 3.0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
+  </div>
+</div>

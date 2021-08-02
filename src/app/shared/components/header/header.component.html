@@ -1,0 +1,226 @@
+<header id="header">
+  <div class="br-header">
+    <div class="container-lg">
+      <div class="header-top">
+        <div class="header-logo">
+          <img src="assets/govbr-logo-large.png" alt="logo" /><span class="br-divider vertical mx-half mx-sm-1"></span>
+          <div class="sign">Governo Federal</div>
+        </div>
+        <div class="header-actions">
+          <div class="header-links dropdown">
+            <button
+              class="br-button circle small"
+              type="button"
+              data-toggle="dropdown"
+              aria-label="Abrir Acesso Rápido"
+            >
+              <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+            </button>
+            <div class="br-list">
+              <div class="header">
+                <div class="title">Acesso Rápido</div>
+              </div>
+              <a class="br-item" [routerLink]="['/tcu']" routerLinkActive="router-link-active">Acesso à Informação</a
+              ><a class="br-item" href="javascript:void(0)">Participe</a
+              ><a class="br-item" href="javascript:void(0)">Acessibilidade</a>
+            </div>
+          </div>
+          <span class="br-divider vertical mx-half mx-sm-1"></span>
+          <div class="header-functions dropdown">
+            <button
+              class="br-button circle small"
+              type="button"
+              data-toggle="dropdown"
+              aria-label="Abrir Funcionalidades do Sistema"
+            >
+              <i class="fas fa-th" aria-hidden="true"></i>
+            </button>
+            <div class="br-list">
+              <div class="header">
+                <div class="title">Funcionalidades do Sistema</div>
+              </div>
+              <div class="align-items-center br-item">
+                <button class="br-button circle small" type="button" aria-label="Funcionalidade 1">
+                  <i class="fas fa-chart-bar" aria-hidden="true"></i><span class="text">Funcionalidade 1</span>
+                </button>
+              </div>
+              <div class="align-items-center br-item">
+                <button class="br-button circle small" type="button" aria-label="Funcionalidade 2">
+                  <i class="fas fa-headset" aria-hidden="true"></i><span class="text">Funcionalidade 2</span>
+                </button>
+              </div>
+              <div class="align-items-center br-item">
+                <button class="br-button circle small" type="button" aria-label="Funcionalidade 3">
+                  <i class="fas fa-comment" aria-hidden="true"></i><span class="text">Funcionalidade 3</span>
+                </button>
+              </div>
+              <div class="align-items-center br-item">
+                <button class="br-button circle small" type="button" aria-label="Funcionalidade 4">
+                  <i class="fas fa-adjust" aria-hidden="true"></i><span class="text">Funcionalidade 4</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="header-search-trigger">
+            <button
+              class="br-button circle"
+              type="button"
+              aria-label="Abrir Busca"
+              data-toggle="search"
+              data-target=".header-search"
+            >
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="header-login">
+            <div class="header-sign-in">
+              <button class="br-button sign-in small" type="button" data-trigger="login">
+                <i class="fas fa-user" aria-hidden="true"></i><span class="d-sm-inline">Entrar</span>
+              </button>
+            </div>
+            <div class="header-avatar d-none">
+              <div class="avatar dropdown">
+                <span class="br-avatar" title="Fulana da Silva"
+                  ><span class="image"><img src="https://picsum.photos/id/823/400" alt="Avatar" /></span
+                ></span>
+                <button
+                  class="br-button circle small"
+                  type="button"
+                  aria-label="Abrir Menu de usuário"
+                  data-toggle="dropdown"
+                >
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </button>
+                <div class="br-notification show">
+                  <div class="notification-header">
+                    <div class="row">
+                      <div class="col-10">
+                        <span class="text-bold">Fulano da Silva</span><br /><small
+                          ><a>nome.sobrenome@dominio.gov</a></small
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="notification-body">
+                    <div class="br-tab">
+                      <nav class="tab-nav">
+                        <ul>
+                          <li class="tab-item">
+                            <button type="button" data-panel="notif-item142" aria-label="notif-item142">
+                              <span class="name"
+                                ><span class="icon"><i class="fas fa-image" aria-hidden="true"></i></span
+                                ><span class="name">Item</span></span
+                              >
+                            </button>
+                          </li>
+                          <li class="tab-item is-active">
+                            <button type="button" data-panel="notif-item143" aria-label="notif-item143">
+                              <span class="name"
+                                ><span class="icon"><i class="fas fa-image" aria-hidden="true"></i></span
+                                ><span class="name">Item</span></span
+                              >
+                            </button>
+                          </li>
+                        </ul>
+                      </nav>
+                      <div class="tab-content">
+                        <div class="tab-panel" id="notif-item142">
+                          <div class="br-list">
+                            <button class="br-item" type="button">
+                              <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso</button
+                            ><span class="br-divider"></span>
+                            <button class="br-item" type="button">
+                              <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso</button
+                            ><span class="br-divider"></span>
+                            <button class="br-item" type="button">
+                              <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso
+                            </button>
+                          </div>
+                        </div>
+                        <div class="tab-panel is-active" id="notif-item143">
+                          <div class="br-list">
+                            <button class="br-item" type="button">
+                              <span class="br-tag status small warning"></span><span class="text-bold">Título</span
+                              ><span class="text-medium mb-2">25 de out</span
+                              ><span
+                                >Nostrud consequat culpa ex mollit aute. Ex ex veniam ea labore laboris duis duis elit.
+                                Ex aute dolor enim aute Lorem dolor. Duis labore ad anim culpa. Non aliqua excepteur
+                                sunt eiusmod ex consectetur ex esse laborum velit ut aute.</span
+                              ></button
+                            ><span class="br-divider"></span>
+                            <button class="br-item" type="button">
+                              <span class="text-bold">Título</span><span class="text-medium mb-2">24 de out</span
+                              ><span
+                                >Labore nulla elit laborum nulla duis. Deserunt ad nulla commodo occaecat nulla proident
+                                ea proident aliquip dolore sunt nulla. Do sit eu consectetur quis culpa. Eiusmod minim
+                                irure sint nulla incididunt occaecat ipsum mollit in ut. Minim adipisicing veniam
+                                adipisicing velit nostrud duis consectetur aute nulla deserunt culpa aliquip.</span
+                              ></button
+                            ><span class="br-divider"></span>
+                            <button class="br-item" type="button">
+                              <span class="br-tag status small warning"></span><span class="text-bold">Título</span
+                              ><span class="text-medium mb-2">03 de out</span
+                              ><span
+                                >Duis qui dolor dolor qui sint consectetur. Ipsum eu dolore ex anim reprehenderit
+                                laborum commodo. Labore do ut nulla eiusmod consectetur.</span
+                              ></button
+                            ><span class="br-divider"></span>
+                            <button class="br-item" type="button">
+                              <span class="text-bold">Título</span><span class="text-medium mb-2">16 de mai</span
+                              ><span
+                                >Sunt velit dolor enim mollit incididunt irure est. Ad ea Lorem culpa quis occaecat sunt
+                                in exercitation nisi. Sit laborum laborum dolor culpa ipsum velit. Non nulla nisi dolore
+                                et anim consequat officia deserunt amet qui. Incididunt exercitation irure labore ut
+                                Lorem culpa. Dolore ea irure pariatur ullamco culpa veniam amet dolor in fugiat pariatur
+                                ut. Sit non ut enim et incididunt tempor irure pariatur ex proident labore cillum dolore
+                                nisi.</span
+                              >
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <div class="header-menu">
+          <div class="header-menu-trigger">
+            <button
+              class="br-button small circle"
+              type="button"
+              aria-label="Menu"
+              data-toggle="menu"
+              data-target="#navigation"
+              (click)="onOpenMenu.emit()"
+            >
+              <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="header-info">
+            <div class="header-title">###app.nome###</div>
+            <div class="header-subtitle">Versão {{ versao }}</div>
+          </div>
+        </div>
+        <div class="header-search">
+          <div class="br-input has-icon">
+            <label for="searchbox">Texto da pesquisa</label>
+            <input class="has-icon" id="searchbox" type="text" placeholder="O que você procura?" />
+            <button class="icon" type="button" aria-label="Pesquisar">
+              <span class="icon">
+                <i class="fas fa-search" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <button class="br-button circle search-close" type="button" aria-label="Fechar Busca" data-dismiss="search">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

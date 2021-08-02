@@ -1,0 +1,23 @@
+<div class="template-base">
+  <nav id="skip-links">
+    <!-- Carregar Atalhos de Teclado aqui -->
+    <div class="skip-links" aria-label="Acesso rápido">
+      <a accesskey="1" href="#main-content"> Ir para o Conteúdo<strong class="accesskey">1</strong> </a>
+      <a accesskey="2" href="#main-navigation"> Ir para para Navegação<strong class="accesskey">2</strong> </a>
+      <a accesskey="3" href="#main-searchbox"> Ir para para Busca<strong class="accesskey">3</strong> </a>
+    </div>
+  </nav>
+  <br-header (onOpenMenu)="menuVisivel = true"></br-header>
+  <main id="main">
+    <div class="container-lg">
+      <div class="row">
+        <br-menu *ngIf="menuVisivel" (onCloseMenu)="menuVisivel = false" [itens]="itensMenu"></br-menu>
+        <div id="container-content" class="col">
+          <!-- Carregar Conteúdo Principal aqui -->
+          <div id="main-content"><router-outlet></router-outlet></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <br-rodape></br-rodape>
+</div>

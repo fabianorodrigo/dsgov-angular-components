@@ -1,0 +1,10 @@
+[
+  {"icone": "people", "texto": "Pessoas", "exibicao":"sempre"},
+  {"icone": "map", "texto": "Qualquer coisa", "exibicao":"naoLogado"},
+  {"icone": "map", "texto": "Qualquer coisa pra logado", "exibicao":"logado"},
+  {"icone": "account_balance", "texto": "Instituições", "exibicao":"sempre"},
+  {"icone": "movie", "texto": "Obras não publicitárias", "exibicao":"sempre"},
+  {"icone": "local_movies", "texto": "Obras publicitárias", "exibicao":"sempre"},
+  {"icone": "money", "texto": "Fomento", "exibicao":"sempre"},
+  {"icone": "event", "texto": "Eventos", "exibicao":"sempre"}
+]
