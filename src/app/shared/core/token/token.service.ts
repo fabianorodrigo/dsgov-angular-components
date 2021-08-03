@@ -6,11 +6,11 @@ const KEY = 'authToken';
 
 @Injectable({ providedIn: 'root' })
 export class TokenService {
-  hasValidToken() {
-    return this.getToken() != null && this.getToken() != '' && !this.isTokenExpired();
+  temTokenValido() {
+    return this.getToken() != null && this.getToken() != '' && !this.eTokenExpirado();
   }
 
-  isTokenExpired() {
+  eTokenExpirado() {
     const token = this.getToken();
     const user = jwt_decode.default(token) as User;
     const agoraSegundosDesde1970 = Math.floor(new Date().getTime() / 1000);

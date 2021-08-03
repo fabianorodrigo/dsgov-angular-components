@@ -1,3 +1,5 @@
+import { BreadcrumbModule } from './shared/components/breadcrumb/breadcrumb.module';
+import { TabelaModule } from './shared/components/tabela/tabela.module';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -34,6 +36,8 @@ moment.locale('pt-BR');
     MatMomentDateModule,
     MatNativeDateModule,
     DialogsModule,
+    TabelaModule,
+    BreadcrumbModule,
   ],
   providers: [
     DatePipe,

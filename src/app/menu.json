@@ -1,5 +1,5 @@
 [
-  {"icone": "people", "texto": "Pessoas", "exibicao":"sempre"},
+  {"icone": "people", "texto": "Entidade", "exibicao":"sempre", "rota":"/entidade"},
   {"icone": "map", "texto": "Qualquer coisa", "exibicao":"naoLogado"},
   {"icone": "map", "texto": "Qualquer coisa pra logado", "exibicao":"logado"},
   {"icone": "account_balance", "texto": "Instituições", "exibicao":"sempre"},

@@ -1,5 +1,5 @@
 export enum AcaoEnum {
-  INCLUIR = 'incluir',
+  INSERIR = 'inserir',
   EDITAR = 'editar',
   VISUALIZAR = 'visualizar',
   EXCLUIR = 'excluir',

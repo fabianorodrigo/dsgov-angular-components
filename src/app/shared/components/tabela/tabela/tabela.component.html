@@ -1,0 +1,35 @@
+<div class="br-table">
+  <table mat-table #table [dataSource]="dataSource">
+    <ng-container *ngFor="let col of colunas" [matColumnDef]="col.atributo">
+      <th mat-header-cell class="table-header" *matHeaderCellDef mat-sort-header>{{ col.tituloCabecalho }}</th>
+      <td mat-cell *matCellDef="let registro">
+        {{ col.tipo !== 'date' ? registro[col.atributo] : (registro[col.atributo] | date: 'd/M/y') }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="acoes" *ngIf="exibeColunaAcoes">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let registro">
+        <a (click)="onVisualiza.emit(registro)" type="button">
+          <mat-icon>zoom_in</mat-icon>
+        </a>
+        <a (click)="onEdita.emit(registro)" type="button">
+          <mat-icon>edit</mat-icon>
+        </a>
+        <a (click)="onExclui.emit(registro)" type="button">
+          <mat-icon>delete</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunas"></tr>
+  </table>
+  <mat-paginator
+    *ngIf="dataSource?.data"
+    [length]="dataSource.data.length"
+    [pageSize]="tamanhoPagina"
+    [pageSizeOptions]="[10, 20, 50, 100]"
+  ></mat-paginator>
+</div>
+<ng-template #resultadoNaoEncontrado>
+  <p>Não foram encontradas pessoas com nomes que correspondam à busca</p>
+</ng-template>

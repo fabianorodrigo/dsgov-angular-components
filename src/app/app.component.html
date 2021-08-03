@@ -8,13 +8,14 @@
     </div>
   </nav>
   <br-header (onOpenMenu)="menuVisivel = true"></br-header>
-  <main id="main">
-    <div class="container-lg">
+  <main id="main" class="d-flex flex-fill">
+    <div class="container-fluid d-flex">
       <div class="row">
         <br-menu *ngIf="menuVisivel" (onCloseMenu)="menuVisivel = false" [itens]="itensMenu"></br-menu>
-        <div id="container-content" class="col">
+        <div class="col pt-3 pb-5">
+          <br-breadcrumb></br-breadcrumb>
           <!-- Carregar Conteúdo Principal aqui -->
-          <div id="main-content"><router-outlet></router-outlet></div>
+          <div id="main-content" class="main-content pl-sm-3"><router-outlet></router-outlet></div>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ export class AppComponent {
   user: User | undefined;
   menuVisivel: boolean = false;
 
-  itensMenu: ItemMenu[] = require('./itens-menu.json');
+  itensMenu: ItemMenu[] = require('./menu.json');
 
   constructor(private userService: UserService) {
     this.user$ = userService.getUser();

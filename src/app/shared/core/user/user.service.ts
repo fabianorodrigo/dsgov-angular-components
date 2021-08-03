@@ -8,7 +8,7 @@ import * as jwt_decode from 'jwt-decode';
 export class UserService {
   constructor(private tokenService: TokenService) {
     //se já tiver um token, já manda o decodeAndNotify
-    this.tokenService.hasValidToken() && this.decodeAndNotify();
+    this.tokenService.temTokenValido() && this.decodeAndNotify();
   }
 
   //Ao invés de ser do tipo 'Subject' o userSubject precisa ser do tipo 'BehaviorSubject'
@@ -44,7 +44,7 @@ export class UserService {
   }
 
   isLogged() {
-    return this.tokenService.hasValidToken();
+    return this.tokenService.temTokenValido();
   }
 
   getUser() {

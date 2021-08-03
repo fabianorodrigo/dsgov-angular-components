@@ -20,7 +20,7 @@ export class RequestInterceptor implements HttpInterceptor {
   constructor(private tokenService: TokenService, public dialog: MatDialog, private router: Router) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (this.tokenService.hasValidToken()) {
+    if (this.tokenService.temTokenValido()) {
       const token = this.tokenService.getToken();
       req = req.clone({
         setHeaders: {
