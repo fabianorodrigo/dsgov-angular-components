@@ -5,6 +5,12 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "paths": {
+      "dsgov-components": [
+        "dist/dsgov-components/dsgov-components",
+        "dist/dsgov-components"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

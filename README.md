@@ -1,6 +1,6 @@
 # DsgovAngularComponents
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
+Biblioteca de componentes Angular (versão 11.2.10) de acordo com o padrão visual do Governo Federal brasileiro: https://dsgov.estaleiro.serpro.gov.br/
 
 ## Development server
 
