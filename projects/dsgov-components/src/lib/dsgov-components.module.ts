@@ -1,16 +1,10 @@
+import { ButtonModule } from './components/button/button.module';
 import { NgModule } from '@angular/core';
 import { DsgovComponentsComponent } from './dsgov-components.component';
 
-
-
 @NgModule({
-  declarations: [
-    DsgovComponentsComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    DsgovComponentsComponent
-  ]
+  declarations: [],
+  imports: [ButtonModule],
+  exports: [ButtonModule],
 })
-export class DsgovComponentsModule { }
+export class DsgovComponentsModule {}

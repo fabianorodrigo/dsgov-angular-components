@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "build-library": "ng build dsgov-components"
+    "build-library": "ng build dsgov-components",
+    "pack-lib": "cd dist/dsgov-components && npm pack"
   },
   "private": true,
   "dependencies": {

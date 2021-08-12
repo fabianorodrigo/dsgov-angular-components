@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/dsgov-components",
       "sourceRoot": "projects/dsgov-components/src",
-      "prefix": "lib",
+      "prefix": "br",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

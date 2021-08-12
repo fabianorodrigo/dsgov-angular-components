@@ -1,0 +1,9 @@
+<button
+  [ngClass]="'br-button ' + ngClass"
+  [class.disabled]="isDisabled"
+  [class.active]="isActive"
+  [class.loading]="isLoading"
+  type="button"
+>
+  <ng-content></ng-content>
+</button>
