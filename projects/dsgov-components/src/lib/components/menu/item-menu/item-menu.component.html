@@ -1,0 +1,25 @@
+<li>
+  <a
+    *ngIf="item.click == null; else itemMenuComEventoOnClick"
+    class="menu-item"
+    [routerLink]="item.rota"
+  >
+    <i
+      *ngIf="item.classIconeFontAwesome"
+      [class]="item.classIconeFontAwesome"
+      aria-hidden="true"
+    ></i>
+    <span *ngIf="item.texto" class="content">{{ item.texto }}</span>
+  </a>
+</li>
+
+<ng-template #itemMenuComEventoOnClick>
+  <a class="menu-item" (click)="item.click($event)" [routerLink]="item.rota">
+    <i
+      *ngIf="item.classIconeFontAwesome"
+      [class]="item.classIconeFontAwesome"
+      aria-hidden="true"
+    ></i>
+    <span *ngIf="item.texto" class="content">{{ item.texto }}</span>
+  </a>
+</ng-template>

@@ -1,4 +1,4 @@
-import { ItemBreadcrumb } from './ItemBreadcrumb';
+import { ItemBreadcrumb } from '../item-breadcrumb.interface';
 import { BaseComponent } from './../../base/base/base.component';
 import { Component, Input, OnInit } from '@angular/core';
 

@@ -1,0 +1,54 @@
+<div class="br-menu active">
+  <div class="menu-container">
+    <div class="row">
+      <div class="col-sm-4 col-lg-3">
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-close">
+              <button
+                class="br-button circle"
+                type="button"
+                aria-label="Fechar o menu"
+                data-dismiss="menu"
+                (click)="onCloseMenu($event)"
+              >
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="menu-title">
+              <img [src]="urlImagem" alt="logo" />
+            </div>
+          </div>
+          <nav class="menu-body">
+            <div class="menu-folder">
+              <a class="menu-item" href="javascript: void(0)"
+                ><span class="content">Início</span></a
+              >
+              <ul>
+                <ng-container *ngFor="let item of itens">
+                  <br-item-menu
+                    *ngIf="
+                      item.exibicao == SEMPRE ||
+                      (item.exibicao == LOGADO && usuario != null) ||
+                      (item.exibicao == NAO_LOGADO && usuario == null)
+                    "
+                    [item]="item"
+                  ></br-item-menu>
+                </ng-container>
+              </ul>
+            </div>
+          </nav>
+          <div class="menu-footer" *ngIf="exibeInformacaoLicenca">
+            <div class="menu-info">
+              <div class="text-center text-down-01">
+                {{ informacaoLicenca.label }}
+                <strong>{{ informacaoLicenca.nomeLicenca }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
+  </div>
+</div>
