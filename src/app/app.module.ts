@@ -1,4 +1,4 @@
-import { BreadcrumbModule } from './shared/components/breadcrumb/breadcrumb.module';
+import { DsgovModule } from './dsgov/dsgov.module';
 import { TabelaModule } from './shared/components/tabela/tabela.module';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './shared/core/core.module';
 import { ErrorsModule } from './shared/errors';
 import { MaterialModule } from './material.module';
-import { DialogsModule, HeaderModule, MenuModule, RodapeModule } from './shared/components';
+import { DialogsModule, HeaderModule, RodapeModule } from './shared/components';
 import * as moment from 'moment';
 import 'moment/locale/pt-br';
 import { DatePipe, registerLocaleData } from '@angular/common';
@@ -28,7 +28,6 @@ moment.locale('pt-BR');
     BrowserAnimationsModule,
     ErrorsModule,
     HeaderModule,
-    MenuModule,
     RodapeModule,
     MaterialModule,
     FlexLayoutModule,
@@ -37,7 +36,7 @@ moment.locale('pt-BR');
     MatNativeDateModule,
     DialogsModule,
     TabelaModule,
-    BreadcrumbModule,
+    DsgovModule,
   ],
   providers: [
     DatePipe,

@@ -11,9 +11,9 @@
   <main id="main" class="d-flex flex-fill">
     <div class="container-fluid d-flex">
       <div class="row">
-        <br-menu *ngIf="menuVisivel" (onCloseMenu)="menuVisivel = false" [itens]="itensMenu"></br-menu>
+        <br-menu *ngIf="menuVisivel" (closeMenu)="menuVisivel = false" [itens]="itensMenu"></br-menu>
         <div class="col pt-3 pb-5">
-          <br-breadcrumb></br-breadcrumb>
+          <br-breadcrumb [itens]="itensBreadcrumb"></br-breadcrumb>
           <!-- Carregar Conteúdo Principal aqui -->
           <div id="main-content" class="main-content pl-sm-3"><router-outlet></router-outlet></div>
         </div>
