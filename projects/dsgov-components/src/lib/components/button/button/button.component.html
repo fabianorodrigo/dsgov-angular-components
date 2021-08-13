@@ -4,6 +4,7 @@
   [class.active]="isActive"
   [class.loading]="isLoading"
   type="button"
+  (click)="onClickComponent($event)"
 >
   <ng-content></ng-content>
 </button>
