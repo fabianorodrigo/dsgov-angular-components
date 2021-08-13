@@ -4,7 +4,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'br-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css'],
+  styles: [],
 })
 export class ButtonComponent extends BaseComponent implements OnInit {
   constructor() {
