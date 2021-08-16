@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User, UserService } from './shared/core';
 import { ItemBreadcrumb, ItemMenu, RegraExibicaoMenuEnum } from 'dsgov-components';
+import { Usuario } from 'dsgov-components/lib/components/base/usuario.interface';
 
 declare var require: any;
 @Component({
@@ -11,8 +12,8 @@ declare var require: any;
 })
 export class AppComponent {
   //é uma convenção que as variáveis Observable terminem com $
-  user$: Observable<User>;
-  user: User | undefined;
+  user$: Observable<Usuario>;
+  user: Usuario;
   menuVisivel: boolean = false;
 
   itensMenu: ItemMenu[] = [];
@@ -28,21 +29,28 @@ export class AppComponent {
     (require('./menu.json') as []).forEach(item => {
       this.itensMenu.push(item);
     });
-  }
-
-  gOnInit(): void {
-    const itemA: ItemMenu = {
-      texto: 'teste',
-      rota: 'http://lugar',
-      exibicao: RegraExibicaoMenuEnum.SEMPRE,
-      classIconeFontAwesome: 'fas fa-camera-retro',
+    //menu logout
+    const logout: ItemMenu = {
+      texto: 'Sair',
+      exibicao: RegraExibicaoMenuEnum.LOGADO,
+      classIconeFontAwesome: 'fas fa-door-open',
+      click: this.logout.bind(this),
     } as ItemMenu;
-    this.itensMenu.push(itemA);
+    this.itensMenu.push(logout);
+    //definindo Usuario
+    this.user = { jti: 'testonildo', exp: new Date().getTime(), groups: [], upn: 'xxx' };
   }
 
   title = '###app.nome###';
 
+  fechaMenu() {
+    this.menuVisivel = false;
+    console.warn(this.menuVisivel);
+  }
+
   logout() {
+    this.fechaMenu();
+    this.user = null;
     this.userService.logout();
   }
 }
