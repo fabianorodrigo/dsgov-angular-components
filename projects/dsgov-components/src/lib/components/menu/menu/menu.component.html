@@ -1,4 +1,4 @@
-<div class="br-menu active">
+<div class="br-menu active" id="main-navigation">
   <div class="menu-container">
     <div class="row">
       <div class="col-sm-4 col-lg-3">
@@ -20,23 +20,15 @@
             </div>
           </div>
           <nav class="menu-body">
-            <div class="menu-folder">
-              <a class="menu-item" href="javascript: void(0)"
-                ><span class="content">Início</span></a
-              >
-              <ul>
-                <ng-container *ngFor="let item of itens">
-                  <br-item-menu
-                    *ngIf="
-                      item.exibicao == SEMPRE ||
-                      (item.exibicao == LOGADO && usuario != null) ||
-                      (item.exibicao == NAO_LOGADO && usuario == null)
-                    "
-                    [item]="item"
-                  ></br-item-menu>
-                </ng-container>
-              </ul>
-            </div>
+            <ng-container *ngFor="let grupo of grupos">
+              <br-grupo-menu
+                [grupo]="grupo"
+                [usuario]="usuario"
+                [closeMenu]="closeMenu"
+                (mudancaExibicaoSideMenu)="onMudancaExibicaoSideMenu($event)"
+                [idSideMenuVisivel]="idSideMenuVisivel"
+              ></br-grupo-menu>
+            </ng-container>
           </nav>
           <div class="menu-footer" *ngIf="exibeInformacaoLicenca">
             <div class="menu-info">

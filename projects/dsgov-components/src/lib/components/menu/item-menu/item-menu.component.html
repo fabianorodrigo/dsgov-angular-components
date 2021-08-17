@@ -1,7 +1,14 @@
-<li>
+<li
+  *ngIf="item.subItens == null || item.subItens.length == 0; else itemAgrupador"
+>
   <a
-    *ngIf="item.click == null; else itemMenuComEventoOnClick"
+    *ngIf="
+      idSideMenuVisivel == null ||
+      idSideMenuVisivel == item.id ||
+      idSideMenuVisivel == item.idParent
+    "
     class="menu-item"
+    (click)="onClickComponent($event)"
     [routerLink]="item.rota"
   >
     <i
@@ -13,13 +20,42 @@
   </a>
 </li>
 
-<ng-template #itemMenuComEventoOnClick>
-  <a class="menu-item" (click)="item.click($event)" [routerLink]="item.rota">
-    <i
-      *ngIf="item.classIconeFontAwesome"
-      [class]="item.classIconeFontAwesome"
-      aria-hidden="true"
-    ></i>
-    <span *ngIf="item.texto" class="content">{{ item.texto }}</span>
-  </a>
+<ng-template #itemAgrupador>
+  <li
+    [class]="expandido ? 'side-menu active' : 'side-menu'"
+    *ngIf="
+      idSideMenuVisivel == null ||
+      idSideMenuVisivel == item.id ||
+      idSideMenuVisivel == item.idParent
+    "
+  >
+    <a
+      href="javascript: void(0)"
+      class="menu-item"
+      (click)="onClickComponent($event)"
+    >
+      <span *ngIf="item.classIconeFontAwesome" class="icon"
+        ><i [class]="item.classIconeFontAwesome" aria-hidden="true"></i
+      ></span>
+      <span *ngIf="item.texto" class="content">{{ item.texto }}</span>
+      <span class="support"
+        ><i class="fas fa-angle-right" aria-hidden="true"></i
+      ></span>
+    </a>
+    <ul>
+      <ng-container *ngFor="let subItem of item.subItens">
+        <br-item-menu
+          *ngIf="
+            subItem.exibicao == SEMPRE ||
+            (subItem.exibicao == LOGADO && usuario != null) ||
+            (subItem.exibicao == NAO_LOGADO && usuario == null)
+          "
+          [item]="subItem"
+          [closeMenu]="closeMenu"
+          [mudancaExibicaoSideMenu]="mudancaExibicaoSideMenu"
+          [idSideMenuVisivel]="idSideMenuVisivel"
+        ></br-item-menu>
+      </ng-container>
+    </ul>
+  </li>
 </ng-template>

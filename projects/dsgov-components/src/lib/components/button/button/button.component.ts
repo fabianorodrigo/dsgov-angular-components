@@ -11,6 +11,9 @@ export class ButtonComponent extends BaseComponent implements OnInit {
     super();
   }
 
+  //Evento de click
+  @Output() click = new EventEmitter<any>();
+
   /*** Os Estados são representados em propriedades específicas ***/
 
   //se true, aplica a classe 'disabled' ao botão
@@ -27,4 +30,8 @@ export class ButtonComponent extends BaseComponent implements OnInit {
   ngClass: string | string[] | Set<string> | { [klass: string]: any };
 
   ngOnInit(): void {}
+
+  onClickComponent(event) {
+    this.click.emit(event);
+  }
 }

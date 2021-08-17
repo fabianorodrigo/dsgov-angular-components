@@ -1,9 +1,8 @@
-import { InformacaoLicenca } from '../../base/informacao-licenca';
-import { BaseComponent } from './../../base/base/base.component';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Usuario } from '../../base/usuario.interface';
 import { ItemMenu } from '../item-menu.interface';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { BaseComponent, InformacaoLicenca, Usuario } from '../../base';
 import { RegraExibicaoMenuEnum } from '../regra-exibicao-menu.enum';
+import { GrupoItemMenu } from './../grupo-item-menu.interface';
 
 @Component({
   selector: 'br-menu',
@@ -16,12 +15,12 @@ export class MenuComponent extends BaseComponent implements OnInit {
   readonly LOGADO = RegraExibicaoMenuEnum.LOGADO;
   readonly NAO_LOGADO = RegraExibicaoMenuEnum.NAO_LOGADO;
 
-  // dados do usuario eventualmente ligado
+  // dados do usuario eventualmente logado
   @Input() usuario: Usuario;
   // evento disparado quando o menu é fechado
   @Output() closeMenu = new EventEmitter<any>();
-  // lista de itens de menu
-  @Input() itens: ItemMenu[];
+  // lista de grupos de itens de menu
+  @Input() grupos: GrupoItemMenu[];
   // url da imagem que aparece no menu
   @Input() urlImagem: string = 'assets/govbr-logo-large.png';
 
@@ -30,15 +29,36 @@ export class MenuComponent extends BaseComponent implements OnInit {
   // Label de apresentação e nome da licença utilizada
   @Input() informacaoLicenca: InformacaoLicenca = new InformacaoLicenca();
 
+  //ID do side-menu (um menu com subitens de um item) sendo exibido no momento
+  @Input() idSideMenuVisivel: string = null;
+
   constructor() {
     super();
   }
 
-  ngOnInit(): void {
-    console.warn(this.itens);
+  ngOnInit() {
+    // setando ids para os grupos e itens de menu
+    // utilizado no controle de exibição/ocultação de side-menus
+    this.grupos.forEach((g, i) => {
+      this.setIDs(i.toString(), g.itens);
+    });
+  }
+
+  private setIDs(idParent: string, itens: ItemMenu[]) {
+    itens.forEach((item, i) => {
+      item.idParent = idParent.toString();
+      item.id = item.idParent.concat('_', i.toString());
+      if (item.subItens != null) {
+        this.setIDs(item.id, item.subItens);
+      }
+    });
   }
 
   onCloseMenu(event) {
     this.closeMenu.emit(event);
+  }
+
+  onMudancaExibicaoSideMenu(id: string) {
+    this.idSideMenuVisivel = id;
   }
 }
