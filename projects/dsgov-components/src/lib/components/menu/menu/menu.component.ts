@@ -30,7 +30,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
   @Input() informacaoLicenca: InformacaoLicenca = new InformacaoLicenca();
 
   //ID do side-menu (um menu com subitens de um item) sendo exibido no momento
-  @Input() idSideMenuVisivel: string = null;
+  idSideMenuVisivel: string[] = [];
 
   constructor() {
     super();
@@ -40,16 +40,20 @@ export class MenuComponent extends BaseComponent implements OnInit {
     // setando ids para os grupos e itens de menu
     // utilizado no controle de exibição/ocultação de side-menus
     this.grupos.forEach((g, i) => {
-      this.setIDs(i.toString(), g.itens);
+      this.setIDs([i.toString()], g.itens);
     });
   }
 
-  private setIDs(idParent: string, itens: ItemMenu[]) {
+  private setIDs(idParents: string[], itens: ItemMenu[]) {
     itens.forEach((item, i) => {
-      item.idParent = idParent.toString();
-      item.id = item.idParent.concat('_', i.toString());
+      item.idParents = idParents;
+      item.id = item.idParents[item.idParents.length - 1].concat(
+        '_',
+        i.toString()
+      );
       if (item.subItens != null) {
-        this.setIDs(item.id, item.subItens);
+        this.setIDs(item.idParents.concat(item.id), item.subItens);
+        item.idChildren = item.subItens.map((si) => si.id);
       }
     });
   }
@@ -59,6 +63,15 @@ export class MenuComponent extends BaseComponent implements OnInit {
   }
 
   onMudancaExibicaoSideMenu(id: string) {
-    this.idSideMenuVisivel = id;
+    // Se passar null, significa que está saindo de um side menu
+    // remove então o último elemento (caso seja uma situação de
+    // menus aninhados, voltará para o nível anterior)
+    if (id == null) {
+      this.idSideMenuVisivel.pop();
+    }
+    // passando um identificador, acrescenta id do side menu à pilha
+    else {
+      this.idSideMenuVisivel.push(id);
+    }
   }
 }

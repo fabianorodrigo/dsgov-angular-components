@@ -2,7 +2,7 @@
   [class]="expandido ? 'menu-folder drop-menu active' : 'menu-folder drop-menu'"
 >
   <a
-    *ngIf="idSideMenuVisivel == null"
+    *ngIf="idSideMenuVisivel.length == 0"
     class="menu-item"
     href="javascript: void(0)"
     (click)="onClickComponent($event)"

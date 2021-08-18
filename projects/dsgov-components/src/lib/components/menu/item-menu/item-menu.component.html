@@ -3,9 +3,9 @@
 >
   <a
     *ngIf="
-      idSideMenuVisivel == null ||
-      idSideMenuVisivel == item.id ||
-      idSideMenuVisivel == item.idParent
+      idSideMenuVisivel.length == 0 ||
+      idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
+      item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
     "
     class="menu-item"
     (click)="onClickComponent($event)"
@@ -24,15 +24,23 @@
   <li
     [class]="expandido ? 'side-menu active' : 'side-menu'"
     *ngIf="
-      idSideMenuVisivel == null ||
-      idSideMenuVisivel == item.id ||
-      idSideMenuVisivel == item.idParent
+      idSideMenuVisivel.length == 0 ||
+      idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
+      item.idParents.includes(
+        idSideMenuVisivel[idSideMenuVisivel.length - 1]
+      ) ||
+      item.idChildren.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
     "
   >
     <a
       href="javascript: void(0)"
       class="menu-item"
       (click)="onClickComponent($event)"
+      *ngIf="
+        idSideMenuVisivel.length == 0 ||
+        idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
+        item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
+      "
     >
       <span *ngIf="item.classIconeFontAwesome" class="icon"
         ><i [class]="item.classIconeFontAwesome" aria-hidden="true"></i

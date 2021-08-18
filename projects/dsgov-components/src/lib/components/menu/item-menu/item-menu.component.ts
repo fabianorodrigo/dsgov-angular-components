@@ -17,7 +17,7 @@ export class ItemMenuComponent extends BaseComponent {
   @Input() item: ItemMenu;
 
   //ID do side-menu (um menu com subitens de um item) sendo exibido no momento
-  @Input() idSideMenuVisivel: string = null;
+  @Input() idSideMenuVisivel: string[] = [];
 
   // o EventEmitter de fechamento do menu é passado para os grupos e depois para os itens
   // de menu a fim de que seja chamado quando um item de menu de rota (sem uma função que

@@ -27,7 +27,7 @@ export class GrupoMenuComponent extends BaseComponent {
   @Input() closeMenu: EventEmitter<any> = null;
 
   //ID do side-menu (um menu com subitens de um item) sendo exibido no momento
-  @Input() idSideMenuVisivel: string = null;
+  @Input() idSideMenuVisivel: string[] = [];
 
   // evento disparado quando um side menu é exibido ou escondido
   // side-menu é um menu formado por subItens de um item de menu
