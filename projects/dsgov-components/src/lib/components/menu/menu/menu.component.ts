@@ -1,3 +1,4 @@
+import { LinkExternoMenu } from './../link-externo-menu.interface';
 import { ItemMenu } from '../item-menu.interface';
 import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { BaseComponent, InformacaoLicenca, Usuario } from '../../base';
@@ -23,13 +24,17 @@ export class MenuComponent extends BaseComponent implements OnInit {
   @Input() grupos: GrupoItemMenu[];
   // url da imagem que aparece no menu
   @Input() urlImagem: string = 'assets/govbr-logo-large.png';
+  //Links externos exibidos no menu, abaixo dos itens
+  @Input() linksExternos: LinkExternoMenu[] = [];
 
   // Indica a exibição ou não da informação sobre licença no menu
   @Input() exibeInformacaoLicenca: boolean = true;
   // Label de apresentação e nome da licença utilizada
   @Input() informacaoLicenca: InformacaoLicenca = new InformacaoLicenca();
 
-  //ID do side-menu (um menu com subitens de um item) sendo exibido no momento
+  // Pilha com IDs de side-menus (um menu com subitens de um item) ativos no momento
+  // o ID da ponta da pilha é em exibição no momento. Ao fechar o side-menu, ocorre
+  // um POP nesta pilha
   idSideMenuVisivel: string[] = [];
 
   constructor() {
