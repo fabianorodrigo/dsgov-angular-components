@@ -1,5 +1,9 @@
 <div
-  [class]="expandido ? 'menu-folder drop-menu active' : 'menu-folder drop-menu'"
+  [class]="
+    expandido
+      ? 'divisor-menu menu-folder drop-menu active'
+      : 'menu-folder drop-menu'
+  "
 >
   <a
     *ngIf="idSideMenuVisivel.length == 0"

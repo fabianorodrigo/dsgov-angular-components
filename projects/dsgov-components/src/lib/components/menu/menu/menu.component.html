@@ -21,13 +21,33 @@
           </div>
           <nav class="menu-body">
             <ng-container *ngFor="let grupo of grupos">
-              <br-grupo-menu
+              <!-- AGRUPAMENTO EXPANSAO -->
+              <br-grupo-menu-expansao
+                *ngIf="tipoAgrupamentoMenu == AGRUPAMENTO_EXPANSAO"
                 [grupo]="grupo"
                 [usuario]="usuario"
                 [closeMenu]="closeMenu"
                 (mudancaExibicaoSideMenu)="onMudancaExibicaoSideMenu($event)"
                 [idSideMenuVisivel]="idSideMenuVisivel"
-              ></br-grupo-menu>
+              ></br-grupo-menu-expansao>
+              <!-- AGRUPAMENTO POR ROTULOS -->
+              <br-grupo-menu-rotulos
+                *ngIf="tipoAgrupamentoMenu == AGRUPAMENTO_ROTULO"
+                [grupo]="grupo"
+                [usuario]="usuario"
+                [closeMenu]="closeMenu"
+                (mudancaExibicaoSideMenu)="onMudancaExibicaoSideMenu($event)"
+                [idSideMenuVisivel]="idSideMenuVisivel"
+              ></br-grupo-menu-rotulos>
+              <!-- AGRUPAMENTO POR DIVIDER -->
+              <br-grupo-menu-dividers
+                *ngIf="tipoAgrupamentoMenu == AGRUPAMENTO_DIVIDER"
+                [grupo]="grupo"
+                [usuario]="usuario"
+                [closeMenu]="closeMenu"
+                (mudancaExibicaoSideMenu)="onMudancaExibicaoSideMenu($event)"
+                [idSideMenuVisivel]="idSideMenuVisivel"
+              ></br-grupo-menu-dividers>
             </ng-container>
           </nav>
           <div class="menu-footer" *ngIf="exibeInformacaoLicenca">

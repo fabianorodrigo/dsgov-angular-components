@@ -1,19 +1,25 @@
-import { GrupoItemMenu } from './../grupo-item-menu.interface';
-import { BaseComponent } from './../../base/base/base.component';
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
-import { RegraExibicaoMenuEnum } from '../regra-exibicao-menu.enum';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BaseComponent } from '../../base/base/base.component';
 import { Usuario } from '../../base/usuario.interface';
+import { GrupoItemMenu } from '../grupo-item-menu.interface';
+import {
+  RegraExibicaoMenu,
+  RegraExibicaoMenuType,
+} from '../regra-exibicao-menu.enum';
 
 @Component({
-  selector: 'br-grupo-menu',
-  templateUrl: './grupo-menu.component.html',
-  styles: [],
+  selector: 'br-grupo-menu-expansao',
+  templateUrl: './grupo-menu-expansao.component.html',
+  styles: [
+    `div.divisor-menu.menu-folder {
+    border-bottom: 1px solid var(--menu-divider);`,
+  ],
 })
-export class GrupoMenuComponent extends BaseComponent {
+export class GrupoMenuExpansaoComponent extends BaseComponent {
   //constantes usadas no template
-  readonly SEMPRE = RegraExibicaoMenuEnum.SEMPRE;
-  readonly LOGADO = RegraExibicaoMenuEnum.LOGADO;
-  readonly NAO_LOGADO = RegraExibicaoMenuEnum.NAO_LOGADO;
+  readonly SEMPRE = RegraExibicaoMenu.SEMPRE;
+  readonly LOGADO = RegraExibicaoMenu.LOGADO;
+  readonly NAO_LOGADO = RegraExibicaoMenu.NAO_LOGADO;
 
   @Input() grupo: GrupoItemMenu;
   // dados do usuario eventualmente logado

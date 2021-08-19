@@ -1,9 +1,13 @@
-import { LinkExternoMenu } from './../link-externo-menu.interface';
-import { ItemMenu } from '../item-menu.interface';
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BaseComponent, InformacaoLicenca, Usuario } from '../../base';
-import { RegraExibicaoMenuEnum } from '../regra-exibicao-menu.enum';
+import { ItemMenu } from '../item-menu.interface';
+import {
+  RegraExibicaoMenu,
+  RegraExibicaoMenuType,
+} from '../regra-exibicao-menu.enum';
+import { TipoAgrupamentoMenu } from '../tipo-agrupamento-menu.enum';
 import { GrupoItemMenu } from './../grupo-item-menu.interface';
+import { LinkExternoMenu } from './../link-externo-menu.interface';
 
 @Component({
   selector: 'br-menu',
@@ -12,9 +16,16 @@ import { GrupoItemMenu } from './../grupo-item-menu.interface';
 })
 export class MenuComponent extends BaseComponent implements OnInit {
   //constantes usadas no template
-  readonly SEMPRE = RegraExibicaoMenuEnum.SEMPRE;
-  readonly LOGADO = RegraExibicaoMenuEnum.LOGADO;
-  readonly NAO_LOGADO = RegraExibicaoMenuEnum.NAO_LOGADO;
+  readonly SEMPRE = RegraExibicaoMenu.SEMPRE;
+  readonly LOGADO = RegraExibicaoMenu.LOGADO;
+  readonly NAO_LOGADO = RegraExibicaoMenu.NAO_LOGADO;
+  readonly AGRUPAMENTO_EXPANSAO = TipoAgrupamentoMenu.EXPANSAO;
+  readonly AGRUPAMENTO_ROTULO = TipoAgrupamentoMenu.ROTULO;
+  readonly AGRUPAMENTO_DIVIDER = TipoAgrupamentoMenu.DIVIDER;
+
+  // Tipo do agrupamento do menu
+  @Input() tipoAgrupamentoMenu: TipoAgrupamentoMenu =
+    TipoAgrupamentoMenu.EXPANSAO;
 
   // dados do usuario eventualmente logado
   @Input() usuario: Usuario;

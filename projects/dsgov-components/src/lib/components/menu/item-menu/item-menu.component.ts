@@ -1,5 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { RegraExibicaoMenuEnum } from '../regra-exibicao-menu.enum';
+import {
+  RegraExibicaoMenu,
+  RegraExibicaoMenuType,
+} from '../regra-exibicao-menu.enum';
 import { BaseComponent } from './../../base/base/base.component';
 import { ItemMenu } from './../item-menu.interface';
 
@@ -10,9 +13,9 @@ import { ItemMenu } from './../item-menu.interface';
 })
 export class ItemMenuComponent extends BaseComponent {
   //constantes usadas no template
-  readonly SEMPRE = RegraExibicaoMenuEnum.SEMPRE;
-  readonly LOGADO = RegraExibicaoMenuEnum.LOGADO;
-  readonly NAO_LOGADO = RegraExibicaoMenuEnum.NAO_LOGADO;
+  readonly SEMPRE = RegraExibicaoMenu.SEMPRE;
+  readonly LOGADO = RegraExibicaoMenu.LOGADO;
+  readonly NAO_LOGADO = RegraExibicaoMenu.NAO_LOGADO;
 
   @Input() item: ItemMenu;
 

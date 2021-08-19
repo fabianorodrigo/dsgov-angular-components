@@ -15,3 +15,4 @@ export * from './lib/components/menu/menu/menu.component';
 export * from './lib/components/menu/item-menu.interface';
 export * from './lib/components/menu/link-externo-menu.interface';
 export * from './lib/components/menu/regra-exibicao-menu.enum';
+export * from './lib/components/menu/tipo-agrupamento-menu.enum';
