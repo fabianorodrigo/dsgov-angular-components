@@ -2,6 +2,8 @@
  * Public API Surface of dsgov-components
  */
 
+//Base
+export * from './lib/components/base';
 //Button
 export * from './lib/components/button/button.module';
 export * from './lib/components/button/button/button.component';

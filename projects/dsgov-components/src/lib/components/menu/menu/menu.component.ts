@@ -1,3 +1,4 @@
+import { Densidade, DensidadeType } from './../../base/densidade.enum';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BaseComponent, InformacaoLicenca, Usuario } from '../../base';
 import { ItemMenu } from '../item-menu.interface';
@@ -5,7 +6,10 @@ import {
   RegraExibicaoMenu,
   RegraExibicaoMenuType,
 } from '../regra-exibicao-menu.enum';
-import { TipoAgrupamentoMenu } from '../tipo-agrupamento-menu.enum';
+import {
+  TipoAgrupamentoMenu,
+  TipoAgrupamentoMenuType,
+} from '../tipo-agrupamento-menu.enum';
 import { GrupoItemMenu } from './../grupo-item-menu.interface';
 import { LinkExternoMenu } from './../link-externo-menu.interface';
 
@@ -24,8 +28,10 @@ export class MenuComponent extends BaseComponent implements OnInit {
   readonly AGRUPAMENTO_DIVIDER = TipoAgrupamentoMenu.DIVIDER;
 
   // Tipo do agrupamento do menu
-  @Input() tipoAgrupamentoMenu: TipoAgrupamentoMenu =
+  @Input() tipoAgrupamentoMenu: TipoAgrupamentoMenuType =
     TipoAgrupamentoMenu.EXPANSAO;
+  // Densidade dos itens de menu. Default: densidade normal
+  @Input() densidade: DensidadeType = 'normal';
 
   // dados do usuario eventualmente logado
   @Input() usuario: Usuario;
