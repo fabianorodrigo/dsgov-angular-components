@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { User, UserService } from './shared/core';
-import { ItemBreadcrumb, ItemMenu, RegraExibicaoMenuEnum } from 'dsgov-components';
+import { ItemBreadcrumb, RegraExibicaoMenu, TipoAgrupamentoMenu } from 'dsgov-components';
 import { Usuario } from 'dsgov-components/lib/components/base/usuario.interface';
+import { GrupoItemMenu } from 'dsgov-components/lib/components/menu/grupo-item-menu.interface';
+import { Observable } from 'rxjs';
+import { UserService } from './shared/core';
 
 declare var require: any;
 @Component({
@@ -11,12 +12,17 @@ declare var require: any;
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  // Constantes utilizadas no template
+  readonly AGRUPAMENTO_EXPANSAO = TipoAgrupamentoMenu.EXPANSAO;
+  readonly AGRUPAMENTO_ROTULO = TipoAgrupamentoMenu.ROTULO;
+  readonly AGRUPAMENTO_DIVIDER = TipoAgrupamentoMenu.DIVIDER;
+
   //é uma convenção que as variáveis Observable terminem com $
   user$: Observable<Usuario>;
   user: Usuario;
   menuVisivel: boolean = false;
 
-  itensMenu: ItemMenu[] = [];
+  itensMenu: GrupoItemMenu[] = [];
   itensBreadcrumb: ItemBreadcrumb[] = [
     { label: 'Página Ancestral 01', link: 'http://ancestral01' },
     { label: 'Página Ancestral 02', link: 'http://ancestral02' },
@@ -30,12 +36,13 @@ export class AppComponent {
       this.itensMenu.push(item);
     });
     //menu logout
-    const logout: ItemMenu = {
+    const logout: GrupoItemMenu = {
       texto: 'Sair',
-      exibicao: RegraExibicaoMenuEnum.LOGADO,
+      exibicao: RegraExibicaoMenu.LOGADO,
       classIconeFontAwesome: 'fas fa-door-open',
       click: this.logout.bind(this),
-    } as ItemMenu;
+      itens: [],
+    };
     this.itensMenu.push(logout);
     //definindo Usuario
     this.user = { jti: 'testonildo', exp: new Date().getTime(), groups: [], upn: 'xxx' };
@@ -44,8 +51,9 @@ export class AppComponent {
   title = '###app.nome###';
 
   fechaMenu() {
+    console.warn('menuVisivel', this.menuVisivel);
     this.menuVisivel = false;
-    console.warn(this.menuVisivel);
+    console.warn('menuVisivel', this.menuVisivel);
   }
 
   logout() {

@@ -11,7 +11,18 @@
   <main id="main" class="d-flex flex-fill">
     <div class="container-fluid d-flex">
       <div class="row">
-        <br-menu *ngIf="menuVisivel" (closeMenu)="fechaMenu()" [usuario]="user" [itens]="itensMenu"></br-menu>
+        <br-menu
+          *ngIf="menuVisivel"
+          (closeMenu)="fechaMenu()"
+          [usuario]="user"
+          [grupos]="itensMenu"
+          urlImagem="assets/ANCINE.png"
+          [linksExternos]="[
+            { label: 'Portal', url: 'http://gov.br/ancine' },
+            { label: 'SAVI', url: 'http://savi.ancine.gov.br' }
+          ]"
+          [tipoAgrupamentoMenu]="AGRUPAMENTO_EXPANSAO"
+        ></br-menu>
         <div class="col pt-3 pb-5">
           <br-breadcrumb [itens]="itensBreadcrumb"></br-breadcrumb>
           <!-- Carregar Conteúdo Principal aqui -->
@@ -20,5 +31,5 @@
       </div>
     </div>
   </main>
-  <br-rodape></br-rodape>
+  <br-footer></br-footer>
 </div>

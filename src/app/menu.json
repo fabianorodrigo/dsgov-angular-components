@@ -1,10 +1,21 @@
 [
-  {"classIconeFontAwesome": "fas fa-users", "texto": "Entidade", "exibicao":"sempre", "rota":"/entidade"},
-  {"classIconeFontAwesome": "fas fa-map-signs", "texto": "Qualquer coisa", "exibicao":"naoLogado"},
-  {"classIconeFontAwesome": "fas fa-map-pin", "texto": "Qualquer coisa pra logado", "exibicao":"logado"},
-  {"classIconeFontAwesome": "fas fa-university", "texto": "Instituições", "exibicao":"sempre"},
-  {"classIconeFontAwesome": "fas fa-film", "texto": "Obras não publicitárias", "exibicao":"sempre"},
-  {"classIconeFontAwesome": "fas fa-photo-video", "texto": "Obras publicitárias", "exibicao":"sempre"},
-  {"classIconeFontAwesome": "fas fa-money-bill-alt", "texto": "Fomento", "exibicao":"sempre"},
-  {"classIconeFontAwesome": "fas fa-calendar-alt", "texto": "Eventos", "exibicao":"sempre"}
+  {"classIconeFontAwesome":"fas fa-hamburger", "texto": "Grupo 1", "itens":
+    [
+      {"classIconeFontAwesome": "fas fa-users", "texto": "Entidade", "exibicao":"sempre", "rota":"/entidade"},
+      {"classIconeFontAwesome": "fas fa-map-signs", "texto": "Qualquer coisa", "exibicao":"sempre"},
+      {"classIconeFontAwesome": "fas fa-map-pin", "texto": "Jureba", "exibicao":"sempre", "subItens":[
+        {"classIconeFontAwesome": "fas fa-photo-video", "texto": "Obras publicitárias", "exibicao":"sempre", "rota":"http://oglobo.com.br"},
+        {"classIconeFontAwesome": "fas fa-money-bill-alt", "texto": "Fomento", "exibicao":"sempre", "rota":"http://ge.com.br"},
+        {"classIconeFontAwesome": "fas fa-film", "texto": "Esse tem subitens", "exibicao":"sempre", "subItens":[
+          {"classIconeFontAwesome": "fas fa-users", "texto": "Teste ", "exibicao":"sempre", "rota":"/entidade"},
+          {"classIconeFontAwesome": "fas fa-allergies", "texto": "Testando", "exibicao":"sempre", "rota":"/entidade"}
+        ]}
+      ]},
+      {"classIconeFontAwesome": "fas fa-calendar-alt", "texto": "Eventos", "exibicao":"sempre", "rota":"http://uol.com.br"},
+      {"classIconeFontAwesome": "fas fa-university", "texto": "Instituições", "exibicao":"sempre"},
+      {"classIconeFontAwesome": "fas fa-film", "texto": "Obras não publicitárias", "exibicao":"sempre"}
+
+    ]
+  },
+  {"classIconeFontAwesome": "fas fa-futbol", "texto": "Grupo 2", "itens":[{"classIconeFontAwesome": "fas fa-users", "texto": "Entidade", "exibicao":"sempre", "rota":"/entidade"}]}
 ]
