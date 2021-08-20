@@ -1,27 +1,48 @@
-# DsgovAngularComponents
+# DSGOV Angular Components
 
-Biblioteca de componentes Angular (versão 11.2.10) de acordo com o padrão visual do Governo Federal brasileiro: https://dsgov.estaleiro.serpro.gov.br/
+Biblioteca de componentes em Angular (v11.2.10) de acordo com Padrão Digital de Governo dos órgãos e entidades do Poder Executivo federal, estabelecido pela Portaria nº 540 de 8 de setembro de 2020 da Presidência da República/Secretaria de Governo.
 
-## Development server
+A Portaria 540/2020 define Padrão Digital do Governo em seu Artigo 3º como: _sítio com conjunto de diretrizes, orientações, padrões, fundamentos visuais, componentes, modelos, boas práticas de desenvolvimento e manuais que devem ser atendidos por designers e desenvolvedores, para garantir uma experiência única do usuário, na interação com sítios, portais, aplicativos móveis e demais propriedades digitais do Governo federal, disponível no endereço eletrônico "gov.br/ds"_.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+A atual versão da biblioteca _DSGOV Angular Components_ é baseada nas informações contidas na versão **2.1.0 BETA** do endereço eletrônico [gov.br/ds](http://gov.br/ds) e utiliza os arquivos CSS contidos no pacote NPM versão **2.0.2** disponbilizado na seção Downloads deste mesmo endereço.
 
-## Code scaffolding
+O propósito deste projeto é oferecer aos desenvolvedores de software para órgãos do Governo Federal, servidores ou terceirizados, uma alternativa simples, leve, compatível com outros frameworks e bibliotecas de mercado, eficiente e gratuita que permita alcançar os objetivos preconizados pela Portaria nº 540/2020 e, ao mesmo tempo, agilize a execução de projetos de software de órgãos do Governo Federal, facilite a padronização e o acompanhamento da evolução contínua do Padrão Digital do Governo. Desta forma, indo diretamente ao encontro do princípio da Economicidade elencado na Seção II da citada Portaria.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Componentes
 
-## Build
+A seguir são identificados os componentes padrão estabelecidos no [gov.br/ds](http://gov.br/ds) e o atual estágio de implementaçao de cada um deles na biblioteca _DSGOV Angular Components_:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+| Componente     | Grau de Implementado |
+| -------------- | :------------------: |
+| Accordion      |                      |
+| Avatar         |                      |
+| Breadcrumb     |     Parcialmente     |
+| Button         |     Implementado     |
+| Card           |                      |
+| CookieBar      |                      |
+| Checkbox       |                      |
+| DateTimePicker |                      |
+| Divider        |     Implementado     |
+| Footer         |     Parcialmente     |
+| Header         |                      |
+| Input          |                      |
+| Item           |                      |
+| List           |                      |
+| Loading        |                      |
+| Magic Button   |                      |
+| Menu           |     Parcialmente     |
+| Message        |                      |
+| Modal          |                      |
+| Notification   |                      |
+| Pagination     |                      |
+| Radio          |                      |
+| Scrim          |                      |
+| Select         |                      |
+| Sign-in        |                      |
+| Switch         |                      |
+| Table          |                      |
+| Tab            |                      |
+| Textarea       |                      |
+| Tooltip        |                      |
+| Upload         |                      |
+| Wizard         |                      |
