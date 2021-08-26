@@ -1,7 +1,7 @@
-export type DensidadeType = 'small' | 'normal' | 'large';
+export type DensidadeType = 'small' | 'medium' | 'large';
 
 export class Densidade {
-  static readonly ALTA: DensidadeType = 'small';
-  static readonly NORMAL: DensidadeType = 'normal';
-  static readonly BAIXA: DensidadeType = 'large';
+  static readonly BAIXA: DensidadeType = 'small';
+  static readonly MEDIA: DensidadeType = 'medium';
+  static readonly ALTA: DensidadeType = 'large';
 }

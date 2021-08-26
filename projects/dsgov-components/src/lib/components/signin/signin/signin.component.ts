@@ -1,3 +1,4 @@
+import { Densidade } from './../../base/densidade.enum';
 import { TipoSignin, TipoSigninType } from './../tipo-signin.enum';
 import { BaseComponent } from './../../base/base/base.component';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
@@ -20,7 +21,7 @@ export class SigninComponent extends BaseComponent {
   @Input() tipoSignin: TipoSigninType = TipoSignin.ENTRAR_GOVBR_COR;
 
   // Densidade dos itens de menu. Default: densidade normal
-  @Input() densidade: DensidadeType = 'normal';
+  @Input() densidade: DensidadeType = Densidade.MEDIA;
 
   constructor(private domSanitizer: DomSanitizer) {
     super();
