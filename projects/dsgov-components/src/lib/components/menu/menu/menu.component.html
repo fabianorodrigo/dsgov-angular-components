@@ -57,7 +57,7 @@
             <div class="menu-links" *ngIf="linksExternos.length > 0">
               <ng-container *ngFor="let link of linksExternos">
                 <a [href]="link.url" target="_blank"
-                  ><span class="mr-1">{{ link.label }}</span
+                  ><span class="mr-1">{{ link.texto }}</span
                   ><i
                     class="fas fa-external-link-square-alt"
                     aria-hidden="true"

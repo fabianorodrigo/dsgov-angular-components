@@ -1,0 +1,47 @@
+<!-- Padrão -->
+<div
+  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  *ngIf="tipoItem == PADRAO"
+  [disabled]="isDisabled ? 'disabled' : ''"
+  role="listitem"
+>
+  <ng-container *ngTemplateOutlet="innerHTML"></ng-container>
+</div>
+
+<!-- Selection -->
+<div
+  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  *ngIf="tipoItem == SELECTION"
+  data-toggle="selection"
+  [disabled]="isDisabled ? 'disabled' : ''"
+  role="listitem"
+>
+  <ng-container *ngTemplateOutlet="innerHTML"></ng-container>
+</div>
+
+<!-- Link  -->
+<a
+  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  *ngIf="tipoItem == LINK"
+  [href]="href"
+  [target]="target"
+  [disabled]="isDisabled ? 'disabled' : ''"
+>
+  <ng-container *ngTemplateOutlet="innerHTML"></ng-container>
+</a>
+
+<!-- Button  -->
+<br-button
+  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  *ngIf="tipoItem == BUTTON"
+  [click]="click"
+  [isActive]="isActive"
+  [isDisabled]="isDisabled"
+  role="listitem"
+>
+  <ng-container *ngTemplateOutlet="innerHTML"></ng-container>
+</br-button>
+
+<ng-template #innerHTML>
+  <ng-content></ng-content>
+</ng-template>

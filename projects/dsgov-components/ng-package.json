@@ -3,7 +3,8 @@
   "dest": "../../dist/dsgov-components",
   "assets": [
     "./assets/dsgov-2.0.2/css/dsgov.min.css",
-    "./assets/dsgov-2.0.2/css/dsgov-base.min.css"
+    "./assets/dsgov-2.0.2/css/dsgov-base.min.css",
+    "./assets/css/lib.css"
   ],
   "lib": {
     "entryFile": "src/public-api.ts"

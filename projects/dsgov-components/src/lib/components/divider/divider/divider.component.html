@@ -1,1 +1,3 @@
-<span [ngClass]="'br-divider ' + orientacao + ' ' + ngClass"></span>
+<span
+  [ngClass]="'br-divider ' + orientacao + ' ' + (ngClass ? ngClass : '')"
+></span>

@@ -1,4 +1,5 @@
 export interface LinkExternoMenu {
-  label: string;
+  classIconeFontAwesome?: string;
+  texto: string;
   url: string;
 }
