@@ -1,0 +1,24 @@
+<div [class]="'br-input medium ' + densidade + ' ' + estado">
+  <label *ngIf="textoLabel" [for]="id">{{textoLabel}</label>
+  <input
+    [class]="estado + ' ' + densidade"
+    [id]="id"
+    [type]="type"
+    [placeholder]="textoPlaceHolder"
+    [class.disabled]="isDisabled"
+  />
+  <br-button
+    *ngIf="classIconeFontAwesomeBotao"
+    ngClass="circle small"
+    [click]="clickButton"
+    ><i [class]="classIconeFontAwesomeBotao" aria-hidden="true"></i
+  ></br-button>
+  <span
+    *ngIf="estado != ESTADO_DEFAULT && textoFeedback"
+    [class]="'feedback mt-1 ' + estado"
+    role="alert"
+    ><i [class]="iconesEstado[estado]" aria-hidden="true"></i
+    >{{ textoFeedback }}</span
+  >
+  <ng-content></ng-content>
+</div>
