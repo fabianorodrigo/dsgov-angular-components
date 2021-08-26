@@ -1,0 +1,26 @@
+<!-- ENTRAR -->
+<br-button
+  *ngIf="tipoSignin == ENTRAR"
+  (click)="(onClickBotao)"
+  ngClass="'sign-in ' +  + (densidade == 'normal' ? '' : densidade)"
+  ><i class="fas fa-user" aria-hidden="true"></i>Entrar</br-button
+>
+<!-- ENTRAR GOV.BR MONOCROMÁTICO -->
+<br-button
+  *ngIf="tipoSignin == ENTRAR_GOVBR_MONO"
+  (click)="(onClickBotao)"
+  ngClass="'sign-in ' +  + (densidade == 'normal' ? '' : densidade)"
+  ><i class="fas fa-user" aria-hidden="true"></i>com&nbsp;<span
+    class="text-black"
+    >gov.br</span
+  ></br-button
+>
+<!-- ENTRAR GOV.BR COLORIDO -->
+<br-button
+  *ngIf="tipoSignin == ENTRAR_GOVBR_COR"
+  (click)="(onClickBotao)"
+  ngClass="'sign-in ' +  + (densidade == 'normal' ? '' : densidade)"
+  ><i class="fas fa-user" aria-hidden="true"></i>com&nbsp;<img
+    [src]="base64LogoDefault"
+    alt="gov.br"
+/></br-button>
