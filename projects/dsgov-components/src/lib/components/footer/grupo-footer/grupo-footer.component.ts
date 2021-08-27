@@ -1,6 +1,6 @@
 import { BaseComponent } from './../../base/base/base.component';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { LinkExternoMenu } from '../../base';
+import { Link } from '../../base';
 
 @Component({
   selector: 'br-grupo-footer',
@@ -10,7 +10,7 @@ export class GrupoFooterComponent extends BaseComponent implements OnInit {
   @Input() horizontal: boolean;
   @Input() grupo: string;
 
-  @Input() links: LinkExternoMenu[] = [];
+  @Input() links: Link[] = [];
 
   //Indica se o grupo de menu está expandido ou colapsado
   @Input() expandido = true;

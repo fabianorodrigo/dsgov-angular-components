@@ -2,7 +2,7 @@ import { Component, Input, OnInit, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { InformacaoLicenca } from '../../base';
 import { BaseComponent } from './../../base/base/base.component';
-import { LinkExternoMenu } from './../../base/link-externo-menu.interface';
+import { Link } from '../../base';
 
 @Component({
   selector: 'br-footer',
@@ -35,9 +35,9 @@ export class FooterComponent extends BaseComponent implements OnInit {
 
   // grupos de links do rodapé
   grupos: string[];
-  @Input() gruposLinks: { [nomeGrupo: string]: LinkExternoMenu[] } = {};
+  @Input() gruposLinks: { [nomeGrupo: string]: Link[] } = {};
   // links para os perfis do órgão em redes sociais
-  @Input() linksRedesSociais: LinkExternoMenu[] = [];
+  @Input() linksRedesSociais: Link[] = [];
 
   // Indica a exibição ou não da informação sobre licença no menu
   @Input() exibeInformacaoLicenca: boolean = true;

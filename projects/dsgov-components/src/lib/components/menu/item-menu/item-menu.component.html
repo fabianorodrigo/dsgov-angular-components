@@ -9,7 +9,11 @@
     "
     class="menu-item"
     (click)="onClickComponent($event)"
-    [routerLink]="item.rota"
+    [routerLink]="item.link.tipo == TIPOLINK_ROTA ? item.link.url : null"
+    [href]="item.link.tipo == TIPOLINK_URL ? item.link.url : null"
+    [target]="
+      item.link.tipo == TIPOLINK_URL && item.link.novaAba ? '_blank' : null
+    "
   >
     <i
       *ngIf="item.classIconeFontAwesome"

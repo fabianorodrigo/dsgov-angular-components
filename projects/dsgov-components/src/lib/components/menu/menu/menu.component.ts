@@ -1,18 +1,13 @@
 import { base64LogoGovBr } from './../../base/logoGovBr';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  BaseComponent,
-  InformacaoLicenca,
-  LinkExternoMenu,
-  Usuario,
-} from '../../base';
+import { BaseComponent, InformacaoLicenca, Link, Usuario } from '../../base';
 import { ItemMenu } from '../item-menu.interface';
 import { RegraExibicaoMenu } from '../regra-exibicao-menu.enum';
 import {
   TipoAgrupamentoLista,
   TipoAgrupamentoListaType,
 } from '../../list/tipo-agrupamento-lista.enum';
-import { DensidadeType } from './../../base/densidade.enum';
+import { Densidade, DensidadeType } from './../../base/densidade.enum';
 import { GrupoItemMenu } from './../grupo-item-menu.interface';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -34,7 +29,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
   @Input() tipoAgrupamentoMenu: TipoAgrupamentoListaType =
     TipoAgrupamentoLista.EXPANSAO;
   // Densidade dos itens de menu. Default: densidade normal
-  @Input() densidade: DensidadeType = 'normal';
+  @Input() densidade: DensidadeType = Densidade.MEDIA;
 
   // dados do usuario eventualmente logado
   @Input() usuario: Usuario;
@@ -45,7 +40,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
   // url da imagem que aparece no menu
   @Input() urlImagem: string;
   //Links externos exibidos no menu, abaixo dos itens
-  @Input() linksExternos: LinkExternoMenu[] = [];
+  @Input() linksExternos: Link[] = [];
 
   // Indica a exibição ou não da informação sobre licença no menu
   @Input() exibeInformacaoLicenca: boolean = true;

@@ -1,3 +1,4 @@
+import { TipoLink } from './../../base/tipo-link.enum';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import {
   RegraExibicaoMenu,
@@ -16,6 +17,9 @@ export class ItemMenuComponent extends BaseComponent {
   readonly SEMPRE = RegraExibicaoMenu.SEMPRE;
   readonly LOGADO = RegraExibicaoMenu.LOGADO;
   readonly NAO_LOGADO = RegraExibicaoMenu.NAO_LOGADO;
+
+  readonly TIPOLINK_ROTA = TipoLink.ROTA;
+  readonly TIPOLINK_URL = TipoLink.URL;
 
   @Input() item: ItemMenu;
 

@@ -1,3 +1,4 @@
+import { Link } from '../base';
 import { RegraExibicaoMenuType } from './regra-exibicao-menu.enum';
 
 type FunctionOnClickItemMenu = (item: ItemMenu) => void;
@@ -6,9 +7,7 @@ export interface ItemMenu {
   idParents?: string[];
   idChildren?: string[];
   exibicao: RegraExibicaoMenuType;
-  classIconeFontAwesome?: string;
-  texto?: string;
-  rota?: string;
+  link: Link;
   click?: FunctionOnClickItemMenu;
   subItens: ItemMenu[];
 }
