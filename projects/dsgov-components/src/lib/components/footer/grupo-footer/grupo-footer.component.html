@@ -15,7 +15,6 @@
     </div>
   </a>
   <div *ngIf="expandido" class="br-list open">
-    <br-divider></br-divider>
     <br-item
       *ngFor="let item of links"
       tipoItem="link"
@@ -23,6 +22,5 @@
       target="_blank"
       ><div class="content">{{ item.texto }}</div></br-item
     >
-    <br-divider ngClass="br-divider"></br-divider>
   </div>
 </div>
