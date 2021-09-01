@@ -24,9 +24,9 @@ A seguir são identificados os componentes padrão estabelecidos no [gov.br/ds](
 | DateTimePicker |                      |
 | Divider        |     Implementado     |
 | Footer         |     Parcialmente     |
-| Header         |                      |
-| Input          |                      |
-| Item           |                      |
+| Header         |     Parcialmente     |
+| Input          |     Implementado     |
+| Item           |     Implementado     |
 | List           |                      |
 | Loading        |                      |
 | Magic Button   |                      |
@@ -38,7 +38,7 @@ A seguir são identificados os componentes padrão estabelecidos no [gov.br/ds](
 | Radio          |                      |
 | Scrim          |                      |
 | Select         |                      |
-| Sign-in        |                      |
+| Sign-in        |     Implementado     |
 | Switch         |                      |
 | Table          |                      |
 | Tab            |                      |
