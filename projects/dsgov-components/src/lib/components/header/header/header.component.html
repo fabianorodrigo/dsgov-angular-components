@@ -1,0 +1,26 @@
+<header id="header" [class]="'br-header ' + tamanhoHeader">
+  <div class="container-fluid">
+    <div class="header-top">
+      <br-header-logo
+        ngClass="header-logo"
+        [logo]="urlImagem || base64LogoDefault"
+        [textoAssinatura]="textoAssinatura"
+      ></br-header-logo>
+      <br-header-actions
+        [usuario]="usuario"
+        [links]="links"
+        [funcionalidades]="funcionalidades"
+        ngClass="header-actions"
+        (clickEntrar)="onClickEntrar($event)"
+        (clickSair)="onClickSair($event)"
+      ></br-header-actions>
+    </div>
+    <br-header-bottom
+      [titulo]="titulo"
+      [subtitulo]="subtitulo"
+      [labelPesquisa]="labelPesquisa"
+      ngClass="header-bottom"
+      (clickMenu)="onClickMenu($event)"
+    ></br-header-bottom>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+<div class="header-functions dropdown">
+  <button
+    class="br-button circle small"
+    type="button"
+    data-toggle="dropdown"
+    aria-label="Abrir Funcionalidades do Sistema"
+  >
+    <i class="fas fa-th" aria-hidden="true"></i>
+  </button>
+  <div class="br-list">
+    <div class="header">
+      <div class="title">Funcionalidades do Sistema</div>
+    </div>
+    <ng-container *ngFor="let funcionalidade of funcionalidades">
+      <div class="align-items-center br-item">
+        <button
+          class="br-button circle small"
+          type="button"
+          [aria-label]="funcionalidade.texto"
+          (click)="funcionalidade.funcao ? funcionalidade.funcao($event) : _"
+        >
+          <i
+            *ngIf="funcionalidade.classIconeFontAwesome"
+            [class]="funcionalidade.classIconeFontAwesome"
+            aria-hidden="true"
+          ></i
+          ><span class="text">{{ funcionalidade.texto }}</span>
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
