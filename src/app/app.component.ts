@@ -58,6 +58,13 @@ export class AppComponent {
     // funcionalidades cabecalho
     this.funcionalidadesCabecalho = [
       {
+        classIconeFontAwesome: 'fas fa-comment',
+        texto: 'Chat',
+        funcao: () => {
+          alert('O chat ainda não está implementado');
+        },
+      },
+      {
         classIconeFontAwesome: 'fas fa-adjust',
         texto: 'Mudar para o modo de alto contraste',
         funcao: this.aplicarContraste.bind(this),
