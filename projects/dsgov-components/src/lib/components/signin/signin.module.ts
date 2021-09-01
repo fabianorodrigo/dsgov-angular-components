@@ -6,5 +6,6 @@ import { SigninComponent } from './signin/signin.component';
 @NgModule({
   declarations: [SigninComponent],
   imports: [CommonModule, ButtonModule],
+  exports: [SigninComponent],
 })
 export class SigninModule {}

@@ -9,18 +9,18 @@
     "
     class="menu-item"
     (click)="onClickComponent($event)"
-    [routerLink]="item.link.tipo == TIPOLINK_ROTA ? item.link.url : null"
-    [href]="item.link.tipo == TIPOLINK_URL ? item.link.url : null"
+    [routerLink]="item?.link?.tipo == TIPOLINK_ROTA ? item.link.url : null"
+    [href]="item?.link?.tipo == TIPOLINK_URL ? item.link.url : null"
     [target]="
-      item.link.tipo == TIPOLINK_URL && item.link.novaAba ? '_blank' : null
+      item?.link?.tipo == TIPOLINK_URL && item.link.novaAba ? '_blank' : null
     "
   >
     <i
-      *ngIf="item.classIconeFontAwesome"
-      [class]="item.classIconeFontAwesome"
+      *ngIf="item?.link?.classIconeFontAwesome"
+      [class]="item?.link?.classIconeFontAwesome"
       aria-hidden="true"
     ></i>
-    <span *ngIf="item.texto" class="content">{{ item.texto }}</span>
+    <span *ngIf="item?.link?.texto" class="content">{{ item.link.texto }}</span>
   </a>
 </li>
 
@@ -46,10 +46,10 @@
         item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
       "
     >
-      <span *ngIf="item.classIconeFontAwesome" class="icon"
-        ><i [class]="item.classIconeFontAwesome" aria-hidden="true"></i
+      <span *ngIf="item.link.classIconeFontAwesome" class="icon"
+        ><i [class]="item.link.classIconeFontAwesome" aria-hidden="true"></i
       ></span>
-      <span *ngIf="item.texto" class="content">{{ item.texto }}</span>
+      <span *ngIf="item.link.texto" class="content">{{ item.link.texto }}</span>
       <span class="support"
         ><i class="fas fa-angle-right" aria-hidden="true"></i
       ></span>
