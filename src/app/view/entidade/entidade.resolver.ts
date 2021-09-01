@@ -9,7 +9,6 @@ export class EntidadeResolver implements Resolve<Observable<Entidade>> {
   constructor(private service: EntidadeService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.warn('opa do resolve');
     const id = route.params.id;
     return this.service.obter(id);
   }

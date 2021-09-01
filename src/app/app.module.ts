@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './shared/core/core.module';
 import { ErrorsModule } from './shared/errors';
 import { MaterialModule } from './material.module';
-import { DialogsModule, HeaderModule, RodapeModule } from './shared/components';
+import { DialogsModule } from './shared/components';
 import * as moment from 'moment';
 import 'moment/locale/pt-br';
 import { DatePipe, registerLocaleData } from '@angular/common';
@@ -27,8 +27,6 @@ moment.locale('pt-BR');
     AppRoutingModule,
     BrowserAnimationsModule,
     ErrorsModule,
-    HeaderModule,
-    RodapeModule,
     MaterialModule,
     FlexLayoutModule,
     CoreModule,

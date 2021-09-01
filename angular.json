@@ -30,6 +30,7 @@
             "styles": [
               "src/custom-theme.scss",
               "./node_modules/@govbr/dsgov/dist/dsgov.min.css",
+              "./node_modules/dsgov-components/assets/css/lib.css",
               "src/styles.css"
             ],
             "scripts": []

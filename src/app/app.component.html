@@ -7,8 +7,20 @@
       <a accesskey="3" href="#main-searchbox"> Ir para para Busca<strong class="accesskey">3</strong> </a>
     </div>
   </nav>
-  <br-header (onOpenMenu)="menuVisivel = true"></br-header>
+  <br-header
+    (onOpenMenu)="menuVisivel = true"
+    [links]="linksCabecalho"
+    [funcionalidades]="funcionalidadesCabecalho"
+    (clickEntrar)="signin($event)"
+    (clickSair)="logout($event)"
+    [usuario]="user"
+    titulo="Sistema de Testar a Biblioca DSGov"
+    subtitulo="Versão: X.Y.Z-RC01"
+    (clickMenu)="onClickMenu($event)"
+  ></br-header>
   <main id="main" class="d-flex flex-fill">
+    <!-- A classe container-lg força a Largura Fixa no breakpoint desktop.
+      Altere essa classe para container-fluid para usar a Largura Fluida.  -->
     <div class="container-fluid d-flex">
       <div class="row">
         <br-menu
@@ -16,10 +28,9 @@
           (closeMenu)="fechaMenu()"
           [usuario]="user"
           [grupos]="itensMenu"
-          urlImagem="assets/ANCINE.png"
           [linksExternos]="[
-            { label: 'Portal', url: 'http://gov.br/ancine' },
-            { label: 'SAVI', url: 'http://savi.ancine.gov.br' }
+            { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
+            { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
           ]"
           [tipoAgrupamentoMenu]="AGRUPAMENTO_EXPANSAO"
         ></br-menu>
@@ -31,5 +42,9 @@
       </div>
     </div>
   </main>
-  <br-footer></br-footer>
+  <br-footer
+    [gruposLinks]="linksRodape"
+    urlImagem="assets/govbr-negativo.png"
+    [linksRedesSociais]="linksRedesSociaisRodape"
+  ></br-footer>
 </div>

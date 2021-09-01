@@ -2,3 +2,11 @@
 
 /*html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+
+.contraste-dsgov {
+  filter: invert(1);
+}
+
+.contraste-dsgov .layout-container .layout-menu {
+  height: 80%;
+}
