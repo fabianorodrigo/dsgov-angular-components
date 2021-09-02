@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "build-library": "ng build dsgov-components",
-    "pack-lib": "cd dist/dsgov-components && npm pack"
+    "pack-lib": "cd dist/dsgov-components && npm pack",
+    "pack-lib-prod": "ng build dsgov-components --prod && npm run pack-lib"
   },
   "private": true,
   "dependencies": {
