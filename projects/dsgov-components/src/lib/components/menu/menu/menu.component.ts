@@ -14,7 +14,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'br-menu',
   templateUrl: './menu.component.html',
-  styles: [],
+  styles: [
+    `
+      .br-menu .menu-header .menu-title img + * {
+        margin-left: var(--spacing-scale-base);
+      }
+    `,
+  ],
 })
 export class MenuComponent extends BaseComponent implements OnInit {
   //constantes usadas no template
@@ -39,6 +45,8 @@ export class MenuComponent extends BaseComponent implements OnInit {
   @Input() grupos: GrupoItemMenu[];
   // url da imagem que aparece no menu
   @Input() urlImagem: string;
+  // Texto ao lado do logotipo do menu (identificação de site ou sistema)
+  @Input() titulo: string;
   //Links externos exibidos no menu, abaixo dos itens
   @Input() linksExternos: Link[] = [];
 
