@@ -1,0 +1,7 @@
+
+ [
+      { "tipo": "url", "novaAba": true, "texto": "ANS", "url":"http://ans.gov.br"},
+      { "tipo": "url", "novaAba": true, "texto": "ANP", "url":"http://anp.gov.br"},
+      { "tipo": "url", "novaAba": true, "texto": "ANATEL", "url":"http://anatel.gov.br"},
+      { "tipo": "url", "novaAba": true, "texto": "ANVISA", "url":"http://anvisa.gov.br"}
+  ]

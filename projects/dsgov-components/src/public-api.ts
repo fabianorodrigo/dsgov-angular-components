@@ -20,6 +20,7 @@ export * from './lib/components/footer/footer/footer.component';
 // Header
 export * from './lib/components/header/header.module';
 export * from './lib/components/header/tamanho-header.enum';
+export * from './lib/components/header/header/header.component';
 // Menu
 export * from './lib/components/menu/menu.module';
 export * from './lib/components/menu/menu/menu.component';

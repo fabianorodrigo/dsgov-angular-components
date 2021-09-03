@@ -1,0 +1,39 @@
+
+  {"Órgãos de Controle": [
+      {"texto": "TCU", "url":"http://tcu.gov.br"},
+      { "texto": "Ministério Público", "url":"http://mp.gov.br"}
+    ],
+    "Cinema Nacional": [
+      {"texto": "Cinemateca", "url":"http://cinemateca.gov.br"},
+      { "texto": "Embrafilmes", "url":"http://embrafilmes.gov.br"},
+      {"texto": "CSC", "url":"http://csc.gov.br"},
+      {"texto": "Instituto Lente", "url":"http://lente.org.br"},
+      {"texto": "FSA", "url":"http://fsa.gov.br"}
+    ],
+    "Agentes Financeiros": [
+      {"texto": "Banco do Brasil", "url":"http://bb.gov.br"},
+      { "texto": "BRDE", "url":"http://brde.gov.br"},
+      {"texto": "BNDES", "url":"http://bndes.gov.br"},
+      {"texto": "Bradesco", "url":"http://bradesco.com.br"}
+    ],
+    "Consultas": [
+
+      { "texto": "Projetos", "url":"http://gov.br/ancine"},
+      {"texto": "Empresas Registradas", "url":"http://gov.br/ancine"},
+      {"texto": "Situação Cadastral", "url":"http://gov.br/ancine"},
+      {"texto": "CRT Obras Publicitárias", "url":"http://gov.br/ancine"},
+      {"texto": "CTR Obras não Publicitárias", "url":"http://gov.br/ancine"},
+      {"texto": "CPB", "url":"http://gov.br/ancine"},
+      {"texto": "ROE", "url":"http://gov.br/ancine"}
+    ],
+    "Outros sistemas": [
+      {"texto": "SAVI", "url":"http://sad.ancine.gov.br/sadis"},
+      { "texto": "Cota de Tela", "url":"http://sad.ancine.gov.br/cota"},
+      {"texto": "SICA", "url":"http://sad.ancine.gov.br/sica"},
+      {"texto": "RPPF", "url":"http://sad.ancine.gov.br/rppf"}
+    ],
+    "Participação Popular": [
+      { "texto": "Chamada Pública", "url":"http://sad.ancine.gov.br/chapub"},
+      {"texto": "Ouvidoria", "url":"http://gov.br/ancine"}
+    ]
+  }

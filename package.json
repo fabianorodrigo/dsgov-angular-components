@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "build-library": "ng build dsgov-components",
     "pack-lib": "cd dist/dsgov-components && npm pack",
-    "pack-lib-prod": "ng build dsgov-components --prod && npm run pack-lib"
+    "pack-lib-prod": "ng build dsgov-components --prod && npm run pack-lib",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
