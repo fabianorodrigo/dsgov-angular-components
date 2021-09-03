@@ -1,3 +1,29 @@
-p{
-  margin:10px
+p {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+hr {
+  border-bottom: 1px solid grey;
+}
+
+.displayFlex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flexItemLabel {
+  width: 100%;
+}
+
+.flexItem20 {
+  width: 20%;
+}
+.flexItem80 {
+  width: 80%;
+}
+
+div span {
+  font-weight: bold;
 }

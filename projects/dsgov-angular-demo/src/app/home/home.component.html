@@ -1,2 +1,96 @@
-<p>Bem vindo!</p>
-<br-signin></br-signin>
+<p>
+  Bem vindo! Abaixo podem ser encontrados exemplos de uso dos componentes da
+  biblioteca:
+</p>
+
+<div class="displayFlex">
+  <!-- signin -->
+  <div class="flexItemLabel"><span>Botão de Login</span></div>
+  <div class="flexItem20">
+    <br-signin></br-signin>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-signin&gt;&lt;/br-signin&gt;
+  </blockquote>
+
+  <!-- breadcrumb -->
+  <div class="flexItemLabel"><span>Breadcrumb</span></div>
+  <div class="flexItem20">
+    <br-breadcrumb
+      [itens]="[
+        { label: 'A', link: '/a' },
+        { label: 'B', link: '/b' },
+        { label: 'C', link: '/c' }
+      ]"
+    ></br-breadcrumb>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-breadcrumb
+    {{
+      "[itens]=\"[ { label: 'A', link: '/a' }, { label: 'B', link: '/b' }, { label: 'C', link: '/c' } ]\""
+    }}
+    &gt;&lt;/br-breadcrumb&gt;
+  </blockquote>
+
+  <!-- button -->
+  <div class="flexItemLabel"><span>Button</span></div>
+  <div class="flexItem20">
+    <br-button ngClass="primary">Botão</br-button>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-button ngClass="primary"&gt;Botão&lt;/br-button&gt;
+  </blockquote>
+  <div class="flexItem20">
+    <br-button ngClass="secondary">Botão</br-button>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-button ngClass="secondary"&gt;Botão&lt;/br-button&gt;
+  </blockquote>
+  <div class="flexItem20">
+    <br-button ngClass="secondary inverted"
+      ><i class="fas fa-mail-bulk" aria-hidden="true"></i> Botão</br-button
+    >
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-button ngClass="secondary inverted" &gt;&lt;i class="fas
+    fa-mail-bulk" aria-hidden="true"&gt;&lt;/i&gt; Botão&lt;/br-button &gt;
+  </blockquote>
+  <!-- button loading -->
+  <div class="flexItem20">
+    <br-button ngClass="primary" [isLoading]="true">Botão</br-button>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-button ngClass="primary"
+    [isLoading]="true"&gt;Botão&lt;/br-button&gt;
+  </blockquote>
+  <!-- button disabled -->
+  <div class="flexItem20">
+    <br-button ngClass="primary" [isDisabled]="true"
+      >Botão Desabilitado</br-button
+    >
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-button ngClass="primary"
+    [isDisabled]="true"&gt;Botão&lt;/br-button&gt;
+  </blockquote>
+
+  <!-- button ícone -->
+  <div class="flexItem20">
+    <br-button ngClass="primary circle"
+      ><i class="fas fa-film" aria-hidden="true"></i>
+    </br-button>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-button ngClass="primary circle" &gt;&lt;i class="fas fa-film"
+    aria-hidden="true"&gt;&lt;/i&gt; &lt;/br-button&gt;
+  </blockquote>
+  <div class="flexItem20">
+    <br-button ngClass="secondary circle"
+      ><i class="fas fa-ticket-alt" aria-hidden="true"></i
+    ></br-button>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-button ngClass="secondary circle" &gt;&lt;i class="fas fa-ticket-alt"
+    aria-hidden="true"&gt;&lt;/i &gt;&lt;/br-button&gt;
+  </blockquote>
+</div>
