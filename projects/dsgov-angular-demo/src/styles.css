@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+.contraste-dsgov {
+  filter: invert(1);
+}
+
+.contraste-dsgov .layout-container .layout-menu {
+  height: 80%;
+}
