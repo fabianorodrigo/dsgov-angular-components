@@ -50,6 +50,20 @@ export class InputComponent extends BaseComponent implements OnInit {
   // Densidade dos itens de menu. Default: densidade medium
   @Input() densidade: DensidadeType = Densidade.MEDIA;
 
+  /*** As demais características de aparência do componente são informadas via atributo "ngClass" ***/
+  @Input()
+  ngClass: string | string[] | Set<string> | { [klass: string]: any } = '';
+  // classes aplicáveis ao <label></label>
+  @Input()
+  ngClassLabel: string | string[] | Set<string> | { [klass: string]: any } = '';
+  // classes aplicáveis ao <input></input>
+  @Input()
+  ngClassInput: string | string[] | Set<string> | { [klass: string]: any } = '';
+  // classes aplicáveis ao <button></button>
+  @Input()
+  ngClassButton: string | string[] | Set<string> | { [klass: string]: any } =
+    '';
+
   constructor() {
     super();
   }

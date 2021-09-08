@@ -21,6 +21,10 @@ export * from './lib/components/footer/footer/footer.component';
 export * from './lib/components/header/header.module';
 export * from './lib/components/header/tamanho-header.enum';
 export * from './lib/components/header/header/header.component';
+// Input
+export * from './lib/components/input/input.module';
+export * from './lib/components/input/estado-input.enum';
+export * from './lib/components/input/input/input.component';
 // Menu
 export * from './lib/components/menu/menu.module';
 export * from './lib/components/menu/menu/menu.component';
