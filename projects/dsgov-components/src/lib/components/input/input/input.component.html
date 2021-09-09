@@ -23,9 +23,17 @@
     "
     [id]="id"
     [type]="type"
-    [placeholder]="textoPlaceHolder"
     [class.disabled]="isDisabled"
     [ngClass]="ngClassInput"
+    [disabled]="isDisabled ? 'disabled' : ''"
+    [attr.formControlName]="formControlName"
+    [maxLength]="maxLength"
+    [min]="min"
+    [max]="max"
+    [pattern]="pattern"
+    [placeholder]="placeHolder"
+    [step]="step"
+    [attr.required]="required"
   />
   <br-button
     *ngIf="classIconeFontAwesomeBotao"

@@ -28,12 +28,20 @@ export class InputComponent extends BaseComponent implements OnInit {
   //Evento de click do botao dentro do input
   @Output() clickButton = new EventEmitter<any>();
 
+  //atributos input HTML
   @Input() type: string = 'text';
+  @Input() maxLength: number;
+  @Input() min: number | string;
+  @Input() max: number | string;
+  @Input() pattern: string;
+  @Input() placeHolder: string = '';
+  @Input() step: number;
+  @Input() required: boolean = false;
+  //Reactive forms
+  @Input() formControlName: string;
 
   //texto do label
   @Input() textoLabel: string;
-  // texto do place holder
-  @Input() textoPlaceHolder: string;
   //ícone do botão do botão dentro do input
   @Input() classIconeFontAwesomeBotao: string;
   //Valor da propriedade ariaLabel do botão dentro do input
