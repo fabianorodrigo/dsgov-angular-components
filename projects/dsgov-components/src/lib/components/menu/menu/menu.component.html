@@ -1,5 +1,8 @@
 <div
-  [class]="'br-menu active ' + (densidade == 'medium' ? '' : densidade)"
+  *ngIf="visivel"
+  [class]="
+    jc(ngClass, 'br-menu active', densidade == 'medium' ? '' : densidade)
+  "
   id="main-navigation"
 >
   <div class="menu-container">

@@ -37,6 +37,9 @@ export class MenuComponent extends BaseComponent implements OnInit {
   // Densidade dos itens de menu. Default: densidade normal
   @Input() densidade: DensidadeType = Densidade.MEDIA;
 
+  // controle endógeno da exibição do menu
+  @Input() visivel: boolean = false;
+
   // dados do usuario eventualmente logado
   @Input() usuario: Usuario;
   // evento disparado quando o menu é fechado
