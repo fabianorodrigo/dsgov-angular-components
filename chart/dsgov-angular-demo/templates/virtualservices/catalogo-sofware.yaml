@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .Values.nomeModulo }}-virtual-service-gateway
+spec:
+  hosts:
+  - {{ .Values.istio.gateway.host }}
+  gateways:
+  - app-global-gateway.sad-dev
+  http:
+  - match:
+    - uri:
+        prefix: /dsgovdemo
+    rewrite:
+      uri: /
+    route:
+      - destination:
+          host: {{ .Values.client.name }}
+          port:
+            number:  {{ .Values.client.ports.port }}
+        weight: 100

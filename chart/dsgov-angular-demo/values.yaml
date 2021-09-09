@@ -1,0 +1,23 @@
+istio:
+  enabled: true
+  gateway:
+    host: "dev.ancine.gov.br"
+    tls:
+      credentialName: istio-ingressgateway-domain-cert
+
+nomeModulo: dsgov-angular-components
+
+serviceAccount:
+  create: true
+
+client:
+  name: dsgov-angular-demo
+  image:
+    repository: fabianorodrigo/dsgov-angular-demo
+    tag: 0.1.0
+  ingress:
+    disabled: true
+  ports:
+    port: 80
+  edgePath: /
+  disableRewrite: true
