@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit {
   user$: Observable<Usuario>;
   user: Usuario;
 
-  menuExemploVisivel: boolean = false;
+  menuExpansaoVisivel: boolean = false;
+  menuRotuloVisivel: boolean = false;
+  menuDividerVisivel: boolean = false;
 
   constructor(private usuarioService: UsuarioService) {}
 

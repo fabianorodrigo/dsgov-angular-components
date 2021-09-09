@@ -296,8 +296,8 @@
     }}&gt;<br />&lt;/br-footer&gt;
   </blockquote>
 
-  <!-- menu -->
-  <div class="flexItemLabel"><span>Menu</span></div>
+  <!-- menu expansão -->
+  <div class="flexItemLabel"><span>Menu: Agrupamento por Expansão</span></div>
   <div class="flexItem100">
     <div class="header-menu-trigger">
       <button
@@ -307,15 +307,15 @@
         data-toggle="menu"
         data-target="#main-navigation"
         id="navigation"
-        (click)="menuExemploVisivel = !menuExemploVisivel"
+        (click)="menuExpansaoVisivel = !menuExpansaoVisivel"
       >
         <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
     </div>
     <br-menu
-      titulo="Sistema de Coisar"
-      [visivel]="menuExemploVisivel"
-      (closeMenu)="menuExemploVisivel = false"
+      titulo="Agrupamento Expansão"
+      [visivel]="menuExpansaoVisivel"
+      (closeMenu)="menuExpansaoVisivel = false"
       [grupos]="[
         {
           classIconeFontAwesome: 'fas fa-film',
@@ -404,11 +404,11 @@
   <blockquote class="flexItem100">
     &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small
     circle" type="button" aria-label="Menu" data-toggle="menu"
-    data-target="#main-navigation" id="navigation" (click)="menuExemploVisivel =
-    !menuExemploVisivel" &gt; &lt;i class="fas fa-bars"
+    data-target="#main-navigation" id="navigation" (click)="menuExpansaoVisivel
+    = !menuExpansaoVisivel" &gt; &lt;i class="fas fa-bars"
     aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
-    &lt;br-menu titulo="Sistema de Coisar" [visivel]="menuExemploVisivel"
-    (closeMenu)="menuExemploVisivel = false"<br />
+    &lt;br-menu titulo="Agrupamento Expansão" [visivel]="menuExpansaoVisivel"
+    (closeMenu)="menuExpansaoVisivel = false"<br />
     {{
       " [grupos]=\"[
       {
@@ -479,7 +479,6 @@
         texto: 'Grupo 2',
         itens: [
           {
-            exibicao: 'sempre',
             link: {
               classIconeFontAwesome: 'fas fa-users',
               texto: 'Entidade',
@@ -495,6 +494,435 @@
       { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
       { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
     ]\""
+
+
+
+
+    }}&gt;<br />&lt;/br-menu&gt;
+  </blockquote>
+
+  <!-- menu agrupamento por rótulos -->
+  <div class="flexItemLabel"><span>Menu: Agrupamento por Rótulos</span></div>
+  <div class="flexItem100">
+    <div class="header-menu-trigger">
+      <button
+        class="br-button small circle"
+        type="button"
+        aria-label="Menu"
+        data-toggle="menu"
+        data-target="#main-navigation"
+        id="navigation"
+        (click)="menuRotuloVisivel = !menuRotuloVisivel"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+    <br-menu
+      titulo="Agrupamento Rótulos"
+      tipoAgrupamentoMenu="rotulo"
+      [visivel]="menuRotuloVisivel"
+      (closeMenu)="menuRotuloVisivel = false"
+      [grupos]="[
+        {
+          classIconeFontAwesome: 'fas fa-film',
+          texto: 'Grupo 1',
+          itens: [
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-users',
+                texto: 'Entidade',
+                url: '/entidade'
+              }
+            },
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-map-signs',
+                texto: 'Qualquer coisa'
+              }
+            },
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-university',
+                texto: 'Subgrupo 1.1'
+              },
+              subItens: [
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-photo-video',
+                    texto: 'Obras publicitárias',
+                    url: 'http://oglobo.com.br'
+                  }
+                },
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-money-bill-alt',
+                    texto: 'Fomento',
+                    url: 'http://ge.com.br'
+                  }
+                },
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-film',
+                    texto: 'Esse tem subitens'
+                  },
+                  subItens: [
+                    {
+                      link: {
+                        tipo: 'rota',
+                        classIconeFontAwesome: 'fas fa-allergies',
+                        texto: 'Teste ',
+                        url: '/entidade'
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          classIconeFontAwesome: 'fas fa-futbol',
+          texto: 'Grupo 2',
+          itens: [
+            {
+              exibicao: 'sempre',
+              link: {
+                classIconeFontAwesome: 'fas fa-users',
+                texto: 'Entidade',
+                url: '/entidade'
+              }
+            }
+          ]
+        }
+      ]"
+      [linksExternos]="[
+        { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
+        { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
+      ]"
+    ></br-menu>
+  </div>
+  <blockquote class="flexItem100">
+    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small
+    circle" type="button" aria-label="Menu" data-toggle="menu"
+    data-target="#main-navigation" id="navigation" (click)="menuRotuloVisivel =
+    !menuRotuloVisivel" &gt; &lt;i class="fas fa-bars"
+    aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
+    &lt;br-menu titulo="Agrupamento Rótulos" tipoAgrupamentoMenu="rotulo"
+    [visivel]="menuRotuloVisivel" (closeMenu)="menuRotuloVisivel = false"<br />
+    {{
+      " [grupos]=\"[
+        {
+          classIconeFontAwesome: 'fas fa-film',
+          texto: 'Grupo 1',
+          itens: [
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-users',
+                texto: 'Entidade',
+                url: '/entidade'
+              }
+            },
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-map-signs',
+                texto: 'Qualquer coisa'
+              }
+            },
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-university',
+                texto: 'Subgrupo 1.1'
+              },
+              subItens: [
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-photo-video',
+                    texto: 'Obras publicitárias',
+                    url: 'http://oglobo.com.br'
+                  }
+                },
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-money-bill-alt',
+                    texto: 'Fomento',
+                    url: 'http://ge.com.br'
+                  }
+                },
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-film',
+                    texto: 'Esse tem subitens'
+                  },
+                  subItens: [
+                    {
+                      link: {
+                        tipo: 'rota',
+                        classIconeFontAwesome: 'fas fa-allergies',
+                        texto: 'Teste ',
+                        url: '/entidade'
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          classIconeFontAwesome: 'fas fa-futbol',
+          texto: 'Grupo 2',
+          itens: [
+            {
+              exibicao: 'sempre',
+              link: {
+                classIconeFontAwesome: 'fas fa-users',
+                texto: 'Entidade',
+                url: '/entidade'
+              }
+            }
+          ]
+        }
+      ]\""
+    }}<br />
+    {{
+        "[linksExternos]="[
+        { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
+        { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
+      ]\""
+
+
+
+
+
+
+
+
+
+    }}&gt;<br />&lt;/br-menu&gt;
+  </blockquote>
+
+  <!-- menu agrupamento por dividers -->
+  <div class="flexItemLabel"><span>Menu: Agrupamento por Dividers</span></div>
+  <div class="flexItem100">
+    <div class="header-menu-trigger">
+      <button
+        class="br-button small circle"
+        type="button"
+        aria-label="Menu"
+        data-toggle="menu"
+        data-target="#main-navigation"
+        id="navigation"
+        (click)="menuDividerVisivel = !menuDividerVisivel"
+      >
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+    <br-menu
+      titulo="Agrupamento Dividers"
+      tipoAgrupamentoMenu="divider"
+      [visivel]="menuDividerVisivel"
+      (closeMenu)="menuDividerVisivel = false"
+      [grupos]="[
+        {
+          classIconeFontAwesome: 'fas fa-film',
+          texto: 'Grupo 1',
+          itens: [
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-users',
+                texto: 'Entidade',
+                url: '/entidade'
+              }
+            },
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-map-signs',
+                texto: 'Qualquer coisa'
+              }
+            },
+            {
+              link: {
+                tipo: 'rota',
+                classIconeFontAwesome: 'fas fa-university',
+                texto: 'Subgrupo 1.1'
+              },
+              subItens: [
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-photo-video',
+                    texto: 'Obras publicitárias',
+                    url: 'http://oglobo.com.br'
+                  }
+                },
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-money-bill-alt',
+                    texto: 'Fomento',
+                    url: 'http://ge.com.br'
+                  }
+                },
+                {
+                  link: {
+                    tipo: 'rota',
+                    classIconeFontAwesome: 'fas fa-film',
+                    texto: 'Esse tem subitens'
+                  },
+                  subItens: [
+                    {
+                      link: {
+                        tipo: 'rota',
+                        classIconeFontAwesome: 'fas fa-allergies',
+                        texto: 'Teste ',
+                        url: '/entidade'
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          classIconeFontAwesome: 'fas fa-futbol',
+          texto: 'Grupo 2',
+          itens: [
+            {
+              exibicao: 'sempre',
+              link: {
+                classIconeFontAwesome: 'fas fa-users',
+                texto: 'Entidade',
+                url: '/entidade'
+              }
+            }
+          ]
+        }
+      ]"
+      [linksExternos]="[
+        { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
+        { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
+      ]"
+    ></br-menu>
+  </div>
+  <blockquote class="flexItem100">
+    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small
+    circle" type="button" aria-label="Menu" data-toggle="menu"
+    data-target="#main-navigation" id="navigation" (click)="menuDividerVisivel =
+    !menuDividerVisivel" &gt; &lt;i class="fas fa-bars"
+    aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
+    &lt;br-menu titulo="Agrupamento Dividers" tipoAgrupamentoMenu="divider"
+    [visivel]="menuDividerVisivel" (closeMenu)="menuDividerVisivel = false"<br />
+    {{
+      " [grupos]=\"[
+          {
+            classIconeFontAwesome: 'fas fa-film',
+            texto: 'Grupo 1',
+            itens: [
+              {
+                link: {
+                  tipo: 'rota',
+                  classIconeFontAwesome: 'fas fa-users',
+                  texto: 'Entidade',
+                  url: '/entidade'
+                }
+              },
+              {
+                link: {
+                  tipo: 'rota',
+                  classIconeFontAwesome: 'fas fa-map-signs',
+                  texto: 'Qualquer coisa'
+                }
+              },
+              {
+                link: {
+                  tipo: 'rota',
+                  classIconeFontAwesome: 'fas fa-university',
+                  texto: 'Subgrupo 1.1'
+                },
+                subItens: [
+                  {
+                    link: {
+                      tipo: 'rota',
+                      classIconeFontAwesome: 'fas fa-photo-video',
+                      texto: 'Obras publicitárias',
+                      url: 'http://oglobo.com.br'
+                    }
+                  },
+                  {
+                    link: {
+                      tipo: 'rota',
+                      classIconeFontAwesome: 'fas fa-money-bill-alt',
+                      texto: 'Fomento',
+                      url: 'http://ge.com.br'
+                    }
+                  },
+                  {
+                    link: {
+                      tipo: 'rota',
+                      classIconeFontAwesome: 'fas fa-film',
+                      texto: 'Esse tem subitens'
+                    },
+                    subItens: [
+                      {
+                        link: {
+                          tipo: 'rota',
+                          classIconeFontAwesome: 'fas fa-allergies',
+                          texto: 'Teste ',
+                          url: '/entidade'
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            classIconeFontAwesome: 'fas fa-futbol',
+            texto: 'Grupo 2',
+            itens: [
+              {
+                exibicao: 'sempre',
+                link: {
+                  classIconeFontAwesome: 'fas fa-users',
+                  texto: 'Entidade',
+                  url: '/entidade'
+                }
+              }
+            ]
+          }
+        ]\""
+    }}<br />
+    {{
+          "[linksExternos]="[
+          { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
+          { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
+        ]\""
+
+
+
+
+
+
+
+
+
+
 
 
 
