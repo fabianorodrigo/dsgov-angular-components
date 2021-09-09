@@ -4,13 +4,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "build-library": "ng build dsgov-components",
     "pack-lib": "cd dist/dsgov-components && npm pack",
     "pack-lib-prod": "ng build dsgov-components --prod && npm run pack-lib",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-demo": "ng build dsgov-angular-demo",
+    "pack-demo": "cd dist/dsgov-angular-demo && tar zcvf dsgov-angular-demo.tgz * && cp dsgov-angular-demo.tgz ../../docker/nginx/dist.tar.gz",
+    "docker-build-demo": "docker build -f docker/nginx/Dockerfile -t fabianorodrigo/dsgov-angular-demo docker/nginx/ && docker tag fabianorodrigo/dsgov-angular-demo:latest fabianorodrigo/dsgov-angular-demo:0.1.0",
+    "docker-push-demo": "docker push fabianorodrigo/dsgov-angular-demo:0.1.0"
   },
   "private": true,
   "dependencies": {
