@@ -94,70 +94,69 @@
     aria-hidden="true"&gt;&lt;/i &gt;&lt;/br-button&gt;
   </blockquote>
 
+  <div class="flexItemLabel"><span>Input</span></div>
   <!-- input default -->
   <div class="flexItem20">
     <br-input
       textoLabel="Campo default"
-      textoPlaceHolder="Uma dica default"
+      placeHolder="Uma dica default"
       textoFeedback="default não dá feedback"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo default" textoPlaceHolder="Uma dica default"
+    &lt;br-input textoLabel="Campo default" placeHolder="Uma dica default"
     textoFeedback="default não dá feedback"&gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input success -->
   <div class="flexItem20">
     <br-input
       textoLabel="Campo sucesso"
-      textoPlaceHolder="Uma dica de sucesso"
+      placeHolder="Uma dica de sucesso"
       estado="success"
       textoFeedback="Feedback de sucesso"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo sucesso" textoPlaceHolder="Uma dica de
-    sucesso" estado="success" textoFeedback="Feedback de
-    sucesso"&gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo sucesso" placeHolder="Uma dica de sucesso"
+    estado="success" textoFeedback="Feedback de sucesso"&gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input danger -->
   <div class="flexItem20">
     <br-input
       textoLabel="Campo perigoso"
-      textoPlaceHolder="Uma dica perigosa"
+      placeHolder="Uma dica perigosa"
       estado="danger"
       textoFeedback="Feedback perigoso"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo perigoso" textoPlaceHolder="Uma dica
-    perigosa" estado="danger" textoFeedback="Feedback perigoso"
-    &gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo perigoso" placeHolder="Uma dica perigosa"
+    estado="danger" textoFeedback="Feedback perigoso" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input warning -->
   <div class="flexItem20">
     <br-input
       textoLabel="Campo alerta"
-      textoPlaceHolder="Uma dica alarmista"
+      placeHolder="Uma dica alarmista"
       estado="warning"
       textoFeedback="Feedback de atenção"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo alerta" textoPlaceHolder="Uma dica alarmista"
+    &lt;br-input textoLabel="Campo alerta" placeHolder="Uma dica alarmista"
     estado="warning" textoFeedback="Feedback de atenção" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input info -->
   <div class="flexItem20">
     <br-input
       textoLabel="Campo informação"
-      textoPlaceHolder="Uma dica informativa"
+      placeHolder="Uma dica informativa"
       estado="info"
       textoFeedback="Feedback informativo"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo informação" textoPlaceHolder="Uma dica
+    &lt;br-input textoLabel="Campo informação" placeHolder="Uma dica
     informativa" estado="info" textoFeedback="Feedback informativo"
     &gt;&lt;/br-input&gt;
   </blockquote>
@@ -165,14 +164,135 @@
   <div class="flexItem20">
     <br-input
       textoLabel="Campo com botão"
-      textoPlaceHolder="Uma dica com botão"
+      placeHolder="Uma dica com botão"
       classIconeFontAwesomeBotao="fas fa-dog"
       (clickButton)="alerta()"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo com botão" textoPlaceHolder="Uma dica com
-    botão" classIconeFontAwesomeBotao="fas fa-dog" (clickButton)="alerta()"
+    &lt;br-input textoLabel="Campo com botão" placeHolder="Uma dica com botão"
+    classIconeFontAwesomeBotao="fas fa-dog" (clickButton)="alerta()"
     &gt;&lt;/br-input&gt;
+  </blockquote>
+  <!-- input desabilitado -->
+  <div class="flexItem20">
+    <br-input
+      textoLabel="Campo desabilitada"
+      placeHolder="Uma dica desabilitada"
+      estado="warning"
+      textoFeedback="Feedback de desabilitação"
+      [isDisabled]="true"
+    ></br-input>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-input textoLabel="Campo desabilitada" placeHolder="Uma dica
+    desabilitada" estado="warning" textoFeedback="Feedback de desabilitação"
+    [isDisabled]="true" &gt;&lt;/br-input&gt;
+  </blockquote>
+
+  <!-- header -->
+  <div class="flexItemLabel"><span>Header</span></div>
+  <div class="flexItem100">
+    <br-header
+      textoAssinatura="Sistema Ancine Digital"
+      titulo="Sistema de Coisar Coisas"
+      subtitulo="Versão: 1.0.0"
+      [links]="[
+        { texto: 'Link A', url: '/a' },
+        { texto: 'Link B', link: '/b' },
+        { texto: 'Link C', link: '/c' }
+      ]"
+      [funcionalidades]="[
+        { classIconeFontAwesome: 'fas fa-ambulance', funcao: sirene },
+        { classIconeFontAwesome: 'fas fa-business-time', funcao: relogio }
+      ]"
+      (clickEntrar)="signin($event)"
+      (clickSair)="logout($event)"
+      [usuario]="user"
+    ></br-header>
+  </div>
+  <blockquote class="flexItem100">
+    &lt;br-header textoAssinatura="Sistema Ancine Digital" titulo="Sistema de
+    Coisar Coisas" subtitulo="Versão: 1.0.0"<br />
+    {{
+      "[links]=\"[ { texto: 'Link A', url: '/a' }, { texto: 'Link B', link: '/b' }, { texto: 'Link C', link: '/c' } ]\""
+    }}<br />
+    {{
+      "[funcionalidades]=\"[ { classIconeFontAwesome: 'fas fa-ambulance', funcao: sirene }, { classIconeFontAwesome: 'fas fa-business-time', funcao: relogio }]\""
+    }}<br />
+    (clickEntrar)="signin($event)" (clickSair)="logout($event)" [usuario]="user"
+    &gt;<br />&lt;/br-header&gt;
+  </blockquote>
+
+  <!-- footer -->
+  <div class="flexItemLabel"><span>Footer</span></div>
+  <div class="flexItem100">
+    <br-footer
+      [gruposLinks]="{
+        'Órgãos de Controle': [
+          { texto: 'TCU', url: 'http://tcu.gov.br' },
+          { texto: 'Ministério Público', url: 'http://mp.gov.br' }
+        ],
+        'Outros sistemas': [
+          { texto: 'SAVI', url: 'http://sad.ancine.gov.br/sadis' },
+          { texto: 'Cota de Tela', url: 'http://sad.ancine.gov.br/cota' },
+          { texto: 'SICA', url: 'http://sad.ancine.gov.br/sica' },
+          { texto: 'RPPF', url: 'http://sad.ancine.gov.br/rppf' }
+        ]
+      }"
+      [linksRedesSociais]="[
+        {
+          classIconeFontAwesome: 'fab fa-facebook-f',
+          texto: 'Facebook',
+          url: 'http://facebook.com/ancinegovbr'
+        },
+        {
+          classIconeFontAwesome: 'fab fa-twitter',
+          texto: 'Twitter',
+          url: 'http://twitter.com/ancinegovbr'
+        },
+        {
+          classIconeFontAwesome: 'fab fa-youtube',
+          texto: 'Youtube',
+          url: 'http://youtube.com/ancinegov'
+        }
+      ]"
+    ></br-footer>
+  </div>
+  <blockquote class="flexItem100">
+    &lt;br-footer<br />
+    {{
+      "[gruposLinks]=\"{
+        'Órgãos de Controle': [
+          { texto: 'TCU', url: 'http://tcu.gov.br' },
+          { texto: 'Ministério Público', url: 'http://mp.gov.br' }
+        ],
+        'Outros sistemas': [
+          { texto: 'SAVI', url: 'http://sad.ancine.gov.br/sadis' },
+          { texto: 'Cota de Tela', url: 'http://sad.ancine.gov.br/cota' },
+          { texto: 'SICA', url: 'http://sad.ancine.gov.br/sica' },
+          { texto: 'RPPF', url: 'http://sad.ancine.gov.br/rppf' }
+        ]
+      }\""
+    }}
+    <br />
+    {{
+      "[linksRedesSociais]=\"[ {
+        classIconeFontAwesome: 'fab fa-facebook-f',
+        texto: 'Facebook',
+        url: 'http://facebook.com/ancinegovbr'
+      },
+      {
+        classIconeFontAwesome: 'fab fa-twitter',
+        texto: 'Twitter',
+        url: 'http://twitter.com/ancinegovbr'
+      },
+      {
+        classIconeFontAwesome: 'fab fa-youtube',
+        texto: 'Youtube',
+        url: 'http://youtube.com/ancinegov'
+      }
+    ]\""
+    }}&gt;<br />&lt;/br-footer&gt;
   </blockquote>
 </div>

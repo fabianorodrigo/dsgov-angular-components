@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {
   ButtonModule,
   BreadcrumbModule,
+  DividerModule,
   MenuModule,
   FooterModule,
   HeaderModule,
@@ -14,6 +15,7 @@ import {
   imports: [
     ButtonModule,
     BreadcrumbModule,
+    DividerModule,
     InputModule,
     MenuModule,
     FooterModule,
@@ -23,6 +25,7 @@ import {
   exports: [
     ButtonModule,
     BreadcrumbModule,
+    DividerModule,
     MenuModule,
     FooterModule,
     HeaderModule,

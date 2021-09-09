@@ -1,6 +1,6 @@
 p {
   margin-top: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 hr {
@@ -15,6 +15,10 @@ hr {
 
 .flexItemLabel {
   width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: large;
+  text-decoration: underline;
 }
 
 .flexItem20 {
@@ -23,6 +27,9 @@ hr {
 }
 .flexItem80 {
   width: 80%;
+}
+.flexItem100 {
+  width: 100%;
 }
 
 div span {
