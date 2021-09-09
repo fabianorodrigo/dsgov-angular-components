@@ -7,7 +7,6 @@ import { Link } from '../../base';
 @Component({
   selector: 'br-footer',
   templateUrl: './footer.component.html',
-  styles: [],
 })
 export class FooterComponent extends BaseComponent implements OnInit {
   // Indica se o padrão de cores é invertido. Se TRUE, será apendado ao atributo

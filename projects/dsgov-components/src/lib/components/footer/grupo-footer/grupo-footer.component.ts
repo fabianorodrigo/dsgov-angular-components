@@ -5,6 +5,13 @@ import { Link } from '../../base';
 @Component({
   selector: 'br-grupo-footer',
   templateUrl: './grupo-footer.component.html',
+  styles: [
+    `
+      a {
+        text-decoration: none;
+      }
+    `,
+  ],
 })
 export class GrupoFooterComponent extends BaseComponent implements OnInit {
   @Input() horizontal: boolean;

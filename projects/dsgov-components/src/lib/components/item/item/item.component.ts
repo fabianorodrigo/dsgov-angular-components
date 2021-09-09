@@ -6,6 +6,13 @@ import { TipoItemType } from '../tipo-item.enum';
 @Component({
   selector: 'br-item',
   templateUrl: './item.component.html',
+  styles: [
+    `
+      a {
+        text-decoration: none;
+      }
+    `,
+  ],
 })
 export class ItemComponent extends BaseComponent {
   //constantes usadas no template
