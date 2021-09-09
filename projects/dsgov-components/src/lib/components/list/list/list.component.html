@@ -37,9 +37,7 @@
 <!-- não colapsavel -->
 <div
   *ngIf="!isColapsavel"
-  [ngClass]="
-    'br-list ' + (horizontal ? ' horizontal ' : '') + (ngClass ? ngClass : '')
-  "
+  [ngClass]="jc(ngClass, 'br-list', horizontal ? ' horizontal ' : '')"
   role="list"
 >
   <div *ngIf="tituloHeader" class="header">

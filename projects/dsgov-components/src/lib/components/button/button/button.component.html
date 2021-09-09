@@ -1,5 +1,5 @@
 <button
-  [ngClass]="'br-button ' + ngClass"
+  [ngClass]="jc(ngClass, 'br-button')"
   [class.disabled]="isDisabled"
   [class.active]="isActive"
   [class.loading]="isLoading"

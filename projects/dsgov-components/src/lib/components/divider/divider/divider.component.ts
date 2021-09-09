@@ -10,9 +10,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DividerComponent extends BaseComponent {
   //Vertical ou horizontal
   orientacao: OrientacaoDividerType = '';
-  /*** classes atribuídas dinamicamente ao SPAN do divider ***/
-  @Input()
-  ngClass: string | string[] | Set<string> | { [klass: string]: any };
 
   constructor() {
     super();

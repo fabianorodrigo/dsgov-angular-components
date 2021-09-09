@@ -4,11 +4,7 @@
       <img [src]="urlImagem || base64Imagem1Default" [alt]="alt" />
     </div>
     <div
-      [ngClass]="
-        'br-list ' +
-        (horizontal ? ' horizontal ' : '') +
-        (ngClass ? ngClass : '')
-      "
+      [ngClass]="jc(ngClass, 'br-list ', horizontal ? ' horizontal ' : '')"
       data-toggle="data-toggle"
       data-unique="data-unique"
     >

@@ -1,6 +1,6 @@
 <!-- Padrão -->
 <div
-  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  [ngClass]="jc(ngClass, 'br-item')"
   *ngIf="tipoItem == PADRAO"
   [disabled]="isDisabled ? 'disabled' : ''"
   role="listitem"
@@ -10,7 +10,7 @@
 
 <!-- Selection -->
 <div
-  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  [ngClass]="jc(ngClass, 'br-item')"
   *ngIf="tipoItem == SELECTION"
   data-toggle="selection"
   [disabled]="isDisabled ? 'disabled' : ''"
@@ -21,7 +21,7 @@
 
 <!-- Link  -->
 <a
-  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  [ngClass]="jc(ngClass, 'br-item')"
   *ngIf="tipoItem == LINK"
   [href]="href"
   [target]="target"
@@ -32,7 +32,7 @@
 
 <!-- Button  -->
 <br-button
-  [ngClass]="ngClass ? 'br-item ' + ngClass : 'br-item'"
+  [ngClass]="jc(ngClass, 'br-item')"
   *ngIf="tipoItem == BUTTON"
   [click]="click"
   [isActive]="isActive"

@@ -2,20 +2,26 @@
 <br-button
   *ngIf="tipoSignin == ENTRAR"
   (click)="onClickBotao($event)"
-  [ngClass]="'sign-in ' + (densidade == DENSIDADE_MEDIA ? '' : densidade)"
+  [ngClass]="
+    jc(ngClass, 'sign-in', densidade == DENSIDADE_MEDIA ? '' : densidade)
+  "
   ><i class="fas fa-user" aria-hidden="true"></i>Entrar</br-button
 >
 <!-- ENTRAR GOV.BR MONOCROMÁTICO -->
 <br-button
   *ngIf="tipoSignin == ENTRAR_GOVBR_MONO"
   (click)="onClickBotao($event)"
-  [ngClass]="'sign-in ' + (densidade == DENSIDADE_MEDIA ? '' : densidade)"
+  [ngClass]="
+    jc(ngClass, 'sign-in ', densidade == DENSIDADE_MEDIA ? '' : densidade)
+  "
   >Entrar com&nbsp;<span class="text-black">gov.br</span></br-button
 >
 <!-- ENTRAR GOV.BR COLORIDO -->
 <br-button
   *ngIf="tipoSignin == ENTRAR_GOVBR_COR"
   (click)="onClickBotao($event)"
-  [ngClass]="'sign-in ' + (densidade == DENSIDADE_MEDIA ? '' : densidade)"
+  [ngClass]="
+    jc(ngClass, 'sign-in', densidade == DENSIDADE_MEDIA ? '' : densidade)
+  "
   >Entrar com&nbsp;<img [src]="base64LogoDefault" alt="gov.br"
 /></br-button>

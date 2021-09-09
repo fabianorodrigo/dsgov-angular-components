@@ -33,11 +33,6 @@ export class ItemComponent extends BaseComponent {
   //se true, Aplica estilo selecionado
   @Input() isSelected: boolean = false;
 
-  /*** As demais características de aparência aplicadas ao elemento mais externo, por exemplo:
-      'align-items-center',  são informadas via atributo "ngClass" ***/
-  @Input()
-  ngClass: string | string[] | Set<string> | { [klass: string]: any };
-
   constructor() {
     super();
   }

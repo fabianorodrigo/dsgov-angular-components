@@ -1,9 +1,26 @@
-<div [class]="'br-input medium ' + densidade + ' ' + estado + ' ' + ngClass">
+<div
+  [class]="
+    jc(
+      ngClass,
+      'br-input',
+      densidade,
+      estado,
+      classIconeFontAwesomeBotao != null ? ' has-icon ' : ''
+    )
+  "
+>
   <label *ngIf="textoLabel" [for]="id" [ngClass]="ngClassLabel">{{
     textoLabel
   }}</label>
   <input
-    [class]="estado + ' ' + densidade"
+    [ngClass]="
+      jc(
+        ngClassInput,
+        estado,
+        densidade,
+        classIconeFontAwesomeBotao != null ? 'has-icon' : ''
+      )
+    "
     [id]="id"
     [type]="type"
     [placeholder]="textoPlaceHolder"
@@ -12,8 +29,8 @@
   />
   <br-button
     *ngIf="classIconeFontAwesomeBotao"
-    [ngClass]="'circle small ' + ngClassButton"
-    [click]="clickButton"
+    [ngClass]="jc(ngClassButton, 'circle', 'small')"
+    (click)="onClickButton($event)"
     ><i [class]="classIconeFontAwesomeBotao" aria-hidden="true"></i
   ></br-button>
   <span

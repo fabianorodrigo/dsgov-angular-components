@@ -44,11 +44,6 @@ export class FooterComponent extends BaseComponent implements OnInit {
   // Label de apresentação e nome da licença utilizada
   @Input() informacaoLicenca: InformacaoLicenca = new InformacaoLicenca();
 
-  /*** As demais características de aparência do componente
-   são informadas via atributo "ngClass" ***/
-  @Input()
-  ngClass: string | string[] | Set<string> | { [klass: string]: any };
-
   constructor(private domSanitizer: DomSanitizer) {
     super();
   }

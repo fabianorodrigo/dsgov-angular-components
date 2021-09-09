@@ -6,6 +6,7 @@ import {
   FooterModule,
   HeaderModule,
   SigninModule,
+  InputModule,
 } from 'projects/dsgov-components/src/public-api';
 
 @NgModule({
@@ -13,6 +14,7 @@ import {
   imports: [
     ButtonModule,
     BreadcrumbModule,
+    InputModule,
     MenuModule,
     FooterModule,
     HeaderModule,
@@ -24,6 +26,7 @@ import {
     MenuModule,
     FooterModule,
     HeaderModule,
+    InputModule,
     SigninModule,
   ],
 })

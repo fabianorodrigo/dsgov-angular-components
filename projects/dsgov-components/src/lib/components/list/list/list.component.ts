@@ -1,3 +1,4 @@
+import { Densidade } from './../../base/densidade.enum';
 import { BaseComponent } from './../../base/base/base.component';
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import {
@@ -25,15 +26,7 @@ export class ListComponent extends BaseComponent implements OnInit {
   @Input() tipoAgrupamento: TipoAgrupamentoListaType =
     TipoAgrupamentoLista.EXPANSAO;
   // Densidade dos itens de menu. Default: densidade normal
-  @Input() densidade: DensidadeType = 'normal';
-
-  /*** As demais características de aparência do componente
-       são informadas via atributo "ngClass".
-       Quando colapsavel: aplica-se a div que rodeia o cabeçalho da lista (dentro da div br-list).
-                          Caso nada seja informado, essa div terá como class 'col'
-       Quando não colapsavel: aplica-se a div mais externa do componente (a própria div br-list) ***/
-  @Input()
-  ngClass: string | string[] | Set<string> | { [klass: string]: any };
+  @Input() densidade: DensidadeType = Densidade.MEDIA;
 
   //evento de expandir lista
   @Output() expandir: EventEmitter<boolean> = new EventEmitter<boolean>();

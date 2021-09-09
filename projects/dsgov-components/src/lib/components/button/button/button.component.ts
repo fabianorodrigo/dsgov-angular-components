@@ -23,12 +23,6 @@ export class ButtonComponent extends BaseComponent implements OnInit {
   //se true, aplica a classe 'loading' ao botão
   @Input() isLoading: boolean;
 
-  /*** As demais características de aparência do componente, por exemplo:
-      'block', 'circle', 'inverted', 'small', 'primary', 'secondary' etc,
-       são informadas via atributo "ngClass" ***/
-  @Input()
-  ngClass: string | string[] | Set<string> | { [klass: string]: any };
-
   ngOnInit(): void {}
 
   onClickComponent(event) {

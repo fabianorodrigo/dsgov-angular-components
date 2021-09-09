@@ -28,7 +28,6 @@ export class InputComponent extends BaseComponent implements OnInit {
   //Evento de click do botao dentro do input
   @Output() clickButton = new EventEmitter<any>();
 
-  @Input() id: string;
   @Input() type: string = 'text';
 
   //texto do label
@@ -50,9 +49,6 @@ export class InputComponent extends BaseComponent implements OnInit {
   // Densidade dos itens de menu. Default: densidade medium
   @Input() densidade: DensidadeType = Densidade.MEDIA;
 
-  /*** As demais características de aparência do componente são informadas via atributo "ngClass" ***/
-  @Input()
-  ngClass: string | string[] | Set<string> | { [klass: string]: any } = '';
   // classes aplicáveis ao <label></label>
   @Input()
   ngClassLabel: string | string[] | Set<string> | { [klass: string]: any } = '';
@@ -72,5 +68,12 @@ export class InputComponent extends BaseComponent implements OnInit {
     if (!this.id) {
       this.id = this.textoLabel;
     }
+  }
+
+  onClickButton(event) {
+    //The mouseEvent propagates from the child component to the parent component by default.
+    //You can stop propagation of event to parent component.
+    event.stopPropagation();
+    this.clickButton.emit(event);
   }
 }

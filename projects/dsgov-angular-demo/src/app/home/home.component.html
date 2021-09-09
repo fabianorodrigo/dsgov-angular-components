@@ -93,4 +93,86 @@
     &lt;br-button ngClass="secondary circle" &gt;&lt;i class="fas fa-ticket-alt"
     aria-hidden="true"&gt;&lt;/i &gt;&lt;/br-button&gt;
   </blockquote>
+
+  <!-- input default -->
+  <div class="flexItem20">
+    <br-input
+      textoLabel="Campo default"
+      textoPlaceHolder="Uma dica default"
+      textoFeedback="default não dá feedback"
+    ></br-input>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-input textoLabel="Campo default" textoPlaceHolder="Uma dica default"
+    textoFeedback="default não dá feedback"&gt;&lt;/br-input&gt;
+  </blockquote>
+  <!-- input success -->
+  <div class="flexItem20">
+    <br-input
+      textoLabel="Campo sucesso"
+      textoPlaceHolder="Uma dica de sucesso"
+      estado="success"
+      textoFeedback="Feedback de sucesso"
+    ></br-input>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-input textoLabel="Campo sucesso" textoPlaceHolder="Uma dica de
+    sucesso" estado="success" textoFeedback="Feedback de
+    sucesso"&gt;&lt;/br-input&gt;
+  </blockquote>
+  <!-- input danger -->
+  <div class="flexItem20">
+    <br-input
+      textoLabel="Campo perigoso"
+      textoPlaceHolder="Uma dica perigosa"
+      estado="danger"
+      textoFeedback="Feedback perigoso"
+    ></br-input>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-input textoLabel="Campo perigoso" textoPlaceHolder="Uma dica
+    perigosa" estado="danger" textoFeedback="Feedback perigoso"
+    &gt;&lt;/br-input&gt;
+  </blockquote>
+  <!-- input warning -->
+  <div class="flexItem20">
+    <br-input
+      textoLabel="Campo alerta"
+      textoPlaceHolder="Uma dica alarmista"
+      estado="warning"
+      textoFeedback="Feedback de atenção"
+    ></br-input>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-input textoLabel="Campo alerta" textoPlaceHolder="Uma dica alarmista"
+    estado="warning" textoFeedback="Feedback de atenção" &gt;&lt;/br-input&gt;
+  </blockquote>
+  <!-- input info -->
+  <div class="flexItem20">
+    <br-input
+      textoLabel="Campo informação"
+      textoPlaceHolder="Uma dica informativa"
+      estado="info"
+      textoFeedback="Feedback informativo"
+    ></br-input>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-input textoLabel="Campo informação" textoPlaceHolder="Uma dica
+    informativa" estado="info" textoFeedback="Feedback informativo"
+    &gt;&lt;/br-input&gt;
+  </blockquote>
+  <!-- input com botão -->
+  <div class="flexItem20">
+    <br-input
+      textoLabel="Campo com botão"
+      textoPlaceHolder="Uma dica com botão"
+      classIconeFontAwesomeBotao="fas fa-dog"
+      (clickButton)="alerta()"
+    ></br-input>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-input textoLabel="Campo com botão" textoPlaceHolder="Uma dica com
+    botão" classIconeFontAwesomeBotao="fas fa-dog" (clickButton)="alerta()"
+    &gt;&lt;/br-input&gt;
+  </blockquote>
 </div>
