@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   user$: Observable<Usuario>;
   user: Usuario;
 
+  menuExemploVisivel: boolean = false;
+
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit(): void {}

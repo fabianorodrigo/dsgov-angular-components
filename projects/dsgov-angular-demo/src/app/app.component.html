@@ -21,7 +21,7 @@
     (clickSair)="logout($event)"
     [usuario]="user"
     [titulo]="titulo"
-    subtitulo="Versão: X.Y.Z-RC01"
+    subtitulo="Versão: 1.0.0"
     (clickMenu)="onClickMenu($event)"
   ></br-header>
   <main id="main" class="d-flex flex-fill">
@@ -30,7 +30,7 @@
     <div class="container-fluid d-flex">
       <div class="row">
         <br-menu
-          *ngIf="menuVisivel"
+          [visivel]="menuVisivel"
           (closeMenu)="fechaMenu()"
           [usuario]="user"
           [grupos]="itensMenu"
@@ -39,7 +39,7 @@
             { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
           ]"
           [tipoAgrupamentoMenu]="AGRUPAMENTO_EXPANSAO"
-          titulo="Sistema Cobaia"
+          titulo="Sistema Demo"
         ></br-menu>
         <div class="col pt-3 pb-5">
           <br-breadcrumb [itens]="itensBreadcrumb"></br-breadcrumb>

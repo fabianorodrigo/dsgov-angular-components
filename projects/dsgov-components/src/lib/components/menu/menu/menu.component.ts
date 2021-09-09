@@ -20,6 +20,12 @@ import { DomSanitizer } from '@angular/platform-browser';
         margin-left: var(--spacing-scale-base);
       }
     `,
+    `
+      a {
+        text-decoration: none;
+        font-weight: normal;
+      }
+    `,
   ],
 })
 export class MenuComponent extends BaseComponent implements OnInit {
