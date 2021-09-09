@@ -10,7 +10,14 @@ import { ItemMenu } from './../item-menu.interface';
 @Component({
   selector: 'br-item-menu',
   templateUrl: './item-menu.component.html',
-  styles: [],
+  styles: [
+    `
+      a {
+        text-decoration: none;
+        font-weight: normal;
+      }
+    `,
+  ],
 })
 export class ItemMenuComponent extends BaseComponent {
   //constantes usadas no template

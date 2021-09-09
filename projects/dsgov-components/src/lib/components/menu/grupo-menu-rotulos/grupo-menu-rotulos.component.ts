@@ -15,6 +15,12 @@ import { Usuario } from '../../base';
     border-bottom: 1px solid var(--menu-divider);`,
     `div.divisor-menu.menu-folder div.menu-item {
     color: black;`,
+    `
+      a {
+        text-decoration: none;
+        font-weight: normal;
+      }
+    `,
   ],
 })
 export class GrupoMenuRotulosComponent extends BaseComponent {

@@ -2,10 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BaseComponent } from '../../base/base/base.component';
 import { Usuario } from '../../base/usuario.interface';
 import { GrupoItemMenu } from '../grupo-item-menu.interface';
-import {
-  RegraExibicaoMenu,
-  RegraExibicaoMenuType,
-} from '../regra-exibicao-menu.enum';
+import { RegraExibicaoMenu } from '../regra-exibicao-menu.enum';
 
 @Component({
   selector: 'br-grupo-menu-expansao',
@@ -13,6 +10,12 @@ import {
   styles: [
     `div.divisor-menu.menu-folder {
     border-bottom: 1px solid var(--menu-divider);`,
+    `
+      a {
+        text-decoration: none;
+        font-weight: normal;
+      }
+    `,
   ],
 })
 export class GrupoMenuExpansaoComponent extends BaseComponent {
