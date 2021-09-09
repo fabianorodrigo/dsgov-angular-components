@@ -13,6 +13,7 @@
     <ng-container *ngFor="let item of grupo.itens">
       <br-item-menu
         *ngIf="
+          item.exibicao == null ||
           item.exibicao == SEMPRE ||
           (item.exibicao == LOGADO && usuario != null) ||
           (item.exibicao == NAO_LOGADO && usuario == null)

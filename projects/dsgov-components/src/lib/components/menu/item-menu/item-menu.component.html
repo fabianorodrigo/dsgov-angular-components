@@ -58,6 +58,7 @@
       <ng-container *ngFor="let subItem of item.subItens">
         <br-item-menu
           *ngIf="
+            subItem.exibicao == null ||
             subItem.exibicao == SEMPRE ||
             (subItem.exibicao == LOGADO && usuario != null) ||
             (subItem.exibicao == NAO_LOGADO && usuario == null)
