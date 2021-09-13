@@ -8,6 +8,7 @@ import {
   HeaderModule,
   SigninModule,
   InputModule,
+  TooltipModule,
 } from 'projects/dsgov-components/src/public-api';
 
 @NgModule({
@@ -21,6 +22,7 @@ import {
     FooterModule,
     HeaderModule,
     SigninModule,
+    TooltipModule,
   ],
   exports: [
     ButtonModule,
@@ -31,6 +33,7 @@ import {
     HeaderModule,
     InputModule,
     SigninModule,
+    TooltipModule,
   ],
 })
 export class DsgovModule {}

@@ -36,3 +36,8 @@ export * from './lib/components/list/tipo-agrupamento-lista.enum';
 export * from './lib/components/signin/signin.module';
 export * from './lib/components/signin/tipo-signin.enum';
 export * from './lib/components/signin/signin/signin.component';
+//Tooltip
+export * from './lib/components/tooltip/tooltip.module';
+export * from './lib/components/tooltip/estado-tooltip.enum';
+export * from './lib/components/tooltip/posicao-tooltip.enum';
+export * from './lib/components/tooltip/tooltip/tooltip.component';

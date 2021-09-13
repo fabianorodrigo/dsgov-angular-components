@@ -43,6 +43,6 @@ A seguir são identificados os componentes padrão estabelecidos no [gov.br/ds](
 | Table          |                      |
 | Tab            |                      |
 | Textarea       |                      |
-| Tooltip        |                      |
+| Tooltip        |     Parcialmente     |
 | Upload         |                      |
 | Wizard         |                      |
