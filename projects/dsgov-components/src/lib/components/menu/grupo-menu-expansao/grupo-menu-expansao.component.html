@@ -1,0 +1,39 @@
+<div
+  [class]="
+    expandido
+      ? 'divisor-menu menu-folder drop-menu active'
+      : 'menu-folder drop-menu'
+  "
+>
+  <a
+    *ngIf="idSideMenuVisivel.length == 0"
+    class="menu-item"
+    href="javascript: void(0)"
+    (click)="onClickComponent($event)"
+    ><span *ngIf="grupo.classIconeFontAwesome" class="icon"
+      ><i [class]="grupo.classIconeFontAwesome" aria-hidden="true"></i></span
+    ><span class="content">{{ grupo.texto }}</span
+    ><span class="support"
+      ><i
+        *ngIf="grupo?.itens.length > 0"
+        class="fas fa-angle-down"
+        aria-hidden="true"
+      ></i></span
+  ></a>
+  <ul>
+    <ng-container *ngFor="let item of grupo.itens">
+      <br-item-menu
+        *ngIf="
+          item.exibicao == null ||
+          item.exibicao == SEMPRE ||
+          (item.exibicao == LOGADO && usuario != null) ||
+          (item.exibicao == NAO_LOGADO && usuario == null)
+        "
+        [item]="item"
+        [closeMenu]="closeMenu"
+        [mudancaExibicaoSideMenu]="mudancaExibicaoSideMenu"
+        [idSideMenuVisivel]="idSideMenuVisivel"
+      ></br-item-menu>
+    </ng-container>
+  </ul>
+</div>

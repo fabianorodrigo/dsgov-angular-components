@@ -1,0 +1,52 @@
+<div
+  [class]="
+    jc(
+      ngClass,
+      'br-input',
+      densidade,
+      estado,
+      classIconeFontAwesomeBotao != null ? ' has-icon ' : ''
+    )
+  "
+>
+  <label *ngIf="textoLabel" [for]="id" [ngClass]="ngClassLabel">{{
+    textoLabel
+  }}</label>
+  <input
+    [ngClass]="
+      jc(
+        ngClassInput,
+        estado,
+        densidade,
+        classIconeFontAwesomeBotao != null ? 'has-icon' : ''
+      )
+    "
+    [id]="id"
+    [type]="type"
+    [class.disabled]="isDisabled"
+    [ngClass]="ngClassInput"
+    [disabled]="isDisabled ? 'disabled' : ''"
+    [attr.formControlName]="formControlName"
+    [maxLength]="maxLength"
+    [min]="min"
+    [max]="max"
+    [pattern]="pattern"
+    [placeholder]="placeHolder"
+    [step]="step"
+    [attr.required]="required"
+  />
+  <br-button
+    *ngIf="classIconeFontAwesomeBotao"
+    [ngClass]="jc(ngClassButton, 'circle', 'small')"
+    (click)="onClickButton($event)"
+    ><i [class]="classIconeFontAwesomeBotao" aria-hidden="true"></i
+  ></br-button>
+  <span
+    *ngIf="estado != ESTADO_DEFAULT && textoFeedback"
+    [class]="'feedback mt-1 ' + estado"
+    role="alert"
+    ><i [class]="iconesEstado[estado]" aria-hidden="true"></i
+    >{{ textoFeedback }}</span
+  >
+  <ng-content></ng-content>
+</div>

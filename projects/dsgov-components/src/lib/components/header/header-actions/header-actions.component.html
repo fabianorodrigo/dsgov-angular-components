@@ -1,0 +1,18 @@
+<br-header-links
+  [links]="links"
+  ngClass="header-links dropdown"
+></br-header-links>
+<br-divider ngClass="br-divider vertical"></br-divider>
+<br-header-functions
+  [funcionalidades]="funcionalidades"
+  ngClass="header-functions dropdown"
+></br-header-functions>
+<br-header-search-trigger
+  ngClass="header-search-trigger"
+></br-header-search-trigger>
+<br-header-login
+  [usuario]="usuario"
+  ngClass="header-login"
+  (clickEntrar)="onClickEntrar($event)"
+  (clickSair)="onClickSair($event)"
+></br-header-login>

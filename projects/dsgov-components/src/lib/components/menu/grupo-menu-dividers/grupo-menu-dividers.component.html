@@ -1,0 +1,18 @@
+<div class="menu-folder divisor-menu">
+  <ul>
+    <ng-container *ngFor="let item of grupo.itens">
+      <br-item-menu
+        *ngIf="
+          item.exibicao == null ||
+          item.exibicao == SEMPRE ||
+          (item.exibicao == LOGADO && usuario != null) ||
+          (item.exibicao == NAO_LOGADO && usuario == null)
+        "
+        [item]="item"
+        [closeMenu]="closeMenu"
+        [mudancaExibicaoSideMenu]="mudancaExibicaoSideMenu"
+        [idSideMenuVisivel]="idSideMenuVisivel"
+      ></br-item-menu>
+    </ng-container>
+  </ul>
+</div>

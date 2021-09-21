@@ -1,0 +1,59 @@
+<div class="template-base">
+  <nav id="skip-links">
+    <!-- Carregar Atalhos de Teclado aqui -->
+    <div class="skip-links" aria-label="Acesso rápido">
+      <a accesskey="1" href="#main-content">
+        Ir para o Conteúdo<strong class="accesskey">1</strong>
+      </a>
+      <a accesskey="2" href="#main-navigation">
+        Ir para para Navegação<strong class="accesskey">2</strong>
+      </a>
+      <a accesskey="3" href="#main-searchbox">
+        Ir para para Busca<strong class="accesskey">3</strong>
+      </a>
+    </div>
+  </nav>
+  <br-header
+    (onOpenMenu)="menuVisivel = true"
+    [links]="linksCabecalho"
+    [funcionalidades]="funcionalidadesCabecalho"
+    (clickEntrar)="signin($event)"
+    (clickSair)="logout($event)"
+    [usuario]="user"
+    [titulo]="titulo"
+    subtitulo="Versão: 1.0.0"
+    (clickMenu)="onClickMenu($event)"
+  ></br-header>
+  <main id="main" class="d-flex flex-fill">
+    <!-- A classe container-lg força a Largura Fixa no breakpoint desktop.
+      Altere essa classe para container-fluid para usar a Largura Fluida.  -->
+    <div class="container-fluid d-flex">
+      <div class="row">
+        <br-menu
+          [visivel]="menuVisivel"
+          (closeMenu)="fechaMenu()"
+          [usuario]="user"
+          [grupos]="itensMenu"
+          [linksExternos]="[
+            { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
+            { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
+          ]"
+          [tipoAgrupamentoMenu]="AGRUPAMENTO_EXPANSAO"
+          titulo="Sistema Demo"
+        ></br-menu>
+        <div class="col pt-3 pb-5">
+          <br-breadcrumb [itens]="itensBreadcrumb"></br-breadcrumb>
+          <!-- Carregar Conteúdo Principal aqui -->
+          <div id="main-content" class="main-content pl-sm-3">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <br-footer
+    [gruposLinks]="linksRodape"
+    urlImagem="assets/govbr-negativo.png"
+    [linksRedesSociais]="linksRedesSociaisRodape"
+  ></br-footer>
+</div>

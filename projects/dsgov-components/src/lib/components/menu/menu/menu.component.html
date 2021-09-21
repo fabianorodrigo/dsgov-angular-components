@@ -1,0 +1,83 @@
+<div
+  *ngIf="visivel"
+  [class]="
+    jc(ngClass, 'br-menu active', densidade == 'medium' ? '' : densidade)
+  "
+  id="main-navigation"
+>
+  <div class="menu-container">
+    <div class="row">
+      <div class="col-sm-4 col-lg-3">
+        <div class="menu-panel">
+          <div class="menu-header">
+            <div class="menu-close">
+              <button
+                class="br-button circle"
+                type="button"
+                aria-label="Fechar o menu"
+                data-dismiss="menu"
+                (click)="onCloseMenu($event)"
+              >
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="menu-title">
+              <img [src]="urlImagem || base64LogoDefault" alt="logo" />
+              <span>{{ titulo }}</span>
+            </div>
+          </div>
+          <nav class="menu-body">
+            <ng-container *ngFor="let grupo of grupos">
+              <!-- AGRUPAMENTO EXPANSAO -->
+              <br-grupo-menu-expansao
+                *ngIf="tipoAgrupamentoMenu == AGRUPAMENTO_EXPANSAO"
+                [grupo]="grupo"
+                [usuario]="usuario"
+                [closeMenu]="closeMenu"
+                (mudancaExibicaoSideMenu)="onMudancaExibicaoSideMenu($event)"
+                [idSideMenuVisivel]="idSideMenuVisivel"
+              ></br-grupo-menu-expansao>
+              <!-- AGRUPAMENTO POR ROTULOS -->
+              <br-grupo-menu-rotulos
+                *ngIf="tipoAgrupamentoMenu == AGRUPAMENTO_ROTULO"
+                [grupo]="grupo"
+                [usuario]="usuario"
+                [closeMenu]="closeMenu"
+                (mudancaExibicaoSideMenu)="onMudancaExibicaoSideMenu($event)"
+                [idSideMenuVisivel]="idSideMenuVisivel"
+              ></br-grupo-menu-rotulos>
+              <!-- AGRUPAMENTO POR DIVIDER -->
+              <br-grupo-menu-dividers
+                *ngIf="tipoAgrupamentoMenu == AGRUPAMENTO_DIVIDER"
+                [grupo]="grupo"
+                [usuario]="usuario"
+                [closeMenu]="closeMenu"
+                (mudancaExibicaoSideMenu)="onMudancaExibicaoSideMenu($event)"
+                [idSideMenuVisivel]="idSideMenuVisivel"
+              ></br-grupo-menu-dividers>
+            </ng-container>
+          </nav>
+          <div class="menu-footer" *ngIf="exibeInformacaoLicenca">
+            <div class="menu-links" *ngIf="linksExternos.length > 0">
+              <ng-container *ngFor="let link of linksExternos">
+                <a [href]="link.url" target="_blank"
+                  ><span class="mr-1">{{ link.texto }}</span
+                  ><i
+                    class="fas fa-external-link-square-alt"
+                    aria-hidden="true"
+                  ></i></a
+              ></ng-container>
+            </div>
+            <div class="menu-info">
+              <div class="text-center text-down-01">
+                {{ informacaoLicenca.label }}
+                <strong>{{ informacaoLicenca.nomeLicenca }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-scrim" data-dismiss="menu" tabindex="0"></div>
+  </div>
+</div>

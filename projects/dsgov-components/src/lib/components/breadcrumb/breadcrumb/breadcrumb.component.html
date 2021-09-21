@@ -1,0 +1,25 @@
+<div class="br-breadcrumb" aria-label="Breadcumb">
+  <ul class="crumb-list">
+    <li [routerLink]="linkPaginaInicial" class="crumb home">
+      <div class="br-button circle">
+        <span class="sr-only">{{ labelPaginaInicial }}</span>
+        <i class="icon fas fa-home"></i>
+      </div>
+    </li>
+    <ng-container *ngFor="let item of itens; let i = index">
+      <!-- Se for o último elemento, trata-se da página ativa -->
+      <ng-container *ngIf="i == itens.length - 1; else breadcrumAncestral">
+        <li class="crumb" data-active="active">
+          <i class="icon fas fa-chevron-right"></i>
+          <span>{{ item.label }}</span>
+        </li>
+      </ng-container>
+      <ng-template #breadcrumAncestral>
+        <li class="crumb">
+          <i class="icon fas fa-chevron-right"></i>
+          <a [routerLink]="item.link">{{ item.label }}</a>
+        </li>
+      </ng-template>
+    </ng-container>
+  </ul>
+</div>

@@ -1,0 +1,26 @@
+<div class="col">
+  <a
+    (click)="onClickComponent($event)"
+    [class]="expandido ? 'br-item header open' : 'br-item header'"
+    href="javascript:void(0)"
+  >
+    <div class="content text-down-01 text-bold text-uppercase">
+      {{ grupo }}
+    </div>
+    <div class="support">
+      <i
+        [class]="expandido ? 'fas fa-angle-up' : 'fas fa-angle-down'"
+        aria-hidden="true"
+      ></i>
+    </div>
+  </a>
+  <div *ngIf="expandido" class="br-list open">
+    <br-item
+      *ngFor="let item of links"
+      tipoItem="link"
+      [href]="item.url"
+      target="_blank"
+      ><div class="content">{{ item.texto }}</div></br-item
+    >
+  </div>
+</div>

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{.Values.client.name}}
+  labels:
+    app.kubernetes.io/instance: {{.Values.nomeModulo}}
+    chart: "{{ .Values.nomeModulo }}-{{ .Chart.Version}}"
+    release: {{.Values.nomeModulo}}
+    heritage: "Helm"
+    app: {{.Values.client.name}}
+spec:
+  selector:
+    app.kubernetes.io/instance: {{.Values.nomeModulo}}
+    app: {{.Values.client.name}}
+    version: "1"
+  ports:
+    - name: http
+      port: {{.Values.client.ports.port}}

@@ -1,0 +1,74 @@
+<li
+  *ngIf="item.subItens == null || item.subItens.length == 0; else itemAgrupador"
+>
+  <a
+    *ngIf="
+      idSideMenuVisivel.length == 0 ||
+      idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
+      item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
+    "
+    class="menu-item"
+    (click)="onClickComponent($event)"
+    [routerLink]="item?.link?.tipo == TIPOLINK_ROTA ? item.link.url : null"
+    [href]="item?.link?.tipo == TIPOLINK_URL ? item.link.url : null"
+    [target]="
+      item?.link?.tipo == TIPOLINK_URL && item.link.novaAba ? '_blank' : null
+    "
+  >
+    <i
+      *ngIf="item?.link?.classIconeFontAwesome"
+      [class]="item?.link?.classIconeFontAwesome"
+      aria-hidden="true"
+    ></i>
+    <span *ngIf="item?.link?.texto" class="content">{{ item.link.texto }}</span>
+  </a>
+</li>
+
+<ng-template #itemAgrupador>
+  <li
+    [class]="expandido ? 'side-menu active' : 'side-menu'"
+    *ngIf="
+      idSideMenuVisivel.length == 0 ||
+      idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
+      item.idParents.includes(
+        idSideMenuVisivel[idSideMenuVisivel.length - 1]
+      ) ||
+      item.idChildren.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
+    "
+  >
+    <a
+      href="javascript: void(0)"
+      class="menu-item"
+      (click)="onClickComponent($event)"
+      *ngIf="
+        idSideMenuVisivel.length == 0 ||
+        idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
+        item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
+      "
+    >
+      <span *ngIf="item.link.classIconeFontAwesome" class="icon"
+        ><i [class]="item.link.classIconeFontAwesome" aria-hidden="true"></i
+      ></span>
+      <span *ngIf="item.link.texto" class="content">{{ item.link.texto }}</span>
+      <span class="support"
+        ><i class="fas fa-angle-right" aria-hidden="true"></i
+      ></span>
+    </a>
+    <ul>
+      <ng-container *ngFor="let subItem of item.subItens">
+        <br-item-menu
+          *ngIf="
+            subItem.exibicao == null ||
+            subItem.exibicao == SEMPRE ||
+            (subItem.exibicao == LOGADO && usuario != null) ||
+            (subItem.exibicao == NAO_LOGADO && usuario == null)
+          "
+          [item]="subItem"
+          [closeMenu]="closeMenu"
+          [mudancaExibicaoSideMenu]="mudancaExibicaoSideMenu"
+          [idSideMenuVisivel]="idSideMenuVisivel"
+        ></br-item-menu>
+      </ng-container>
+    </ul>
+  </li>
+</ng-template>

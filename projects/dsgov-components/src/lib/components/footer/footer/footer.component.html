@@ -1,0 +1,66 @@
+<footer id="footer" [class]="'br-footer ' + (invertido ? 'inverted' : '')">
+  <div class="container-fluid">
+    <div class="logo">
+      <img [src]="urlImagem || base64Imagem1Default" [alt]="alt" />
+    </div>
+    <div
+      [ngClass]="jc(ngClass, 'br-list ', horizontal ? ' horizontal ' : '')"
+      data-toggle="data-toggle"
+      data-unique="data-unique"
+    >
+      <ng-container *ngFor="let grupo of grupos">
+        <br-grupo-footer
+          [horizontal]="horizontal"
+          [grupo]="grupo"
+          [links]="gruposLinks[grupo]"
+        ></br-grupo-footer>
+      </ng-container>
+    </div>
+    <div class="d-none d-sm-block">
+      <div class="row align-items-end justify-content-between py-5">
+        <div class="col social-network" *ngIf="linksRedesSociais?.length > 0">
+          <p class="text-up-01 text-extra-bold text-uppercase">Redes Sociais</p>
+          <ng-container *ngFor="let perfil of linksRedesSociais">
+            <a [href]="perfil.url" class="mr-3" target="_blank">
+              <i
+                *ngIf="perfil.classIconeFontAwesome"
+                [class]="perfil.classIconeFontAwesome"
+                aria-hidden="true"
+              ></i>
+              <span *ngIf="!perfil.classIconeFontAwesome">{{
+                perfil?.texto
+              }}</span>
+            </a>
+          </ng-container>
+        </div>
+        <div
+          id="footer-brasil"
+          class="col assigns text-right"
+          [ngStyle]="invertido ? {} : { filter: 'invert(1)' }"
+        >
+          <a [href]="url2" [title]="alt2" target="_blank">
+            <img
+              [alt]="alt2"
+              class="ml-4"
+              [src]="urlImagem2 || base64Imagem2Default"
+          /></a>
+          <a [href]="url3" [title]="alt3" target="_blank">
+            <img
+              [alt]="alt3"
+              class="ml-4"
+              [src]="urlImagem3 || base64Imagem3Default"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br-divider ngClass="br-divider my-3"></br-divider>
+  <div class="container-fluid">
+    <div class="info">
+      <div class="text-down-01 text-medium pb-3 text-center">
+        {{ informacaoLicenca.label }}
+        <strong>{{ informacaoLicenca.nomeLicenca }}</strong>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,25 @@
+[
+  {"classIconeFontAwesome":"fas fa-hamburger", "texto": "Grupo 1", "itens":
+    [
+      { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-users", "texto": "Entidade", "url": "/entidade"}},
+      { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-map-signs", "texto": "Qualquer coisa"}},
+      { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-map-pin", "texto": "Jureba"}, "subItens":[
+        { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-photo-video", "texto": "Obras publicitárias", "url":"http://oglobo.com.br"}},
+        { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-money-bill-alt", "texto": "Fomento", "url":"http://ge.com.br"}},
+        { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-film", "texto": "Esse tem subitens"}, "subItens":[
+          { "exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-users", "texto": "Teste ","url":"/entidade"}},
+          { "exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-allergies", "texto": "Teste ","url":"/entidade"}}
+        ]}
+      ]},
+      { "exibicao":"sempre", "link":{"tipo":"url", "classIconeFontAwesome": "fas fa-calendar-alt", "texto": "Eventos", "url":"http://uol.com.br", "novaAba":true}},
+      {"exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-university", "texto": "Instituições"}},
+      {"exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-film", "texto": "Obras não publicitárias"}}
+
+    ]
+  },
+  {"classIconeFontAwesome": "fas fa-futbol", "texto": "Grupo 2", "itens":
+    [
+        {"exibicao":"sempre", "link": {"classIconeFontAwesome": "fas fa-users", "texto": "Entidade", "url":"/entidade"}}
+    ]
+  }
+]

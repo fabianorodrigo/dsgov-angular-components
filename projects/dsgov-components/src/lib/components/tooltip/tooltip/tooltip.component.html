@@ -1,0 +1,12 @@
+<div
+  class="br-tooltip"
+  [attr.success]="estado == 'success' ? estado : null"
+  [attr.info]="estado == 'info' ? estado : null"
+  [attr.warning]="estado == 'warning' ? estado : null"
+  [attr.error]="estado == 'error' ? estado : null"
+  role="tooltip"
+  [attr.place]="posicao"
+>
+  <span class="text" role="tooltip">{{ texto }}</span
+  ><span *ngIf="subtexto" class="subtext">{{ subtexto }}</span>
+</div>

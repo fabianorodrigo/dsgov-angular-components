@@ -1,0 +1,48 @@
+<!-- colapsavel -->
+<div
+  *ngIf="isColapsavel"
+  [class]="'br-list ' + (horizontal ? ' horizontal ' : '')"
+  data-toggle
+  role="list"
+>
+  <div class="col">
+    <a
+      (click)="onClickComponent($event)"
+      [class]="expandido ? 'br-item header open' : 'br-item header'"
+      href="javascript:void(0)"
+    >
+      <div class="content text-down-01 text-bold text-uppercase">
+        {{ grupo }}
+      </div>
+      <div class="support">
+        <i
+          [class]="expandido ? 'fas fa-angle-up' : 'fas fa-angle-down'"
+          aria-hidden="true"
+        ></i>
+      </div>
+    </a>
+  </div>
+  <div class="header">
+    <div class="title">
+      {{ tituloHeader }}
+    </div>
+    <div class="support">
+      <i class="fas fa-angle-up" aria-hidden="true"></i>
+    </div>
+  </div>
+  <br-divider *ngIf="tituloHeader"></br-divider>
+  <ng-content></ng-content>
+</div>
+
+<!-- não colapsavel -->
+<div
+  *ngIf="!isColapsavel"
+  [ngClass]="jc(ngClass, 'br-list', horizontal ? ' horizontal ' : '')"
+  role="list"
+>
+  <div *ngIf="tituloHeader" class="header">
+    <div class="title">{{ tituloHeader }}</div>
+  </div>
+  <br-divider *ngIf="tituloHeader"></br-divider>
+  <ng-content></ng-content>
+</div>

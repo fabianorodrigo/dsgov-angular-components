@@ -1,0 +1,10 @@
+<button
+  [ngClass]="jc(ngClass, 'br-button')"
+  [class.disabled]="isDisabled"
+  [class.active]="isActive"
+  [class.loading]="isLoading"
+  type="button"
+  (click)="onClickComponent($event)"
+>
+  <ng-content></ng-content>
+</button>
