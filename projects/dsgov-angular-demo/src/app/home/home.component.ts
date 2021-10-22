@@ -33,10 +33,10 @@ export class HomeComponent implements OnInit {
     alert('tic tac, tic tac');
   }
 
-  signin(event) {
+  signin(event: MouseEvent) {
     //this.document.location.href = `https://ssodev.ancine.gov.br/cas/login?redirect_uri=${this.document.location.href}`;
     this.user$ = this.usuarioService.getUsuario();
-    this.user$.subscribe((user) => {
+    this.user$.subscribe(user => {
       if (user == null) {
         this.user = {} as Usuario;
       } else {
@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  logout(event) {
+  logout(event: MouseEvent) {
     //this.fechaMenu();
     this.user = null;
     this.usuarioService.logout();

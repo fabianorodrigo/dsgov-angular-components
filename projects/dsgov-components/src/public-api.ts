@@ -1,6 +1,7 @@
 /*
  * Public API Surface of dsgov-components
  */
+// Interfaces
 
 //Base
 export * from './lib/components/base';
@@ -29,6 +30,7 @@ export * from './lib/components/input/input/input.component';
 export * from './lib/components/menu/menu.module';
 export * from './lib/components/menu/menu/menu.component';
 export * from './lib/components/menu/item-menu.interface';
+export * from './lib/components/menu/grupo-item-menu.interface';
 export * from './lib/components/base/link.interface';
 export * from './lib/components/menu/regra-exibicao-menu.enum';
 export * from './lib/components/list/tipo-agrupamento-lista.enum';
