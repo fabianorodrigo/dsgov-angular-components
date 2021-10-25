@@ -1,39 +1,56 @@
 
-  {"Órgãos de Controle": [
-      {"texto": "TCU", "url":"http://tcu.gov.br"},
-      { "texto": "Ministério Público", "url":"http://mp.gov.br"}
+  {"ASSUNTOS": [
+      {"texto": "Notícias", "url":"https://www.gov.br/ancine/pt-br/assuntos/noticias"},
+      { "texto": "Atribuições", "url":"https://www.gov.br/ancine/pt-br/assuntos/atribuicoes-ancine"},
+      { "texto": "Outros Sistemas", "url":"https://www.gov.br/ancine/pt-br/assuntos/outros-sistemas"},
+      { "texto": "Programa de Integridade", "url":"https://www.gov.br/ancine/pt-br/assuntos/programa-de-integridade"},
+      { "texto": "Diretoria Colegiada", "url":"https://www.gov.br/ancine/pt-br/assuntos/diretoria-colegiada"}
     ],
-    "Cinema Nacional": [
-      {"texto": "Cinemateca", "url":"http://cinemateca.gov.br"},
-      { "texto": "Embrafilmes", "url":"http://embrafilmes.gov.br"},
-      {"texto": "CSC", "url":"http://csc.gov.br"},
-      {"texto": "Instituto Lente", "url":"http://lente.org.br"},
-      {"texto": "FSA", "url":"http://fsa.gov.br"}
+    "ACESSO À INFORMAÇÃO": [
+      {"texto": "Institucional", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/institucional"},
+      { "texto": "Participação Social", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/participacao-social"},
+      {"texto": "Receitas e Despesas", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/receitas-e-despesas"},
+      {"texto": "Servidores", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/servidores"},
+      {"texto": "Legislação", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/legislacao"},
+      {"texto": "Serviço de Informação ao Cidadão (SIC)", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/sic"},
+      {"texto": "Informações Classificadas e Desclassificadas", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/informacoes-classificadas-e-desclassificadas"},
+      {"texto": "Agenda de Autoridades", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/agenda-de-autoridades"},
+      {"texto": "Perguntas Frequentes", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/perguntas-frequentes1"},
+      {"texto": "Dados Abertos", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/dados-abertos"},
+      {"texto": "Convênios e Transferências", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/convenios-e-transferencias"},
+      {"texto": "Ações e Programas", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/acoes-e-programas"},
+      {"texto": "Lei Geral de Proteção de Dados - LGPD", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/lei-geral-de-protecao-de-dados"},
+      {"texto": "Transparência e Prestação de Contas", "url":"https://www.gov.br/ancine/pt-br/acesso-a-informacao/transparencia-prestacao-de-contas"}
     ],
-    "Agentes Financeiros": [
-      {"texto": "Banco do Brasil", "url":"http://bb.gov.br"},
-      { "texto": "BRDE", "url":"http://brde.gov.br"},
-      {"texto": "BNDES", "url":"http://bndes.gov.br"},
-      {"texto": "Bradesco", "url":"http://bradesco.com.br"}
+    "CENTRAIS DE CONTEÚDO": [
+      {"texto": "Publicações", "url":"https://www.gov.br/ancine/pt-br/centrais-de-conteudo/publicacoes"},
+      { "texto": "Infográfico", "url":"https://www.gov.br/ancine/pt-br/centrais-de-conteudo/infografico"}
     ],
-    "Consultas": [
+    "COMPOSIÇÃO":[
+      {"texto": "Quem é Quem", "url":"https://www.gov.br/ancine/pt-br/composicao/quem-e-quem"},
+      {"texto": "Diretoria Colegiada", "url":"https://www.gov.br/ancine/pt-br/composicao/diretoria-colegiada"},
+      {"texto": "Gabinete do Diretor-Presidente", "url":"https://www.gov.br/ancine/pt-br/composicao/gabinete-do-diretor-presidente"},
+      {"texto": "Secretarias", "url":"https://www.gov.br/ancine/pt-br/composicao/secretarias"},
+      {"texto": "Assessorias", "url":"https://www.gov.br/ancine/pt-br/composicao/assessorias"},
+      {"texto": "Superintendências", "url":"https://www.gov.br/ancine/pt-br/composicao/superintendencias"},
+      {"texto": "Procuradoria Federal", "url":"https://www.gov.br/ancine/pt-br/composicao/procuradoria-federal"},
+      {"texto": "Auditoria Interna", "url":"https://www.gov.br/ancine/pt-br/composicao/auditoria-interna"},
+      {"texto": "Ouvidoria Geral", "url":"https://www.gov.br/ancine/pt-br/composicao/ouvidoria-geral"},
+      {"texto": "Gerências", "url":"https://www.gov.br/ancine/pt-br/composicao/gerencias"},
+      {"texto": "Coordenações", "url":"https://www.gov.br/ancine/pt-br/composicao/coordenacoes"},
+      {"texto": "Escritórios", "url":"https://www.gov.br/ancine/pt-br/composicao/escritorios"}
+    ],
+    "CANAIS DE ATENDIMENTO": [
+      { "texto": "Fale Conosco", "url":"https://www.gov.br/ancine/pt-br/canais_atendimento/contact-info"},
+      {"texto": "Ouvidoria", "url":"https://www.gov.br/ancine/pt-br/canais_atendimento/ouvidoria"},
+      {"texto": "Contatos", "url":"https://www.gov.br/ancine/pt-br/canais_atendimento/contatos"}
 
-      { "texto": "Projetos", "url":"http://gov.br/ancine"},
-      {"texto": "Empresas Registradas", "url":"http://gov.br/ancine"},
-      {"texto": "Situação Cadastral", "url":"http://gov.br/ancine"},
-      {"texto": "CRT Obras Publicitárias", "url":"http://gov.br/ancine"},
-      {"texto": "CTR Obras não Publicitárias", "url":"http://gov.br/ancine"},
-      {"texto": "CPB", "url":"http://gov.br/ancine"},
-      {"texto": "ROE", "url":"http://gov.br/ancine"}
     ],
-    "Outros sistemas": [
-      {"texto": "SAVI", "url":"http://sad.ancine.gov.br/sadis"},
-      { "texto": "Cota de Tela", "url":"http://sad.ancine.gov.br/cota"},
-      {"texto": "SICA", "url":"http://sad.ancine.gov.br/sica"},
-      {"texto": "RPPF", "url":"http://sad.ancine.gov.br/rppf"}
-    ],
-    "Participação Popular": [
-      { "texto": "Chamada Pública", "url":"http://sad.ancine.gov.br/chapub"},
-      {"texto": "Ouvidoria", "url":"http://gov.br/ancine"}
+    "Fundo Setorial do Audiovisual - FSA": [
+      {"texto": "Institucional", "url":"https://www.gov.br/ancine/pt-br/fsa/institucional"},
+      { "texto": "Estrutura de Governança", "url":"https://www.gov.br/ancine/pt-br/fsa/estrutura-de-governanca"},
+      {"texto": "Normas", "url":"https://www.gov.br/ancine/pt-br/fsa/normas"},
+      {"texto": "Como Participar", "url":"https://www.gov.br/ancine/pt-br/fsa/como-participar"},
+      {"texto": "Resultados", "url":"https://www.gov.br/ancine/pt-br/fsa/resultados"}
     ]
   }
