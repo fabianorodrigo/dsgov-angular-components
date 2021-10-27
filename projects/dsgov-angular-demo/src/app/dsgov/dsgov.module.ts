@@ -10,7 +10,7 @@ import {
   SigninModule,
   InputModule,
   TooltipModule,
-} from 'dsgov-components';
+} from 'projects/dsgov-components/src/public-api';
 
 @NgModule({
   declarations: [],

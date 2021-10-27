@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Usuario } from 'dsgov-components';
+import { Usuario } from 'projects/dsgov-components/src/public-api';
 import { Observable } from 'rxjs';
 import { UsuarioService } from '../usuario';
 
