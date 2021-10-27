@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Funcionalidade, ItemBreadcrumb, Link, RegraExibicaoMenu, TipoAgrupamentoLista } from 'dsgov-components';
-import { Usuario } from 'projects/dsgov-components/src/public-api';
+import { Usuario } from 'dsgov-components';
 import { GrupoItemMenu } from 'projects/dsgov-components/src/lib/components/menu/grupo-item-menu.interface';
 import { Observable } from 'rxjs';
 import { UsuarioService } from './usuario';

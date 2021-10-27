@@ -5,6 +5,7 @@
 
 //Base
 export * from './lib/components/base';
+export * from './lib/components/base/base.module';
 //Button
 export * from './lib/components/button/button.module';
 export * from './lib/components/button/button/button.component';

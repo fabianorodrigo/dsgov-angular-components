@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
+  BaseModule,
   ButtonModule,
   BreadcrumbModule,
   DividerModule,
@@ -9,11 +10,12 @@ import {
   SigninModule,
   InputModule,
   TooltipModule,
-} from 'projects/dsgov-components/src/public-api';
+} from 'dsgov-components';
 
 @NgModule({
   declarations: [],
   imports: [
+    BaseModule,
     ButtonModule,
     BreadcrumbModule,
     DividerModule,
@@ -25,6 +27,7 @@ import {
     TooltipModule,
   ],
   exports: [
+    BaseModule,
     ButtonModule,
     BreadcrumbModule,
     DividerModule,
