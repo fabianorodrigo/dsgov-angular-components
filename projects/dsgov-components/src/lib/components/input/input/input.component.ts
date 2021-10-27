@@ -2,7 +2,7 @@ import { Densidade } from './../../base/densidade.enum';
 import { EstadoInput, EstadoInputType } from './../estado-input.enum';
 import { BaseComponent } from './../../base/base/base.component';
 import { Component, EventEmitter, Input, OnInit, Output, ɵɵtrustConstantResourceUrl } from '@angular/core';
-import { DensidadeType } from '../../base';
+import { DensidadeType } from '../../base/densidade.enum';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({

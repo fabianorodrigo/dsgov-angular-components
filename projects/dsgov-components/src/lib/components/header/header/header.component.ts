@@ -1,16 +1,12 @@
-import { BRHeader } from './BRHeader';
-import { TamanhoHeader, TamanhoHeaderType } from './../tamanho-header.enum';
-import { BaseComponent } from './../../base/base/base.component';
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { base64LogoGovBr, Funcionalidade, Link, Usuario } from '../../base';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Funcionalidade } from '../../base/funcionalidade.interface';
+import { Link } from '../../base/link.interface';
+import { base64LogoGovBr } from '../../base/logoGovBr';
+import { Usuario } from '../../base/usuario.interface';
+import { BaseComponent } from './../../base/base/base.component';
+import { TamanhoHeader, TamanhoHeaderType } from './../tamanho-header.enum';
+import { BRHeader } from './BRHeader';
 
 @Component({
   selector: 'br-header',
@@ -46,10 +42,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   // classe BRHeader disponibilizada no gov.br/ds responsável pelo comportamento do header e seus subelementos
   private headerDS: BRHeader;
 
-  constructor(
-    private component: ElementRef,
-    private domSanitizer: DomSanitizer
-  ) {
+  constructor(private component: ElementRef, private domSanitizer: DomSanitizer) {
     super();
   }
 
@@ -69,6 +62,5 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   }
 
   //logo gov.br
-  readonly base64LogoDefault =
-    this.domSanitizer.bypassSecurityTrustUrl(base64LogoGovBr);
+  readonly base64LogoDefault = this.domSanitizer.bypassSecurityTrustUrl(base64LogoGovBr);
 }

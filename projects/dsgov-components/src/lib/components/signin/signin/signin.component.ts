@@ -1,9 +1,10 @@
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { DensidadeType } from '../../base/densidade.enum';
+import { base64LogoGovBr } from '../../base/logoGovBr';
+import { BaseComponent } from './../../base/base/base.component';
 import { Densidade } from './../../base/densidade.enum';
 import { TipoSignin, TipoSigninType } from './../tipo-signin.enum';
-import { BaseComponent } from './../../base/base/base.component';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { base64LogoGovBr, DensidadeType } from '../../base';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'br-signin',
@@ -33,6 +34,5 @@ export class SigninComponent extends BaseComponent {
   }
 
   //logo gov.br
-  readonly base64LogoDefault =
-    this.domSanitizer.bypassSecurityTrustUrl(base64LogoGovBr);
+  readonly base64LogoDefault = this.domSanitizer.bypassSecurityTrustUrl(base64LogoGovBr);
 }

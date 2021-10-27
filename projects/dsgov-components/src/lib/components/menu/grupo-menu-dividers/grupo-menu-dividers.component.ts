@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BaseComponent, Usuario } from '../../base';
+import { BaseComponent } from '../../base/base/base.component';
+import { Usuario } from '../../base/usuario.interface';
 import { GrupoItemMenu } from '../grupo-item-menu.interface';
 import { RegraExibicaoMenu } from '../regra-exibicao-menu.enum';
 

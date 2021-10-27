@@ -1,11 +1,5 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-} from '@angular/core';
-import { BaseComponent } from '../../base';
+import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
+import { BaseComponent } from '../../base/base/base.component';
 import { EstadoTooltipType, EstadoTooltip } from './../estado-tooltip.enum';
 import { PosicaoTooltipType, PosicaoTooltip } from './../posicao-tooltip.enum';
 import { BRTooltip } from './BRTooltip';

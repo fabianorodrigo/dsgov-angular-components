@@ -4,8 +4,17 @@
 // Interfaces
 
 //Base
-export * from './lib/components/base';
 export * from './lib/components/base/base.module';
+export * from './lib/components/base/base/base.component';
+export * from './lib/components/base/densidade.enum';
+export * from './lib/components/base/erroForm.interface';
+export * from './lib/components/base/funcionalidade.interface';
+export * from './lib/components/base/informacao-licenca';
+export * from './lib/components/base/link.interface';
+export * from './lib/components/base/logoGovBr';
+export * from './lib/components/base/reactive-form/reactive-form.component';
+export * from './lib/components/base/tipo-link.enum';
+export * from './lib/components/base/usuario.interface';
 //Button
 export * from './lib/components/button/button.module';
 export * from './lib/components/button/button/button.component';

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Link, TipoLink } from '../../base';
+import { Component, Input } from '@angular/core';
+import { Link } from '../../base/link.interface';
+import { TipoLink } from '../../base/tipo-link.enum';
 import { BaseComponent } from './../../base/base/base.component';
 
 @Component({

@@ -1,7 +1,8 @@
-import { Funcionalidade } from './../../base/funcionalidade.interface';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Link } from '../../base/link.interface';
+import { Usuario } from '../../base/usuario.interface';
 import { BaseComponent } from './../../base/base/base.component';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Link, Usuario } from '../../base';
+import { Funcionalidade } from './../../base/funcionalidade.interface';
 
 @Component({
   selector: 'br-header-actions',
