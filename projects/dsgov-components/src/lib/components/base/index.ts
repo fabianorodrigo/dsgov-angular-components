@@ -6,3 +6,4 @@ export * from './link.interface';
 export * from './logoGovBr';
 export * from './tipo-link.enum';
 export * from './funcionalidade.interface';
+export * from './erroForm.interface';
