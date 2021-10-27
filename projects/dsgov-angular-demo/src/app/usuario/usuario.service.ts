@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from 'projects/dsgov-components/src/public-api';
+import { Usuario } from 'dsgov-components';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
