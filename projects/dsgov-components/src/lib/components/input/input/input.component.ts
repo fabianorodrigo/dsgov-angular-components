@@ -95,7 +95,6 @@ export class InputComponent extends BaseComponent implements OnInit, ControlValu
   }
 
   onChangeInput(event: Event) {
-    console.log(event);
     if (!this.isDisabled && (event.target as HTMLInputElement).value) {
       this.valor = (event.target as HTMLInputElement).value;
       this.onChange(this.valor);

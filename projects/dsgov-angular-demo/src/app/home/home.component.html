@@ -77,19 +77,20 @@
   <!-- input default -->
   <div [formGroup]="formulario" class="flexItem20">
     <br-input
-      formControlName="inputValue"
+      formControlName="nomeCampo"
       textoLabel="Campo default"
       placeHolder="Uma dica default"
       textoFeedback="default não dá feedback"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo default" placeHolder="Uma dica default" textoFeedback="default não dá
-    feedback"&gt;&lt;/br-input&gt;
+    &lt;br-input formControlName="nomeCampo" textoLabel="Campo default" placeHolder="Uma dica default"
+    textoFeedback="default não dá feedback"&gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input success -->
-  <div class="flexItem20">
+  <div [formGroup]="formulario" class="flexItem20">
     <br-input
+      formControlName="nomeCampo"
       textoLabel="Campo sucesso"
       placeHolder="Uma dica de sucesso"
       estado="success"
@@ -97,12 +98,13 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo sucesso" placeHolder="Uma dica de sucesso" estado="success" textoFeedback="Feedback
-    de sucesso"&gt;&lt;/br-input&gt;
+    &lt;br-input formControlName="nomeCampo" textoLabel="Campo sucesso" placeHolder="Uma dica de sucesso"
+    estado="success" textoFeedback="Feedback de sucesso"&gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input danger -->
-  <div class="flexItem20">
+  <div [formGroup]="formulario" class="flexItem20">
     <br-input
+      formControlName="nomeCampo"
       textoLabel="Campo perigoso"
       placeHolder="Uma dica perigosa"
       estado="danger"
@@ -110,12 +112,13 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo perigoso" placeHolder="Uma dica perigosa" estado="danger" textoFeedback="Feedback
-    perigoso" &gt;&lt;/br-input&gt;
+    &lt;br-input formControlName="nomeCampo" textoLabel="Campo perigoso" placeHolder="Uma dica perigosa" estado="danger"
+    textoFeedback="Feedback perigoso" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input warning -->
-  <div class="flexItem20">
+  <div [formGroup]="formulario" class="flexItem20">
     <br-input
+      formControlName="nomeCampo"
       textoLabel="Campo alerta"
       placeHolder="Uma dica alarmista"
       estado="warning"
@@ -123,12 +126,13 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo alerta" placeHolder="Uma dica alarmista" estado="warning" textoFeedback="Feedback de
-    atenção" &gt;&lt;/br-input&gt;
+    &lt;br-input formControlName="nomeCampo" textoLabel="Campo alerta" placeHolder="Uma dica alarmista" estado="warning"
+    textoFeedback="Feedback de atenção" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input info -->
-  <div class="flexItem20">
+  <div [formGroup]="formulario" class="flexItem20">
     <br-input
+      formControlName="nomeCampo"
       textoLabel="Campo informação"
       placeHolder="Uma dica informativa"
       estado="info"
@@ -136,12 +140,13 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo informação" placeHolder="Uma dica informativa" estado="info" textoFeedback="Feedback
-    informativo" &gt;&lt;/br-input&gt;
+    &lt;br-input formControlName="nomeCampo" textoLabel="Campo informação" placeHolder="Uma dica informativa"
+    estado="info" textoFeedback="Feedback informativo" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input com botão -->
-  <div class="flexItem20">
+  <div [formGroup]="formulario" class="flexItem20">
     <br-input
+      formControlName="nomeCampo"
       textoLabel="Campo com botão"
       placeHolder="Uma dica com botão"
       classIconeFontAwesomeBotao="fas fa-dog"
@@ -149,12 +154,13 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo com botão" placeHolder="Uma dica com botão" classIconeFontAwesomeBotao="fas fa-dog"
-    (clickButton)="alerta()" &gt;&lt;/br-input&gt;
+    &lt;br-input formControlName="nomeCampo" textoLabel="Campo com botão" placeHolder="Uma dica com botão"
+    classIconeFontAwesomeBotao="fas fa-dog" (clickButton)="alerta()" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input desabilitado -->
-  <div class="flexItem20">
+  <div [formGroup]="formulario" class="flexItem20">
     <br-input
+      formControlName="nomeCampo"
       textoLabel="Campo desabilitada"
       placeHolder="Uma dica desabilitada"
       estado="warning"
@@ -163,8 +169,8 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo desabilitada" placeHolder="Uma dica desabilitada" estado="warning"
-    textoFeedback="Feedback de desabilitação" [isDisabled]="true" &gt;&lt;/br-input&gt;
+    &lt;br-input formControlName="nomeCampo" textoLabel="Campo desabilitada" placeHolder="Uma dica desabilitada"
+    estado="warning" textoFeedback="Feedback de desabilitação" [isDisabled]="true" &gt;&lt;/br-input&gt;
   </blockquote>
 
   <!-- tooltip  -->
@@ -552,6 +558,13 @@
 
 
 
+
+
+
+
+
+
+
     }}&gt;<br />&lt;/br-menu&gt;
   </blockquote>
 
@@ -790,6 +803,13 @@
 
 
 
+
+
+
+
+
+
+
     }}&gt;<br />&lt;/br-menu&gt;
   </blockquote>
 
@@ -991,6 +1011,13 @@
           { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
           { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
         ]\""
+
+
+
+
+
+
+
 
 
 

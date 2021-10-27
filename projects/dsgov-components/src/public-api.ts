@@ -12,7 +12,7 @@ export * from './lib/components/base/funcionalidade.interface';
 export * from './lib/components/base/informacao-licenca';
 export * from './lib/components/base/link.interface';
 export * from './lib/components/base/logoGovBr';
-export * from './lib/components/base/reactive-form/reactive-form.component';
+export * from './lib/components/base/base-form/base-form.component';
 export * from './lib/components/base/tipo-link.enum';
 export * from './lib/components/base/usuario.interface';
 //Button
