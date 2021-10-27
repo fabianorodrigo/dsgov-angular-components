@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'projects/dsgov-components/src/public-api';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Usuario } from 'dsgov-components';
 import { Observable } from 'rxjs';
 import { UsuarioService } from '../usuario';
 
@@ -17,9 +18,15 @@ export class HomeComponent implements OnInit {
   menuRotuloVisivel: boolean = false;
   menuDividerVisivel: boolean = false;
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) {}
 
-  ngOnInit(): void {}
+  formulario: FormGroup;
+
+  ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      inputValue: [null, []],
+    });
+  }
 
   alerta() {
     alert('au au ');
