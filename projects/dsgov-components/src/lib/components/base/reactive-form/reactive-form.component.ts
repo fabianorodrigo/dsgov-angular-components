@@ -1,6 +1,6 @@
 import { BaseComponent } from './../base/base.component';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup, ValidationErrors } from '@angular/forms';
+import { FormGroup, NgForm, ValidationErrors } from '@angular/forms';
 import { ErroForm } from 'projects/dsgov-components/src/public-api';
 
 @Component({
@@ -45,7 +45,7 @@ export class ReactiveFormComponent extends BaseComponent {
     return retorno;
   }
 
-  onSubmit(event: SubmitEventInit) {
+  onSubmit(event: NgForm) {
     this.submit.emit(event);
   }
 }
