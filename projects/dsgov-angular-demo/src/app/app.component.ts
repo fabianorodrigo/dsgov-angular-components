@@ -1,12 +1,18 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
-import { Funcionalidade, ItemBreadcrumb, Link, RegraExibicaoMenu, TipoAgrupamentoLista } from 'dsgov-components';
-import { Usuario } from 'dsgov-components';
+import {
+  Funcionalidade,
+  ItemBreadcrumb,
+  Link,
+  RegraExibicaoMenu,
+  TipoAgrupamentoLista,
+} from 'projects/dsgov-components/src/public-api';
+import { Usuario } from 'projects/dsgov-components/src/public-api';
 import { GrupoItemMenu } from 'projects/dsgov-components/src/lib/components/menu/grupo-item-menu.interface';
 import { Observable } from 'rxjs';
 import { UsuarioService } from './usuario';
 import { version } from '../../../../package.json';
-import { environment } from 'src/environments/environment';
+import { environment } from 'projects/dsgov-angular-demo/src/environments/environment';
 
 declare var require: any;
 @Component({

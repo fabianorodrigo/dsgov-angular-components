@@ -1,8 +1,0 @@
-
- [
-      { "classIconeFontAwesome": "fab fa-facebook-f", "texto": "Facebook", "url":"http://facebook.com/ancinegovbr"},
-      { "classIconeFontAwesome": "fab fa-twitter", "texto": "Twitter", "url":"http://twitter.com/ancinegovbr"},
-      { "classIconeFontAwesome": "fab fa-instagram", "texto": "Instagram", "url":"http://instagram.com/ancine"},
-      { "classIconeFontAwesome": "fab fa-linkedin", "texto": "Linkedin", "url":"https://www.linkedin.com/company/ancine/"},
-      { "classIconeFontAwesome": "fab fa-youtube", "texto": "Youtube", "url":"http://youtube.com/ancinegov"}
-  ]

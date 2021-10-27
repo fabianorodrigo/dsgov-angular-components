@@ -1,7 +1,4 @@
-<p>
-  Bem vindo! Abaixo podem ser encontrados exemplos de uso dos componentes da
-  biblioteca:
-</p>
+<p>Bem vindo! Abaixo podem ser encontrados exemplos de uso dos componentes da biblioteca:</p>
 
 <div class="displayFlex">
   <!-- signin -->
@@ -9,9 +6,7 @@
   <div class="flexItem20">
     <br-signin></br-signin>
   </div>
-  <blockquote class="flexItem80">
-    &lt;br-signin&gt;&lt;/br-signin&gt;
-  </blockquote>
+  <blockquote class="flexItem80">&lt;br-signin&gt;&lt;/br-signin&gt;</blockquote>
 
   <!-- breadcrumb -->
   <div class="flexItemLabel"><span>Breadcrumb</span></div>
@@ -26,9 +21,7 @@
   </div>
   <blockquote class="flexItem80">
     &lt;br-breadcrumb
-    {{
-      "[itens]=\"[ { label: 'A', link: '/a' }, { label: 'B', link: '/b' }, { label: 'C', link: '/c' } ]\""
-    }}
+    {{ "[itens]=\"[ { label: 'A', link: '/a' }, { label: 'B', link: '/b' }, { label: 'C', link: '/c' } ]\"" }}
     &gt;&lt;/br-breadcrumb&gt;
   </blockquote>
 
@@ -37,75 +30,62 @@
   <div class="flexItem20">
     <br-button ngClass="primary">Botão</br-button>
   </div>
-  <blockquote class="flexItem80">
-    &lt;br-button ngClass="primary"&gt;Botão&lt;/br-button&gt;
-  </blockquote>
+  <blockquote class="flexItem80">&lt;br-button ngClass="primary"&gt;Botão&lt;/br-button&gt;</blockquote>
   <div class="flexItem20">
     <br-button ngClass="secondary">Botão</br-button>
   </div>
-  <blockquote class="flexItem80">
-    &lt;br-button ngClass="secondary"&gt;Botão&lt;/br-button&gt;
-  </blockquote>
+  <blockquote class="flexItem80">&lt;br-button ngClass="secondary"&gt;Botão&lt;/br-button&gt;</blockquote>
   <div class="flexItem20">
-    <br-button ngClass="secondary inverted"
-      ><i class="fas fa-mail-bulk" aria-hidden="true"></i> Botão</br-button
-    >
+    <br-button ngClass="secondary inverted"><i class="fas fa-mail-bulk" aria-hidden="true"></i> Botão</br-button>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-button ngClass="secondary inverted" &gt;&lt;i class="fas
-    fa-mail-bulk" aria-hidden="true"&gt;&lt;/i&gt; Botão&lt;/br-button &gt;
+    &lt;br-button ngClass="secondary inverted" &gt;&lt;i class="fas fa-mail-bulk" aria-hidden="true"&gt;&lt;/i&gt;
+    Botão&lt;/br-button &gt;
   </blockquote>
   <!-- button loading -->
   <div class="flexItem20">
     <br-button ngClass="primary" [isLoading]="true">Botão</br-button>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-button ngClass="primary"
-    [isLoading]="true"&gt;Botão&lt;/br-button&gt;
+    &lt;br-button ngClass="primary" [isLoading]="true"&gt;Botão&lt;/br-button&gt;
   </blockquote>
   <!-- button disabled -->
   <div class="flexItem20">
-    <br-button ngClass="primary" [isDisabled]="true"
-      >Botão Desabilitado</br-button
-    >
+    <br-button ngClass="primary" [isDisabled]="true">Botão Desabilitado</br-button>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-button ngClass="primary"
-    [isDisabled]="true"&gt;Botão&lt;/br-button&gt;
+    &lt;br-button ngClass="primary" [isDisabled]="true"&gt;Botão&lt;/br-button&gt;
   </blockquote>
 
   <!-- button ícone -->
   <div class="flexItem20">
-    <br-button ngClass="primary circle"
-      ><i class="fas fa-film" aria-hidden="true"></i>
-    </br-button>
+    <br-button ngClass="primary circle"><i class="fas fa-film" aria-hidden="true"></i> </br-button>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-button ngClass="primary circle" &gt;&lt;i class="fas fa-film"
-    aria-hidden="true"&gt;&lt;/i&gt; &lt;/br-button&gt;
+    &lt;br-button ngClass="primary circle" &gt;&lt;i class="fas fa-film" aria-hidden="true"&gt;&lt;/i&gt;
+    &lt;/br-button&gt;
   </blockquote>
   <div class="flexItem20">
-    <br-button ngClass="secondary circle"
-      ><i class="fas fa-ticket-alt" aria-hidden="true"></i
-    ></br-button>
+    <br-button ngClass="secondary circle"><i class="fas fa-ticket-alt" aria-hidden="true"></i></br-button>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-button ngClass="secondary circle" &gt;&lt;i class="fas fa-ticket-alt"
-    aria-hidden="true"&gt;&lt;/i &gt;&lt;/br-button&gt;
+    &lt;br-button ngClass="secondary circle" &gt;&lt;i class="fas fa-ticket-alt" aria-hidden="true"&gt;&lt;/i
+    &gt;&lt;/br-button&gt;
   </blockquote>
 
   <div class="flexItemLabel"><span>Input</span></div>
   <!-- input default -->
-  <div class="flexItem20">
+  <div [formGroup]="formulario" class="flexItem20">
     <br-input
+      formControlName="inputValue"
       textoLabel="Campo default"
       placeHolder="Uma dica default"
       textoFeedback="default não dá feedback"
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo default" placeHolder="Uma dica default"
-    textoFeedback="default não dá feedback"&gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo default" placeHolder="Uma dica default" textoFeedback="default não dá
+    feedback"&gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input success -->
   <div class="flexItem20">
@@ -117,8 +97,8 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo sucesso" placeHolder="Uma dica de sucesso"
-    estado="success" textoFeedback="Feedback de sucesso"&gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo sucesso" placeHolder="Uma dica de sucesso" estado="success" textoFeedback="Feedback
+    de sucesso"&gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input danger -->
   <div class="flexItem20">
@@ -130,8 +110,8 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo perigoso" placeHolder="Uma dica perigosa"
-    estado="danger" textoFeedback="Feedback perigoso" &gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo perigoso" placeHolder="Uma dica perigosa" estado="danger" textoFeedback="Feedback
+    perigoso" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input warning -->
   <div class="flexItem20">
@@ -143,8 +123,8 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo alerta" placeHolder="Uma dica alarmista"
-    estado="warning" textoFeedback="Feedback de atenção" &gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo alerta" placeHolder="Uma dica alarmista" estado="warning" textoFeedback="Feedback de
+    atenção" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input info -->
   <div class="flexItem20">
@@ -156,9 +136,8 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo informação" placeHolder="Uma dica
-    informativa" estado="info" textoFeedback="Feedback informativo"
-    &gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo informação" placeHolder="Uma dica informativa" estado="info" textoFeedback="Feedback
+    informativo" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input com botão -->
   <div class="flexItem20">
@@ -170,9 +149,8 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo com botão" placeHolder="Uma dica com botão"
-    classIconeFontAwesomeBotao="fas fa-dog" (clickButton)="alerta()"
-    &gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo com botão" placeHolder="Uma dica com botão" classIconeFontAwesomeBotao="fas fa-dog"
+    (clickButton)="alerta()" &gt;&lt;/br-input&gt;
   </blockquote>
   <!-- input desabilitado -->
   <div class="flexItem20">
@@ -185,9 +163,8 @@
     ></br-input>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Campo desabilitada" placeHolder="Uma dica
-    desabilitada" estado="warning" textoFeedback="Feedback de desabilitação"
-    [isDisabled]="true" &gt;&lt;/br-input&gt;
+    &lt;br-input textoLabel="Campo desabilitada" placeHolder="Uma dica desabilitada" estado="warning"
+    textoFeedback="Feedback de desabilitação" [isDisabled]="true" &gt;&lt;/br-input&gt;
   </blockquote>
 
   <!-- tooltip  -->
@@ -197,19 +174,16 @@
     <br-tooltip texto="Uma dica preciosa"></br-tooltip>
   </div>
   <blockquote class="flexItem80">
-    &lt;a href="javascript:void(0);"&gt;Link com dica&lt;/a&gt; &lt;br-tooltip
-    texto="Uma dica preciosa"&gt;&lt;/br-tooltip&gt;
+    &lt;a href="javascript:void(0);"&gt;Link com dica&lt;/a&gt; &lt;br-tooltip texto="Uma dica
+    preciosa"&gt;&lt;/br-tooltip&gt;
   </blockquote>
   <div class="flexItem20">
     <p>Parágrafo com dica e subtexto</p>
-    <br-tooltip
-      texto="Uma dica preciosa"
-      subtexto="Com um subtexto"
-    ></br-tooltip>
+    <br-tooltip texto="Uma dica preciosa" subtexto="Com um subtexto"></br-tooltip>
   </div>
   <blockquote class="flexItem80">
-    &lt;p&gt;Parágrafo com dica e subtexto&lt;/p&gt; &lt;br-tooltip texto="Uma
-    dica preciosa" subtexto="Com um subtexto" &gt;&lt;/br-tooltip&gt;
+    &lt;p&gt;Parágrafo com dica e subtexto&lt;/p&gt; &lt;br-tooltip texto="Uma dica preciosa" subtexto="Com um subtexto"
+    &gt;&lt;/br-tooltip&gt;
   </blockquote>
   <!-- tooltip success -->
   <div class="flexItem20">
@@ -217,24 +191,17 @@
     <br-tooltip estado="success" texto="Uma dica de sucesso"></br-tooltip>
   </div>
   <blockquote class="flexItem80">
-    &lt;a href="javascript:void(0);"&gt;Link com dica de sucesso&lt;/a&gt;
-    &lt;br-tooltip estado="success" texto="Uma dica de
-    sucesso"&gt;&lt;/br-tooltip&gt;
+    &lt;a href="javascript:void(0);"&gt;Link com dica de sucesso&lt;/a&gt; &lt;br-tooltip estado="success" texto="Uma
+    dica de sucesso"&gt;&lt;/br-tooltip&gt;
   </blockquote>
   <!-- tooltip warning -->
   <div class="flexItem20">
     <span>span com dica alarmista à direita</span>
-    <br-tooltip
-      estado="warning"
-      texto="Uma dica pra te alertar"
-      subtexto="Preste atenção"
-      posicao="right"
-    ></br-tooltip>
+    <br-tooltip estado="warning" texto="Uma dica pra te alertar" subtexto="Preste atenção" posicao="right"></br-tooltip>
   </div>
   <blockquote class="flexItem80">
-    &lt;span&gt;span com dica alarmista à direita&lt;/span&gt; &lt;br-tooltip
-    estado="warning" texto="Uma dica pra te alertar" subtexto="Preste atenção"
-    posicao="right" &gt;&lt;/br-tooltip&gt;
+    &lt;span&gt;span com dica alarmista à direita&lt;/span&gt; &lt;br-tooltip estado="warning" texto="Uma dica pra te
+    alertar" subtexto="Preste atenção" posicao="right" &gt;&lt;/br-tooltip&gt;
   </blockquote>
   <!-- tooltip error -->
   <div class="flexItem20">
@@ -247,10 +214,8 @@
     ></br-tooltip>
   </div>
   <blockquote class="flexItem80">
-    &lt;br-input textoLabel="Input com tooltip error
-    abaixo"&gt;&lt;/br-input&gt; &lt;br-tooltip estado="error" texto="Uma dica
-    errada" subtexto="Não ligue, é só um teste" posicao="bottom"
-    &gt;&lt;/br-tooltip&gt;
+    &lt;br-input textoLabel="Input com tooltip error abaixo"&gt;&lt;/br-input&gt; &lt;br-tooltip estado="error"
+    texto="Uma dica errada" subtexto="Não ligue, é só um teste" posicao="bottom" &gt;&lt;/br-tooltip&gt;
   </blockquote>
 
   <!-- header -->
@@ -275,16 +240,15 @@
     ></br-header>
   </div>
   <blockquote class="flexItem100">
-    &lt;br-header textoAssinatura="Sistema Ancine Digital" titulo="Sistema de
-    Coisar Coisas" subtitulo="Versão: 1.0.0"<br />
+    &lt;br-header textoAssinatura="Sistema Ancine Digital" titulo="Sistema de Coisar Coisas" subtitulo="Versão:
+    1.0.0"<br />
     {{
       "[links]=\"[ { texto: 'Link A', url: '/a' }, { texto: 'Link B', link: '/b' }, { texto: 'Link C', link: '/c' } ]\""
     }}<br />
     {{
       "[funcionalidades]=\"[ { classIconeFontAwesome: 'fas fa-ambulance', funcao: sirene }, { classIconeFontAwesome: 'fas fa-business-time', funcao: relogio }]\""
     }}<br />
-    (clickEntrar)="signin($event)" (clickSair)="logout($event)" [usuario]="user"
-    &gt;<br />&lt;/br-header&gt;
+    (clickEntrar)="signin($event)" (clickSair)="logout($event)" [usuario]="user" &gt;<br />&lt;/br-header&gt;
   </blockquote>
 
   <!-- footer -->
@@ -465,13 +429,12 @@
     ></br-menu>
   </div>
   <blockquote class="flexItem100">
-    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small
-    circle" type="button" aria-label="Menu" data-toggle="menu"
-    data-target="#main-navigation" id="navigation" (click)="menuExpansaoVisivel
-    = !menuExpansaoVisivel" &gt; &lt;i class="fas fa-bars"
-    aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
-    &lt;br-menu titulo="Agrupamento Expansão" [visivel]="menuExpansaoVisivel"
-    (closeMenu)="menuExpansaoVisivel = false"<br />
+    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small circle" type="button" aria-label="Menu"
+    data-toggle="menu" data-target="#main-navigation" id="navigation" (click)="menuExpansaoVisivel =
+    !menuExpansaoVisivel" &gt; &lt;i class="fas fa-bars" aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt;
+    &lt;/div&gt;<br /><br />
+    &lt;br-menu titulo="Agrupamento Expansão" [visivel]="menuExpansaoVisivel" (closeMenu)="menuExpansaoVisivel =
+    false"<br />
     {{
       " [grupos]=\"[
       {
@@ -557,6 +520,9 @@
       { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
       { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
     ]\""
+
+
+
 
 
 
@@ -696,13 +662,11 @@
     ></br-menu>
   </div>
   <blockquote class="flexItem100">
-    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small
-    circle" type="button" aria-label="Menu" data-toggle="menu"
-    data-target="#main-navigation" id="navigation" (click)="menuRotuloVisivel =
-    !menuRotuloVisivel" &gt; &lt;i class="fas fa-bars"
-    aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
-    &lt;br-menu titulo="Agrupamento Rótulos" tipoAgrupamentoMenu="rotulo"
-    [visivel]="menuRotuloVisivel" (closeMenu)="menuRotuloVisivel = false"<br />
+    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small circle" type="button" aria-label="Menu"
+    data-toggle="menu" data-target="#main-navigation" id="navigation" (click)="menuRotuloVisivel = !menuRotuloVisivel"
+    &gt; &lt;i class="fas fa-bars" aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
+    &lt;br-menu titulo="Agrupamento Rótulos" tipoAgrupamentoMenu="rotulo" [visivel]="menuRotuloVisivel"
+    (closeMenu)="menuRotuloVisivel = false"<br />
     {{
       " [grupos]=\"[
         {
@@ -789,6 +753,9 @@
         { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
         { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
       ]\""
+
+
+
 
 
 
@@ -933,13 +900,11 @@
     ></br-menu>
   </div>
   <blockquote class="flexItem100">
-    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small
-    circle" type="button" aria-label="Menu" data-toggle="menu"
-    data-target="#main-navigation" id="navigation" (click)="menuDividerVisivel =
-    !menuDividerVisivel" &gt; &lt;i class="fas fa-bars"
-    aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
-    &lt;br-menu titulo="Agrupamento Dividers" tipoAgrupamentoMenu="divider"
-    [visivel]="menuDividerVisivel" (closeMenu)="menuDividerVisivel = false"<br />
+    &lt;div class="header-menu-trigger"&gt; &lt;button class="br-button small circle" type="button" aria-label="Menu"
+    data-toggle="menu" data-target="#main-navigation" id="navigation" (click)="menuDividerVisivel = !menuDividerVisivel"
+    &gt; &lt;i class="fas fa-bars" aria-hidden="true"&gt;&lt;/i&gt; &lt;/button&gt; &lt;/div&gt;<br /><br />
+    &lt;br-menu titulo="Agrupamento Dividers" tipoAgrupamentoMenu="divider" [visivel]="menuDividerVisivel"
+    (closeMenu)="menuDividerVisivel = false"<br />
     {{
       " [grupos]=\"[
           {
@@ -1026,6 +991,9 @@
           { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
           { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
         ]\""
+
+
+
 
 
 
