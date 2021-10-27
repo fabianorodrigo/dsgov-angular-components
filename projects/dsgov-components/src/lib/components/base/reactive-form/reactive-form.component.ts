@@ -1,12 +1,12 @@
 import { BaseComponent } from './../base/base.component';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, NgForm, ValidationErrors } from '@angular/forms';
-import { ErroForm } from 'projects/dsgov-components/src/public-api';
+import { ErroForm } from '../erroForm.interface';
 
 @Component({
   selector: 'br-reactive-form',
   templateUrl: './reactive-form.component.html',
-  styleUrls: ['./reactive-form.component.css'],
+  styles: [],
 })
 export class ReactiveFormComponent extends BaseComponent {
   @Input() formulario: FormGroup;
