@@ -4,7 +4,6 @@ import { ErroForm } from '../erroForm.interface';
 export abstract class BaseFormComponent {
   abstract iniciarForm();
 
-  formulario: FormGroup;
   exibe: boolean = false;
   formSubmetido: boolean = false;
   formEnviado: boolean = false;
@@ -49,9 +48,9 @@ export abstract class BaseFormComponent {
     { id: 'email', mensagem: 'Insira um endereço de e-mail válido' },
   ];
 
-  getMensagemErro(campo: string) {
-    let type = this.errorsType.filter(err => this.formulario.get(campo).errors[err.id])[0];
-    let { requiredLength } = this.formulario.get(campo).errors[type.id];
+  getMensagemErro(formulario: FormGroup, campo: string) {
+    let type = this.errorsType.filter(err => formulario.get(campo).errors[err.id])[0];
+    let { requiredLength } = formulario.get(campo).errors[type.id];
     return `${type.mensagem} ${requiredLength || ''}`;
   }
 
@@ -59,9 +58,9 @@ export abstract class BaseFormComponent {
     return array.find(item => item.id === value).hint;
   }
 
-  public getErro(campo: string) {
-    if ((this.formSubmetido || this.formulario.get(campo).dirty) && this.formulario.get(campo).errors) {
-      return this.errorsType.some(err => this.formulario.get(campo).errors[err.id]);
+  public getErro(formulario: FormGroup, campo: string) {
+    if ((this.formSubmetido || formulario.get(campo).dirty) && formulario.get(campo).errors) {
+      return this.errorsType.some(err => formulario.get(campo).errors[err.id]);
     }
     return;
   }
@@ -74,10 +73,10 @@ export abstract class BaseFormComponent {
     );
   }
 
-  validarFormulario() {
-    if (this.formulario.invalid) {
-      Object.keys(this.formulario.controls).forEach(campo => {
-        this.formulario.get(campo).markAsTouched();
+  validarFormulario(formulario: FormGroup) {
+    if (formulario.invalid) {
+      Object.keys(formulario.controls).forEach(campo => {
+        formulario.get(campo).markAsTouched();
       });
       this.formSubmetido = true;
       this.formEnviado = true;
@@ -154,18 +153,18 @@ export abstract class BaseFormComponent {
   /**
    * Captura os erros de cada controle no formulário {form} e seus subformulários
    *
-   * @param form Formulário alvo da inspeção
+   * @param formulario Formulário alvo da inspeção
    * @param logConsole Se TRUE, os erros são logados no console do navegador (default: false)
    * @return Array de ErroForm contendo a chave do controle inválido, a chave do erro e valor do erro
    */
-  getErrosValidacaoForm(form: FormGroup, logConsole: boolean = false): ErroForm[] {
+  getErrosValidacaoForm(formulario: FormGroup, logConsole: boolean = false): ErroForm[] {
     let retorno: ErroForm[] = [];
-    Object.keys(form.controls).forEach(key => {
+    Object.keys(formulario.controls).forEach(key => {
       //Se for um formGroup, chama recursivamente
-      if (form.get(key)['controls']) {
-        retorno = retorno.concat(this.getErrosValidacaoForm(form.get(key) as FormGroup));
+      if (formulario.get(key)['controls']) {
+        retorno = retorno.concat(this.getErrosValidacaoForm(formulario.get(key) as FormGroup));
       } else {
-        const controlErrors: ValidationErrors = form.get(key).errors;
+        const controlErrors: ValidationErrors = formulario.get(key).errors;
         if (controlErrors != null) {
           Object.keys(controlErrors).forEach(keyError => {
             retorno.push({ controle: key, erro: keyError, descricao: controlErrors[keyError] });

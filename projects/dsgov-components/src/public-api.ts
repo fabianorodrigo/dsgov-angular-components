@@ -5,7 +5,6 @@
 
 //Base
 export * from './lib/components/base/base.module';
-export * from './lib/components/base/base/base.component';
 export * from './lib/components/base/densidade.enum';
 export * from './lib/components/base/erroForm.interface';
 export * from './lib/components/base/funcionalidade.interface';
