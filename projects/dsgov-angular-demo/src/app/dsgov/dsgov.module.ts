@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RadioModule } from 'projects/dsgov-components/src/lib/components/radio/radio.module';
 import {
   BaseModule,
   ButtonModule,
@@ -25,6 +26,7 @@ import {
     HeaderModule,
     SigninModule,
     TooltipModule,
+    RadioModule,
   ],
   exports: [
     BaseModule,
@@ -37,6 +39,7 @@ import {
     InputModule,
     SigninModule,
     TooltipModule,
+    RadioModule,
   ],
 })
 export class DsgovModule {}

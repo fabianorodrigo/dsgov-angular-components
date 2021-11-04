@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       nomeCampo: [null, []],
+      nomeCampo2: [null, []],
     });
   }
 

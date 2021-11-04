@@ -173,6 +173,44 @@
     estado="warning" textoFeedback="Feedback de desabilitação" [isDisabled]="true" &gt;&lt;/br-input&gt;
   </blockquote>
 
+  <div class="flexItemLabel"><span>Radio</span></div>
+  <!-- radio vertical (default) -->
+  <div [formGroup]="formulario" class="flexItem20">
+    <br-radio
+      formControlName="nomeCampo"
+      textoLabel="Radio default"
+      textoAdicional="Uma dica default"
+      [opcoes]="[
+        { id: 1, label: 'Opção 1', estado: 'valid' },
+        { id: 2, label: 'Opção 2', isDisabled: false, estado: 'invalid' },
+        { id: 3, label: 'Opção 3', isDisabled: true }
+      ]"
+    ></br-radio>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-radio formControlName="nomeCampo" textoLabel="Radio default" textoAdicional="Uma dica default" {{
+    "[opcoes]=\"[ { id: 1, label: 'Opção 1', estado: 'valid' }, { id: 2, label: 'Opção 2', isDisabled: false, estado:
+    'invalid' }, { id: 3, label: 'Opção 3', isDisabled: true } ]\"" &gt;&lt;/br-radio&gt;
+  </blockquote>
+
+  <!-- radio horizontal -->
+  <div [formGroup]="formulario" class="flexItem20">
+    <br-radio-horizontal
+      formControlName="nomeCampo2"
+      textoLabel="Radio Horizontal"
+      textoAdicional="Uma dica default"
+      [opcoes]="[
+        { id: 1, label: 'Opção 1', estado: 'valid' },
+        { id: 3, label: 'Opção 3' }
+      ]"
+    ></br-radio-horizontal>
+  </div>
+  <blockquote class="flexItem80">
+    &lt;br-radio-horizontal formControlName="nomeCampo2" textoLabel="Radio default" textoAdicional="Uma dica default" {{
+    "[opcoes]=\"[ { id: 1, label: 'Opção 1', estado: 'valid' }, { id: 3, label: 'Opção 3' } ]\""
+    &gt;&lt;/br-radio-horizontal&gt;
+  </blockquote>
+
   <!-- tooltip  -->
   <div class="flexItemLabel"><span>Tooltip</span></div>
   <div class="flexItem20">
@@ -565,6 +603,26 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }}&gt;<br />&lt;/br-menu&gt;
   </blockquote>
 
@@ -810,6 +868,26 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }}&gt;<br />&lt;/br-menu&gt;
   </blockquote>
 
@@ -1011,6 +1089,26 @@
           { tipo: 'url', texto: 'Portal', url: 'http://gov.br/ancine' },
           { tipo: 'url', texto: 'SAVI', url: 'http://savi.ancine.gov.br' }
         ]\""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

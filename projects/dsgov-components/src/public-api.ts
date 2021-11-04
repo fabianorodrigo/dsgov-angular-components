@@ -14,6 +14,7 @@ export * from './lib/components/base/logoGovBr';
 export * from './lib/components/base/base-form/base-form.component';
 export * from './lib/components/base/tipo-link.enum';
 export * from './lib/components/base/usuario.interface';
+export * from './lib/components/base/opcao-valor-label';
 //Button
 export * from './lib/components/button/button.module';
 export * from './lib/components/button/button/button.component';
@@ -35,6 +36,12 @@ export * from './lib/components/header/header/header.component';
 export * from './lib/components/input/input.module';
 export * from './lib/components/input/estado-input.enum';
 export * from './lib/components/input/input/input.component';
+// Radio
+export * from './lib/components/radio/radio.module';
+export * from './lib/components/radio/estado-radio.enum';
+export * from './lib/components/radio/opcao-radio';
+export * from './lib/components/radio/radio/radio.component';
+export * from './lib/components/radio/radio-horizontal/radio-horizontal.component';
 // Menu
 export * from './lib/components/menu/menu.module';
 export * from './lib/components/menu/menu/menu.component';
