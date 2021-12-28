@@ -26,6 +26,8 @@ export class ButtonComponent extends BaseComponent implements OnInit {
   ngOnInit(): void {}
 
   onClickComponent(event) {
-    this.click.emit(event);
+    if (!this.isDisabled) {
+      this.click.emit(event);
+    }
   }
 }

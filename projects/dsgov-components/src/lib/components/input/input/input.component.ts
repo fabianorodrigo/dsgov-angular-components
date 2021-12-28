@@ -65,8 +65,7 @@ export class InputComponent extends BaseComponent implements OnInit {
   ngClassInput: string | string[] | Set<string> | { [klass: string]: any } = '';
   // classes aplicáveis ao <button></button>
   @Input()
-  ngClassButton: string | string[] | Set<string> | { [klass: string]: any } =
-    '';
+  ngClassButton: string | string[] | Set<string> | { [klass: string]: any } = '';
 
   constructor() {
     super();
@@ -82,6 +81,8 @@ export class InputComponent extends BaseComponent implements OnInit {
     //The mouseEvent propagates from the child component to the parent component by default.
     //You can stop propagation of event to parent component.
     event.stopPropagation();
-    this.clickButton.emit(event);
+    if (!this.isDisabled) {
+      this.clickButton.emit(event);
+    }
   }
 }
