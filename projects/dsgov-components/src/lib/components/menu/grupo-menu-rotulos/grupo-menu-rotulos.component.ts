@@ -1,11 +1,8 @@
-import { BaseComponent } from './../../base/base/base.component';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  RegraExibicaoMenu,
-  RegraExibicaoMenuType,
-} from '../regra-exibicao-menu.enum';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Usuario } from '../../base/usuario.interface';
 import { GrupoItemMenu } from '../grupo-item-menu.interface';
-import { Usuario } from '../../base';
+import { RegraExibicaoMenu } from '../regra-exibicao-menu.enum';
+import { BaseComponent } from './../../base/base/base.component';
 
 @Component({
   selector: 'br-grupo-menu-rotulos',

@@ -1,6 +1,6 @@
 import { BaseComponent } from './../../base/base/base.component';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { Link } from '../../base';
+import { Link } from '../../base/link.interface';
 
 @Component({
   selector: 'br-grupo-footer',

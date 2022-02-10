@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BaseComponent, Usuario } from '../../base';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BaseComponent } from '../../base/base/base.component';
+import { Usuario } from '../../base/usuario.interface';
 
 @Component({
   selector: 'br-header-login',

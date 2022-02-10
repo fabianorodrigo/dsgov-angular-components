@@ -1,14 +1,22 @@
 import { Densidade } from './../../base/densidade.enum';
 import { EstadoInput, EstadoInputType } from './../estado-input.enum';
 import { BaseComponent } from './../../base/base/base.component';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { DensidadeType } from '../../base';
+import { Component, EventEmitter, Input, OnInit, Output, ɵɵtrustConstantResourceUrl } from '@angular/core';
+import { DensidadeType } from '../../base/densidade.enum';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'br-input',
   templateUrl: './input.component.html',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      multi: true,
+      useExisting: InputComponent,
+    },
+  ],
 })
-export class InputComponent extends BaseComponent implements OnInit {
+export class InputComponent extends BaseComponent implements OnInit, ControlValueAccessor {
   //constantes usadas no template
   readonly ESTADO_DEFAULT = EstadoInput.DEFAULT;
   //ícones feedback
@@ -18,6 +26,8 @@ export class InputComponent extends BaseComponent implements OnInit {
     warning: 'fas fa-exclamation-triangle',
     info: 'fas fa-info-circle',
   };
+
+  valor: any = '';
 
   //Evento de click
   @Output() click = new EventEmitter<any>();
@@ -37,8 +47,6 @@ export class InputComponent extends BaseComponent implements OnInit {
   @Input() placeHolder: string = '';
   @Input() step: number;
   @Input() required: boolean = false;
-  //Reactive forms
-  @Input() formControlName: string;
 
   //texto do label
   @Input() textoLabel: string;
@@ -53,6 +61,8 @@ export class InputComponent extends BaseComponent implements OnInit {
   @Input() estado: EstadoInputType = EstadoInput.DEFAULT;
   //se true, aplica a classe 'disabled'
   @Input() isDisabled: boolean;
+  //se true, input foi alterado
+  touched = false;
 
   // Densidade dos itens de menu. Default: densidade medium
   @Input() densidade: DensidadeType = Densidade.MEDIA;
@@ -84,5 +94,35 @@ export class InputComponent extends BaseComponent implements OnInit {
     if (!this.isDisabled) {
       this.clickButton.emit(event);
     }
+  }
+
+  onChangeInput(event: Event) {
+    if (!this.isDisabled && (event.target as HTMLInputElement).value) {
+      this.valor = (event.target as HTMLInputElement).value;
+      this.onChange(this.valor);
+    }
+  }
+
+  onChange = valor => {};
+
+  onTouched = () => {};
+
+  writeValue(valor: any) {
+    this.valor = valor;
+  }
+  registerOnChange(onChange: any) {
+    this.onChange = onChange;
+  }
+  registerOnTouched(onTouched: any) {
+    this.onTouched = onTouched;
+  }
+  markAsTouched() {
+    if (!this.touched) {
+      this.onTouched();
+      this.touched = true;
+    }
+  }
+  setDisabledState(disabled: boolean) {
+    this.isDisabled = disabled;
   }
 }

@@ -1,0 +1,19 @@
+<p [class]="jc(ngClassLabel, 'label mb-0')">{{ textoLabel }}</p>
+<p *ngIf="textoAdicional && textoAdicional.trim() != ''" class="help-text">{{ textoAdicional }}</p>
+<ng-container *ngFor="let item of opcoes; let i = index">
+  <div class="d-inline-block mr-5">
+    <div [class]="jc(ngClass, 'br-radio', densidade, item.estado, item.isDisabled ? ' disabled ' : '')">
+      <input
+        [ngClass]="jc(ngClassInput)"
+        [id]="formControlName.concat(i)"
+        type="radio"
+        [name]="formControlName"
+        [value]="item.id"
+        [checked]="valor && item.id == valor"
+        [attr.disabled]="disabled"
+        (change)="onChangeInput($event)"
+      />
+      <label [ngClass]="jc(ngClassLabelInterna)" [for]="formControlName.concat(i)">{{ item.label }}</label>
+    </div>
+  </div>
+</ng-container>

@@ -1,7 +1,7 @@
-import { Funcionalidade } from './../../base/funcionalidade.interface';
+import { Component, Input } from '@angular/core';
+import { TipoLink } from '../../base/tipo-link.enum';
 import { BaseComponent } from './../../base/base/base.component';
-import { Component, Input, OnInit } from '@angular/core';
-import { Link, TipoLink } from '../../base';
+import { Funcionalidade } from './../../base/funcionalidade.interface';
 
 @Component({
   selector: 'br-header-functions',

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'br-base',
@@ -22,13 +22,7 @@ export class BaseComponent {
    * @param classesCSS sequência de nomes de classes CSS
    * @returns classes CSS aplicáveis separadas por espaço
    */
-  jc(
-    ngClass: string | string[] | Set<string> | { [klass: string]: any },
-    ...classesCSS: string[]
-  ): string {
-    return (
-      classesCSS.filter((classe) => classe != null).join(' ') +
-      (ngClass ? ' ' + ngClass : '')
-    );
+  jc(ngClass: string | string[] | Set<string> | { [klass: string]: any }, ...classesCSS: string[]): string {
+    return classesCSS.filter(classe => classe != null).join(' ') + (ngClass ? ' ' + ngClass : '');
   }
 }

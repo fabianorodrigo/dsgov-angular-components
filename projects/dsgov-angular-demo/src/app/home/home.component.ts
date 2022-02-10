@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Usuario } from 'projects/dsgov-components/src/public-api';
 import { Observable } from 'rxjs';
 import { UsuarioService } from '../usuario';
@@ -17,9 +18,16 @@ export class HomeComponent implements OnInit {
   menuRotuloVisivel: boolean = false;
   menuDividerVisivel: boolean = false;
 
-  constructor(private usuarioService: UsuarioService) {}
+  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) {}
 
-  ngOnInit(): void {}
+  formulario: FormGroup;
+
+  ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      nomeCampo: [null, []],
+      nomeCampo2: [null, []],
+    });
+  }
 
   alerta() {
     alert('au au ');
@@ -33,10 +41,10 @@ export class HomeComponent implements OnInit {
     alert('tic tac, tic tac');
   }
 
-  signin(event) {
+  signin(event: MouseEvent) {
     //this.document.location.href = `https://ssodev.ancine.gov.br/cas/login?redirect_uri=${this.document.location.href}`;
     this.user$ = this.usuarioService.getUsuario();
-    this.user$.subscribe((user) => {
+    this.user$.subscribe(user => {
       if (user == null) {
         this.user = {} as Usuario;
       } else {
@@ -49,7 +57,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  logout(event) {
+  logout(event: MouseEvent) {
     //this.fechaMenu();
     this.user = null;
     this.usuarioService.logout();

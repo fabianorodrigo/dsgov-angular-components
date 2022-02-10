@@ -1,12 +1,12 @@
 import { base64LogoGovBr } from './../../base/logoGovBr';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { BaseComponent, InformacaoLicenca, Link, Usuario } from '../../base';
+import { BaseComponent } from '../../base/base/base.component';
+import { InformacaoLicenca } from '../../base/informacao-licenca';
+import { Link } from '../../base/link.interface';
+import { Usuario } from '../../base/usuario.interface';
 import { ItemMenu } from '../item-menu.interface';
 import { RegraExibicaoMenu } from '../regra-exibicao-menu.enum';
-import {
-  TipoAgrupamentoLista,
-  TipoAgrupamentoListaType,
-} from '../../list/tipo-agrupamento-lista.enum';
+import { TipoAgrupamentoLista, TipoAgrupamentoListaType } from '../../list/tipo-agrupamento-lista.enum';
 import { Densidade, DensidadeType } from './../../base/densidade.enum';
 import { GrupoItemMenu } from './../grupo-item-menu.interface';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -38,8 +38,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
   readonly AGRUPAMENTO_DIVIDER = TipoAgrupamentoLista.DIVIDER;
 
   // Tipo do agrupamento do menu
-  @Input() tipoAgrupamentoMenu: TipoAgrupamentoListaType =
-    TipoAgrupamentoLista.EXPANSAO;
+  @Input() tipoAgrupamentoMenu: TipoAgrupamentoListaType = TipoAgrupamentoLista.EXPANSAO;
   // Densidade dos itens de menu. Default: densidade normal
   @Input() densidade: DensidadeType = Densidade.MEDIA;
 
@@ -84,13 +83,10 @@ export class MenuComponent extends BaseComponent implements OnInit {
   private setIDs(idParents: string[], itens: ItemMenu[]) {
     itens.forEach((item, i) => {
       item.idParents = idParents;
-      item.id = item.idParents[item.idParents.length - 1].concat(
-        '_',
-        i.toString()
-      );
+      item.id = item.idParents[item.idParents.length - 1].concat('_', i.toString());
       if (item.subItens != null) {
         this.setIDs(item.idParents.concat(item.id), item.subItens);
-        item.idChildren = item.subItens.map((si) => si.id);
+        item.idChildren = item.subItens.map(si => si.id);
       }
     });
   }
@@ -113,6 +109,5 @@ export class MenuComponent extends BaseComponent implements OnInit {
   }
 
   //logo gov.br
-  readonly base64LogoDefault =
-    this.domSanitizer.bypassSecurityTrustUrl(base64LogoGovBr);
+  readonly base64LogoDefault = this.domSanitizer.bypassSecurityTrustUrl(base64LogoGovBr);
 }

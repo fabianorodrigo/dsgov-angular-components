@@ -1,4 +1,4 @@
-import { Link } from '../base';
+import { Link } from '../base/link.interface';
 import { RegraExibicaoMenuType } from './regra-exibicao-menu.enum';
 
 type FunctionOnClickItemMenu = (item: ItemMenu) => void;

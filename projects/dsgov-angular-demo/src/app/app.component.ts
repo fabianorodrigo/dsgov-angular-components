@@ -1,18 +1,18 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
 import {
   Funcionalidade,
   ItemBreadcrumb,
   Link,
   RegraExibicaoMenu,
   TipoAgrupamentoLista,
-} from 'dsgov-components';
-import { Usuario } from 'projects/dsgov-components/src/lib/components/base';
+} from 'projects/dsgov-components/src/public-api';
+import { Usuario } from 'projects/dsgov-components/src/public-api';
 import { GrupoItemMenu } from 'projects/dsgov-components/src/lib/components/menu/grupo-item-menu.interface';
-
 import { Observable } from 'rxjs';
 import { UsuarioService } from './usuario';
+import { version } from '../../../../package.json';
+import { environment } from 'projects/dsgov-angular-demo/src/environments/environment';
 
 declare var require: any;
 @Component({
@@ -20,7 +20,7 @@ declare var require: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // Constantes utilizadas no template
   readonly AGRUPAMENTO_EXPANSAO = TipoAgrupamentoLista.EXPANSAO;
   readonly AGRUPAMENTO_ROTULO = TipoAgrupamentoLista.ROTULO;
@@ -32,6 +32,9 @@ export class AppComponent {
   user$: Observable<Usuario>;
   user: Usuario;
   menuVisivel: boolean = false;
+
+  titulo = 'DSGov Angular Demo';
+  subtitulo = ``;
 
   linksCabecalho: Link[] = [];
   funcionalidadesCabecalho: Funcionalidade[] = [];
@@ -45,11 +48,8 @@ export class AppComponent {
     { label: 'Página atual', link: 'http://paginatual' },
   ];
 
-  constructor(
-    private userService: UsuarioService,
-    @Inject(DOCUMENT) private document: Document
-  ) {
-    (require('./menu.json') as []).forEach((item) => {
+  constructor(private userService: UsuarioService, @Inject(DOCUMENT) private document: Document) {
+    (require('./menu.json') as []).forEach(item => {
       this.itensMenu.push(item);
     });
     //menu logout
@@ -86,7 +86,10 @@ export class AppComponent {
     this.linksRedesSociaisRodape = require('./redesSociais.json');
   }
 
-  titulo = 'DSGov Angular Demo';
+  ngOnInit(): void {
+    this.titulo = 'DSGov Angular Demo';
+    this.subtitulo = `${version} ${!environment.production ? '(DEV)' : ''}`;
+  }
 
   onClickMenu(event) {
     this.menuVisivel = true;
@@ -98,7 +101,7 @@ export class AppComponent {
   signin(event) {
     //this.document.location.href = `https://ssodev.ancine.gov.br/cas/login?redirect_uri=${this.document.location.href}`;
     this.user$ = this.userService.getUsuario();
-    this.user$.subscribe((user) => {
+    this.user$.subscribe(user => {
       if (user == null) {
         this.user = {} as Usuario;
       } else {

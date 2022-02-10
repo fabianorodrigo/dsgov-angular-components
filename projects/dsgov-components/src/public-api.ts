@@ -1,9 +1,20 @@
 /*
  * Public API Surface of dsgov-components
  */
+// Interfaces
 
 //Base
-export * from './lib/components/base';
+export * from './lib/components/base/base.module';
+export * from './lib/components/base/densidade.enum';
+export * from './lib/components/base/erroForm.interface';
+export * from './lib/components/base/funcionalidade.interface';
+export * from './lib/components/base/informacao-licenca';
+export * from './lib/components/base/link.interface';
+export * from './lib/components/base/logoGovBr';
+export * from './lib/components/base/base-form/base-form.component';
+export * from './lib/components/base/tipo-link.enum';
+export * from './lib/components/base/usuario.interface';
+export * from './lib/components/base/opcao-valor-label';
 //Button
 export * from './lib/components/button/button.module';
 export * from './lib/components/button/button/button.component';
@@ -25,10 +36,17 @@ export * from './lib/components/header/header/header.component';
 export * from './lib/components/input/input.module';
 export * from './lib/components/input/estado-input.enum';
 export * from './lib/components/input/input/input.component';
+// Radio
+export * from './lib/components/radio/radio.module';
+export * from './lib/components/radio/estado-radio.enum';
+export * from './lib/components/radio/opcao-radio';
+export * from './lib/components/radio/radio/radio.component';
+export * from './lib/components/radio/radio-horizontal/radio-horizontal.component';
 // Menu
 export * from './lib/components/menu/menu.module';
 export * from './lib/components/menu/menu/menu.component';
 export * from './lib/components/menu/item-menu.interface';
+export * from './lib/components/menu/grupo-item-menu.interface';
 export * from './lib/components/base/link.interface';
 export * from './lib/components/menu/regra-exibicao-menu.enum';
 export * from './lib/components/list/tipo-agrupamento-lista.enum';
