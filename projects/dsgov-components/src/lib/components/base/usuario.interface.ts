@@ -13,6 +13,6 @@ export interface Usuario {
   nomeCompleto?: string;
   email?: string;
   imgAvatar?: any;
-  roles?: string[];
+  roles: string[];
   name?: string;
 }
