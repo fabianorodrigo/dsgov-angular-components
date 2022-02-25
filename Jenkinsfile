@@ -36,7 +36,7 @@ node {
                   credentialsId: "${NEXUS_CREDENTIAL_ID}",
                   artifacts: [
                       [artifactId: 'dsgov-components',
-                      file: 'ancine-dsgov-components-0.3.6.tgz',
+                      file: 'dist/dsgov-components/ancine-dsgov-components-0.3.6.tgz',
                       type: 'tgz']
                   ]
           )
