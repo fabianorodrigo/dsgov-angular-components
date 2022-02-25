@@ -11,9 +11,9 @@
           { "exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-allergies", "texto": "Teste ","url":"/entidade"}}
         ]}
       ]},
-      { "exibicao":"sempre", "link":{"tipo":"url", "classIconeFontAwesome": "fas fa-calendar-alt", "texto": "Eventos", "url":"http://uol.com.br", "novaAba":true}},
+      { "exibicao":"rolesTodas", "roles":["A","B","C"], "link":{"tipo":"url", "classIconeFontAwesome": "fas fa-calendar-alt", "texto": "Eventos (rolesTodas)", "url":"http://uol.com.br", "novaAba":true}},
       {"exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-university", "texto": "Instituições"}},
-      {"exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-film", "texto": "Obras não publicitárias"}}
+      {"exibicao":"roles", "roles":["A","B","C"], "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-film", "texto": "Obras não publicitárias (roles)"}}
 
     ]
   },

@@ -25,6 +25,8 @@ export class GrupoMenuRotulosComponent extends BaseComponent {
   readonly SEMPRE = RegraExibicaoMenu.SEMPRE;
   readonly LOGADO = RegraExibicaoMenu.LOGADO;
   readonly NAO_LOGADO = RegraExibicaoMenu.NAO_LOGADO;
+  readonly ROLES_TODAS = RegraExibicaoMenu.ROLES_TODAS;
+  readonly ROLES = RegraExibicaoMenu.ROLES;
 
   @Input() grupo: GrupoItemMenu;
   // dados do usuario eventualmente logado
@@ -51,5 +53,21 @@ export class GrupoMenuRotulosComponent extends BaseComponent {
     if (this.grupo.click) {
       this.grupo.click(this.grupo);
     }
+  }
+
+  /**
+   * @param roles Conjunto de roles das quais ao menos uma é esperada
+   * @returns Retorna TRUE se alguma das {roles} consta entre as roles do usuário
+   */
+  usuarioTemAlgumaRole(roles: string[]) {
+    return roles && this.usuario && roles.some(r => this.usuario.roles.includes(r));
+  }
+
+  /**
+   * @param roles Conjunto de roles das quais é esperado que se tenha todas
+   * @returns Retorna TRUE se TODAS as {roles} constam entre as roles do usuário
+   */
+  usuarioTemTodasRoles(roles: string[]) {
+    return roles && this.usuario && roles.every(r => this.usuario.roles.includes(r));
   }
 }

@@ -15,6 +15,8 @@ export class UsuarioService {
       jti: 'teste',
       upn: 'jose.silva',
       groups: [],
+      name: 'Jose da Silva (name)',
+      roles: ['A', 'B'],
       exp: new Date().getTime(),
       nomeCompleto: 'José da Silva',
       email: 'josedasilva@dsgov.br',

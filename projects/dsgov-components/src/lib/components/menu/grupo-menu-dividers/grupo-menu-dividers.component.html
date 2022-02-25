@@ -6,7 +6,9 @@
           item.exibicao == null ||
           item.exibicao == SEMPRE ||
           (item.exibicao == LOGADO && usuario != null) ||
-          (item.exibicao == NAO_LOGADO && usuario == null)
+          (item.exibicao == NAO_LOGADO && usuario == null) ||
+          (item.exibicao == ROLES && usuarioTemAlgumaRole(item.roles)) ||
+          (item.exibicao == ROLES_TODAS && usuarioTemTodasRoles(item.roles))
         "
         [item]="item"
         [closeMenu]="closeMenu"

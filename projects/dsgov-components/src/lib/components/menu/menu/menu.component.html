@@ -1,8 +1,6 @@
 <div
   *ngIf="visivel"
-  [class]="
-    jc(ngClass, 'br-menu active', densidade == 'medium' ? '' : densidade)
-  "
+  [class]="jc(ngClass, 'br-menu active', densidade == 'medium' ? '' : densidade)"
   id="main-navigation"
 >
   <div class="menu-container">
@@ -62,10 +60,7 @@
               <ng-container *ngFor="let link of linksExternos">
                 <a [href]="link.url" target="_blank"
                   ><span class="mr-1">{{ link.texto }}</span
-                  ><i
-                    class="fas fa-external-link-square-alt"
-                    aria-hidden="true"
-                  ></i></a
+                  ><i class="fas fa-external-link-square-alt" aria-hidden="true"></i></a
               ></ng-container>
             </div>
             <div class="menu-info">
