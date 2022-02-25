@@ -25,25 +25,22 @@ node {
       sh("npm run pack-lib-prod")
     }
     stage('Publicação do pacote no Nexus'){
-        steps {
-            script {
-                nexusArtifactUploader(
-                        nexusVersion: 'nexus3',
-                        protocol: 'https',
-                        nexusUrl: 'rj-nexus.ancine.gov.br',
-                        groupId: '@ancine',
-                        version: 'X',
-                        repository: 'ancine-npm',
-                        credentialsId: 'nexus',
-                        artifacts: [
-                            [artifactId: 'dsgov-components',
-                            file: 'dsgov-components.tgz',
-                            type: 'tgz']
-                        ]
-                )
-            }
-        }
-
+      script {
+          nexusArtifactUploader(
+                  nexusVersion: 'nexus3',
+                  protocol: 'https',
+                  nexusUrl: 'rj-nexus.ancine.gov.br',
+                  groupId: '@ancine',
+                  version: 'X',
+                  repository: 'ancine-npm',
+                  credentialsId: 'nexus',
+                  artifacts: [
+                      [artifactId: 'dsgov-components',
+                      file: 'dsgov-components.tgz',
+                      type: 'tgz']
+                  ]
+          )
+      }
     }
     stage('Limpeza do Workspace') {
       cleanWs()
