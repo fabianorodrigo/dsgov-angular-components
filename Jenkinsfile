@@ -27,16 +27,16 @@ node {
     stage('Publicação do pacote no Nexus'){
       script {
           nexusArtifactUploader(
-                  nexusVersion: 'nexus3',
-                  protocol: 'https',
-                  nexusUrl: 'rj-nexus.ancine.gov.br',
+                  nexusVersion: "${NEXUS_VERSION}",
+                  protocol: "${NEXUS_PROTOCOL}",
+                  nexusUrl: "${NEXUS_URL}",
                   groupId: '@ancine',
                   version: 'X',
-                  repository: 'ancine-npm',
-                  credentialsId: 'nexus',
+                  repository: "${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}",
+                  credentialsId: "${NEXUS_CREDENTIAL_ID}",
                   artifacts: [
                       [artifactId: 'dsgov-components',
-                      file: 'dsgov-components.tgz',
+                      file: 'ancine-dsgov-components-0.3.6.tgz',
                       type: 'tgz']
                   ]
           )
