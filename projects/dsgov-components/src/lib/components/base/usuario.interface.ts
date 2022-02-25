@@ -8,9 +8,11 @@ export interface Usuario {
   // Upn: User Principal Name. É o nome de entrada do usuário
   //e.g. name@yourdomain.com OU jose.silva
   upn: string;
-  groups: string[];
+  groups?: string[];
   exp: number;
   nomeCompleto?: string;
   email?: string;
   imgAvatar?: any;
+  roles?: string[];
+  name?: string;
 }

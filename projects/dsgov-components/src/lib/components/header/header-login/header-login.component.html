@@ -4,28 +4,17 @@
   </div>
   <div [ngClass]="'header-avatar ' + (usuario != null ? '' : 'd-none')">
     <div class="avatar dropdown">
-      <span class="br-avatar" [title]="usuario?.nomeCompleto || usuario?.upn"
-        ><span class="image"
-          ><img
-            *ngIf="usuario?.imgAvatar"
-            [src]="usuario?.imgAvatar"
-            alt="Avatar" /></span
+      <span class="br-avatar" [title]="usuario?.nomeCompleto || usuario?.name || usuario?.upn"
+        ><span class="image"><img *ngIf="usuario?.imgAvatar" [src]="usuario?.imgAvatar" alt="Avatar" /></span
       ></span>
-      <button
-        class="br-button circle small"
-        type="button"
-        aria-label="Abrir Menu de usuário"
-        data-toggle="dropdown"
-      >
+      <button class="br-button circle small" type="button" aria-label="Abrir Menu de usuário" data-toggle="dropdown">
         <i class="fas fa-angle-down" aria-hidden="true"></i>
       </button>
       <div class="br-notification">
         <div class="notification-header">
           <div class="row">
             <div class="col-10">
-              <span class="text-bold">{{
-                usuario?.nomeCompleto || usuario?.upn
-              }}</span
+              <span class="text-bold">{{ usuario?.nomeCompleto || usuario?.name || usuario?.upn }}</span
               ><br /><small>{{ usuario?.email || usuario?.upn }}</small>
             </div>
           </div>
@@ -34,35 +23,23 @@
         <div class="notification-body">
           <br-divider ngClass="br-divider"></br-divider>
           <div class="col-10" id="divBotaoSair">
-            <br-button ngClass="secondary small" (click)="onClickSair($event)"
-              >Sair</br-button
-            >
+            <br-button ngClass="secondary small" (click)="onClickSair($event)">Sair</br-button>
           </div>
           <div class="br-tab" *ngIf="false">
             <nav class="tab-nav">
               <ul>
                 <li class="tab-item">
-                  <button
-                    type="button"
-                    data-panel="notif-item783"
-                    aria-label="notif-item783"
-                  >
+                  <button type="button" data-panel="notif-item783" aria-label="notif-item783">
                     <span class="name"
-                      ><span class="icon"
-                        ><i class="fas fa-image" aria-hidden="true"></i></span
+                      ><span class="icon"><i class="fas fa-image" aria-hidden="true"></i></span
                       ><span class="name">Item</span></span
                     >
                   </button>
                 </li>
                 <li class="tab-item is-active">
-                  <button
-                    type="button"
-                    data-panel="notif-item784"
-                    aria-label="notif-item784"
-                  >
+                  <button type="button" data-panel="notif-item784" aria-label="notif-item784">
                     <span class="name"
-                      ><span class="icon"
-                        ><i class="fas fa-image" aria-hidden="true"></i></span
+                      ><span class="icon"><i class="fas fa-image" aria-hidden="true"></i></span
                       ><span class="name">Item</span></span
                     >
                   </button>
@@ -73,68 +50,52 @@
               <div class="tab-panel" id="notif-item783">
                 <div class="br-list">
                   <button class="br-item" type="button">
-                    <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de
-                    Acesso</button
+                    <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso</button
                   ><span class="br-divider"></span>
                   <button class="br-item" type="button">
-                    <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de
-                    Acesso</button
+                    <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso</button
                   ><span class="br-divider"></span>
                   <button class="br-item" type="button">
-                    <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de
-                    Acesso
+                    <i class="fas fa-heartbeat" aria-hidden="true"></i>Link de Acesso
                   </button>
                 </div>
               </div>
               <div class="tab-panel is-active" id="notif-item784">
                 <div class="br-list">
                   <button class="br-item" type="button">
-                    <span class="br-tag status small warning"></span
-                    ><span class="text-bold">Título</span
+                    <span class="br-tag status small warning"></span><span class="text-bold">Título</span
                     ><span class="text-medium mb-2">25 de out</span
                     ><span
-                      >Nostrud consequat culpa ex mollit aute. Ex ex veniam ea
-                      labore laboris duis duis elit. Ex aute dolor enim aute
-                      Lorem dolor. Duis labore ad anim culpa. Non aliqua
-                      excepteur sunt eiusmod ex consectetur ex esse laborum
-                      velit ut aute.</span
+                      >Nostrud consequat culpa ex mollit aute. Ex ex veniam ea labore laboris duis duis elit. Ex aute
+                      dolor enim aute Lorem dolor. Duis labore ad anim culpa. Non aliqua excepteur sunt eiusmod ex
+                      consectetur ex esse laborum velit ut aute.</span
                     ></button
                   ><span class="br-divider"></span>
                   <button class="br-item" type="button">
-                    <span class="text-bold">Título</span
-                    ><span class="text-medium mb-2">24 de out</span
+                    <span class="text-bold">Título</span><span class="text-medium mb-2">24 de out</span
                     ><span
-                      >Labore nulla elit laborum nulla duis. Deserunt ad nulla
-                      commodo occaecat nulla proident ea proident aliquip dolore
-                      sunt nulla. Do sit eu consectetur quis culpa. Eiusmod
-                      minim irure sint nulla incididunt occaecat ipsum mollit in
-                      ut. Minim adipisicing veniam adipisicing velit nostrud
+                      >Labore nulla elit laborum nulla duis. Deserunt ad nulla commodo occaecat nulla proident ea
+                      proident aliquip dolore sunt nulla. Do sit eu consectetur quis culpa. Eiusmod minim irure sint
+                      nulla incididunt occaecat ipsum mollit in ut. Minim adipisicing veniam adipisicing velit nostrud
                       duis consectetur aute nulla deserunt culpa aliquip.</span
                     ></button
                   ><span class="br-divider"></span>
                   <button class="br-item" type="button">
-                    <span class="br-tag status small warning"></span
-                    ><span class="text-bold">Título</span
+                    <span class="br-tag status small warning"></span><span class="text-bold">Título</span
                     ><span class="text-medium mb-2">03 de out</span
                     ><span
-                      >Duis qui dolor dolor qui sint consectetur. Ipsum eu
-                      dolore ex anim reprehenderit laborum commodo. Labore do ut
-                      nulla eiusmod consectetur.</span
+                      >Duis qui dolor dolor qui sint consectetur. Ipsum eu dolore ex anim reprehenderit laborum commodo.
+                      Labore do ut nulla eiusmod consectetur.</span
                     ></button
                   ><span class="br-divider"></span>
                   <button class="br-item" type="button">
-                    <span class="text-bold">Título</span
-                    ><span class="text-medium mb-2">16 de mai</span
+                    <span class="text-bold">Título</span><span class="text-medium mb-2">16 de mai</span
                     ><span
-                      >Sunt velit dolor enim mollit incididunt irure est. Ad ea
-                      Lorem culpa quis occaecat sunt in exercitation nisi. Sit
-                      laborum laborum dolor culpa ipsum velit. Non nulla nisi
-                      dolore et anim consequat officia deserunt amet qui.
-                      Incididunt exercitation irure labore ut Lorem culpa.
-                      Dolore ea irure pariatur ullamco culpa veniam amet dolor
-                      in fugiat pariatur ut. Sit non ut enim et incididunt
-                      tempor irure pariatur ex proident labore cillum dolore
-                      nisi.</span
+                      >Sunt velit dolor enim mollit incididunt irure est. Ad ea Lorem culpa quis occaecat sunt in
+                      exercitation nisi. Sit laborum laborum dolor culpa ipsum velit. Non nulla nisi dolore et anim
+                      consequat officia deserunt amet qui. Incididunt exercitation irure labore ut Lorem culpa. Dolore
+                      ea irure pariatur ullamco culpa veniam amet dolor in fugiat pariatur ut. Sit non ut enim et
+                      incididunt tempor irure pariatur ex proident labore cillum dolore nisi.</span
                     >
                   </button>
                 </div>

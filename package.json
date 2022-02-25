@@ -1,6 +1,6 @@
 {
   "name": "dsgov-angular-components",
-  "version": "0.3.3",
+  "version": "0.3.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,9 +13,9 @@
     "e2e": "ng e2e",
     "build-demo": "ng build dsgov-angular-demo --base-href '/dsgovdemo/'",
     "pack-demo": "cd dist/dsgov-angular-demo && tar zcvf dsgov-angular-demo.tgz * && cp dsgov-angular-demo.tgz ../../docker/nginx/dist.tar.gz",
-    "docker-build-demo": "docker build -f docker/nginx/Dockerfile -t fabianorodrigo/dsgov-angular-demo docker/nginx/ && docker tag fabianorodrigo/dsgov-angular-demo:latest fabianorodrigo/dsgov-angular-demo:0.3.3",
-    "docker-push-demo": "docker push fabianorodrigo/dsgov-angular-demo:0.3.3",
-    "k8s-deploy-demo": "helm upgrade --install  dsgov-angular-components --kube-context newdev --namespace dsgov-angular-components-dev ./chart/dsgov-angular-demo && kubectl --context newdev --namespace dsgov-angular-components-dev set image deployment/dsgov-angular-demo dsgov-angular-demo=fabianorodrigo/dsgov-angular-demo:0.3.3",
+    "docker-build-demo": "docker build -f docker/nginx/Dockerfile -t fabianorodrigo/dsgov-angular-demo docker/nginx/ && docker tag fabianorodrigo/dsgov-angular-demo:latest fabianorodrigo/dsgov-angular-demo:0.3.5",
+    "docker-push-demo": "docker push fabianorodrigo/dsgov-angular-demo:0.3.5",
+    "k8s-deploy-demo": "helm upgrade --install  dsgov-angular-components --kube-context newdev --namespace dsgov-angular-components-dev ./chart/dsgov-angular-demo && kubectl --context newdev --namespace dsgov-angular-components-dev set image deployment/dsgov-angular-demo dsgov-angular-demo=fabianorodrigo/dsgov-angular-demo:0.3.5",
     "k8s-undeploy-demo": "helm uninstall dsgov-angular-components --kube-context newdev --namespace dsgov-angular-components-dev"
   },
   "private": true,
