@@ -26,20 +26,22 @@ node {
     }
     stage('Publicação do pacote no Nexus'){
       script {
-          nexusArtifactUploader(
-                  nexusVersion: "${NEXUS_VERSION}",
-                  protocol: "${NEXUS_PROTOCOL}",
-                  nexusUrl: "${NEXUS_URL}",
-                  groupId: '@ancine',
-                  version: 'X',
-                  repository: "${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}",
-                  credentialsId: "${NEXUS_CREDENTIAL_ID}",
-                  artifacts: [
-                      [artifactId: 'dsgov-components',
-                      file: 'dist/dsgov-components/ancine-dsgov-components-0.3.6.tgz',
-                      type: 'tgz']
-                  ]
-          )
+        def packageJSON = readJSON file: 'package.json'
+        def packageJSONVersion = packageJSON.version
+        nexusArtifactUploader(
+                nexusVersion: "${NEXUS_VERSION}",
+                protocol: "${NEXUS_PROTOCOL}",
+                nexusUrl: "${NEXUS_URL}",
+                groupId: '@ancine',
+                version: "${packageJSONVersion}",
+                repository: "${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}",
+                credentialsId: "${NEXUS_CREDENTIAL_ID}",
+                artifacts: [
+                    [artifactId: 'dsgov-components',
+                    file: "dist/dsgov-components/ancine-dsgov-components-${packageJSONVersion}.tgz",
+                    type: 'tgz']
+                ]
+        )
       }
     }
     stage('Limpeza do Workspace') {
