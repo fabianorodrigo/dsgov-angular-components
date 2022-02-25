@@ -14,5 +14,5 @@ export interface Usuario {
   email?: string;
   imgAvatar?: any;
   roles: string[];
-  name?: string;
+  name: string;
 }
