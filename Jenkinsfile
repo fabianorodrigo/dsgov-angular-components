@@ -31,8 +31,8 @@ node {
                         nexusVersion: 'nexus3',
                         protocol: 'https',
                         nexusUrl: 'rj-nexus.ancine.gov.br',
-                        groupId('@ancine')
-                        version('X')
+                        groupId: '@ancine'
+                        version: 'X'
                         repository: 'ancine-npm',
                         credentialsId: 'nexus',
                         artifacts: [
