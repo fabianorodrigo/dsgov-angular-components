@@ -120,6 +120,10 @@ export class AppComponent implements OnInit {
     this.userService.logout();
   }
 
+  procurar(event) {
+    alert(`Expressão procurada: ${event}`);
+  }
+
   public aplicarContraste() {
     this.usarContraste = !this.usarContraste;
     if (this.usarContraste) {

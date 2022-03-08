@@ -21,6 +21,8 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   @Input() titulo: string = 'Título';
   // texto do Subtítulo
   @Input() subtitulo: string = 'Subtítulo';
+  //Exibe ou não a caixa de pesquisa
+  @Input() mostraPesquisa: boolean = true;
   //texto do label do campo de pesquisa
   @Input() labelPesquisa: string = 'Texto da pesquisa';
   // links do cabeçalho
@@ -38,6 +40,8 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   @Output() clickEntrar = new EventEmitter<any>();
   //Evento de click no botão sair
   @Output() clickSair = new EventEmitter<any>();
+  //Evento de click na lupa para procurar (search)
+  @Output() clickProcurar = new EventEmitter<any>();
 
   // classe BRHeader disponibilizada no gov.br/ds responsável pelo comportamento do header e seus subelementos
   private headerDS: BRHeader;
@@ -59,6 +63,9 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   }
   onClickSair(event) {
     this.clickSair.emit(event);
+  }
+  onClickProcurar(event) {
+    this.clickProcurar.emit(event);
   }
 
   //logo gov.br

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ButtonModule } from '../button/button.module';
 import { DividerModule } from '../divider/divider.module';
 import { SigninModule } from './../signin/signin.module';
@@ -23,7 +24,7 @@ import { HeaderComponent } from './header/header.component';
     HeaderLoginComponent,
     HeaderBottomComponent,
   ],
-  imports: [CommonModule, DividerModule, SigninModule, ButtonModule],
+  imports: [CommonModule, DividerModule, SigninModule, ButtonModule, FormsModule],
   exports: [HeaderComponent],
 })
 export class HeaderModule {}

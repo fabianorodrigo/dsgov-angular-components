@@ -17,7 +17,7 @@
     <div class="header-subtitle">{{ subtitulo }}</div>
   </div>
 </div>
-<div class="header-search">
+<div class="header-search" *ngIf="this.mostraPesquisa">
   <div class="br-input has-icon">
     <label for="searchbox-56953">{{ labelPesquisa }}</label>
     <input
@@ -25,17 +25,13 @@
       id="searchbox-56953"
       type="text"
       placeholder="O que você procura?"
+      [(ngModel)]="textoPesquisa"
     />
-    <button class="br-button circle small" type="button" aria-label="Pesquisar">
+    <button class="br-button circle small" type="button" aria-label="Pesquisar" (click)="this.onClickProcurar($event)">
       <i class="fas fa-search" aria-hidden="true"></i>
     </button>
   </div>
-  <button
-    class="br-button circle search-close ml-1"
-    type="button"
-    aria-label="Fechar Busca"
-    data-dismiss="search"
-  >
+  <button class="br-button circle search-close ml-1" type="button" aria-label="Fechar Busca" data-dismiss="search">
     <i class="fas fa-times" aria-hidden="true"></i>
   </button>
 </div>

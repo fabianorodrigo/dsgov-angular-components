@@ -18,9 +18,11 @@
     <br-header-bottom
       [titulo]="titulo"
       [subtitulo]="subtitulo"
+      [mostraPesquisa]="mostraPesquisa"
       [labelPesquisa]="labelPesquisa"
       ngClass="header-bottom"
       (clickMenu)="onClickMenu($event)"
+      (clickProcurar)="onClickProcurar($event)"
     ></br-header-bottom>
   </div>
 </header>

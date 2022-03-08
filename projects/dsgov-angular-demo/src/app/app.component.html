@@ -13,6 +13,8 @@
     [funcionalidades]="funcionalidadesCabecalho"
     (clickEntrar)="signin($event)"
     (clickSair)="logout($event)"
+    [mostraPesquisa]="true"
+    (clickProcurar)="procurar($event)"
     [usuario]="user"
     [titulo]="titulo"
     [subtitulo]="subtitulo"
