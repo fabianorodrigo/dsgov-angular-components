@@ -33,6 +33,7 @@ node {
                 protocol: "${NEXUS_PROTOCOL}",
                 nexusUrl: "${NEXUS_URL}",
                 groupId: '@ancine',
+                artifactId: 'dsgov-components',
                 version: "${packageJSONVersion}",
                 repository: "${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}",
                 credentialsId: "${NEXUS_CREDENTIAL_ID}",
