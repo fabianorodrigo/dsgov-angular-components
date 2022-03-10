@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'br-breadcrumb',
   templateUrl: './breadcrumb.component.html',
-  styles: [],
+  styleUrls: ['./breadcrumb.component.css'],
 })
 export class BreadcrumbComponent extends BaseComponent implements OnInit {
   @Input() labelPaginaInicial = 'Página inicial';
