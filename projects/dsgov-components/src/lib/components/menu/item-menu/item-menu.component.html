@@ -3,11 +3,23 @@
     *ngIf="
       idSideMenuVisivel.length == 0 ||
       idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
-      item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1])
+      (item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1]) && item?.link?.tipo == TIPOLINK_ROTA)
     "
     class="menu-item"
     (click)="onClickComponent($event)"
-    [routerLink]="item?.link?.tipo == TIPOLINK_ROTA ? item.link.url : null"
+    [routerLink]="item.link.url"
+  >
+    <i *ngIf="item?.link?.classIconeFontAwesome" [class]="item?.link?.classIconeFontAwesome" aria-hidden="true"></i>
+    <span *ngIf="item?.link?.texto" class="content">{{ item.link.texto }}</span>
+  </a>
+  <a
+    *ngIf="
+      idSideMenuVisivel.length == 0 ||
+      idSideMenuVisivel[idSideMenuVisivel.length - 1] == item.id ||
+      (item.idParents.includes(idSideMenuVisivel[idSideMenuVisivel.length - 1]) && item?.link?.tipo == TIPOLINK_URL)
+    "
+    class="menu-item"
+    (click)="onClickComponent($event)"
     [href]="item?.link?.tipo == TIPOLINK_URL ? item.link.url : null"
     [target]="item?.link?.tipo == TIPOLINK_URL && item.link.novaAba ? '_blank' : null"
   >

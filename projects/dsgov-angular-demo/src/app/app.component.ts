@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import {
   Funcionalidade,
   ItemBreadcrumb,
+  ItemMenu,
   Link,
   RegraExibicaoMenu,
   TipoAgrupamentoLista,
@@ -13,6 +14,7 @@ import { Observable } from 'rxjs';
 import { UsuarioService } from './usuario';
 import { version } from '../../../../package.json';
 import { environment } from 'projects/dsgov-angular-demo/src/environments/environment';
+import { NavigationEnd, Router } from '@angular/router';
 
 declare var require: any;
 @Component({
@@ -48,7 +50,16 @@ export class AppComponent implements OnInit {
     { label: 'Página atual', link: 'http://paginatual' },
   ];
 
-  constructor(private userService: UsuarioService, @Inject(DOCUMENT) private document: Document) {
+  constructor(
+    private userService: UsuarioService,
+    @Inject(DOCUMENT) private document: Document,
+    private router: Router,
+  ) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.itensBreadcrumb = this.getBreadcrumbGrupoFromRota(event.url, this.itensMenu);
+      }
+    });
     (require('./menu.json') as []).forEach(item => {
       this.itensMenu.push(item);
     });
@@ -133,5 +144,50 @@ export class AppComponent implements OnInit {
       this.document.body.classList.remove('contraste-dsgov');
       this.document.body.style.backgroundColor = '#FFFFFF';
     }
+  }
+
+  /**
+   * Procura em {itensMenu} a localização da página onde se encontra {rota} e
+   * retorna um breadcrumb com a representação da hierarquia
+   *
+   * @param rota URL/Rota de uma página da aplicação
+   * @param itens: Itens/subitens de menu a serem pesquisados recursivamente
+   */
+  getBreadcrumbGrupoFromRota(rota: string, itens: GrupoItemMenu[]): ItemBreadcrumb[] {
+    const breadcrumb: ItemBreadcrumb[] = [];
+    for (const item of itens) {
+      if (item.itens && item.itens.length > 0) {
+        const breadInterno = this.getBreadcrumbFromRota(rota, item.itens);
+        if (breadInterno.length > 0) {
+          breadcrumb.push({ label: item.texto, link: null });
+          return breadcrumb.concat(breadInterno);
+        }
+      }
+    }
+    return breadcrumb;
+  }
+
+  /**
+   * Procura em {itensMenu} a localização da página onde se encontra {rota} e
+   * retorna um breadcrumb com a representação da hierarquia
+   *
+   * @param rota URL/Rota de uma página da aplicação
+   * @param itens: Itens/subitens de menu a serem pesquisados recursivamente
+   */
+  getBreadcrumbFromRota(rota: string, itens: ItemMenu[]): ItemBreadcrumb[] {
+    const breadcrumb: ItemBreadcrumb[] = [];
+    for (const item of itens) {
+      if (item.link.url === rota || '/'.concat(item.link.url) === rota) {
+        breadcrumb.push({ label: item.link.texto, link: null });
+        return breadcrumb;
+      } else if (item.subItens && item.subItens.length > 0) {
+        const breadInterno = this.getBreadcrumbFromRota(rota, item.subItens);
+        if (breadInterno.length > 0) {
+          breadcrumb.push({ label: item.link.texto, link: null });
+          return breadcrumb.concat(breadInterno);
+        }
+      }
+    }
+    return breadcrumb;
   }
 }
