@@ -7,8 +7,8 @@
         { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-photo-video", "texto": "Obras publicitárias", "url":"http://oglobo.com.br"}},
         { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-money-bill-alt", "texto": "Fomento", "url":"http://ge.com.br"}},
         { "exibicao":"sempre", "link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-film", "texto": "Esse tem subitens"}, "subItens":[
-          { "exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-users", "texto": "Teste ","url":"/entidade"}},
-          { "exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-allergies", "texto": "Teste ","url":"/entidade"}}
+          { "exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-users", "texto": "Teste ","url":"/entidadeTeste"}},
+          { "exibicao":"sempre","link":{"tipo":"rota", "classIconeFontAwesome": "fas fa-allergies", "texto": "Teste ","url":"/entidadeX"}}
         ]}
       ]},
       { "exibicao":"rolesTodas", "roles":["A","B","C"], "link":{"tipo":"url", "classIconeFontAwesome": "fas fa-calendar-alt", "texto": "Eventos (rolesTodas)", "url":"http://uol.com.br", "novaAba":true}},
