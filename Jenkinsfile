@@ -14,7 +14,20 @@ node {
     stage('Checkout') {
       //disable to recycle workspace data to save time/bandwidth
       deleteDir()
-      checkout scm
+      def scmUrl = 'https://github.com/fabianorodrigo/dsgov-angular-components.git'
+      def branch = env.BRANCH_NAME
+      echo 'Pulling ' + branch + ' from ' + scmUrl
+      checkout ([
+        $class: 'GitSCM',
+              branches: [[name: '*/' + branch]],
+              extensions: [
+                  [$class: 'PruneStaleBranch'],
+                  [$class: 'CleanCheckout'],
+                  [$class: 'LocalBranch']
+              ],
+              userRemoteConfigs: [
+                  [url: scmUrl]]
+          ])
     }
     stage('Instalação Dependências') {
         withEnv(["NPM_CONFIG_LOGLEVEL=warn"]) {
@@ -33,7 +46,7 @@ node {
                 protocol: "${NEXUS_PROTOCOL}",
                 nexusUrl: "${NEXUS_URL}",
                 groupId: '@ancine',
-                version: "${packageJSONVersion}",
+                version: "${env.BRANCH_NAME}",
                 repository: "${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}",
                 credentialsId: "${NEXUS_CREDENTIAL_ID}",
                 artifacts: [
