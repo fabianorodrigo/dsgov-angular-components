@@ -1,6 +1,7 @@
 {
   "name": "dsgov-angular-components",
-  "version": "0.3.12",
+  "version": "0.3.13-RC01",
+  "main": "dsgov-components/src/public-api.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

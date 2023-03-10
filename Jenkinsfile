@@ -37,8 +37,7 @@ node {
                 repository: "${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}",
                 credentialsId: "${NEXUS_CREDENTIAL_ID}",
                 artifacts: [
-                    [artifactId: 'dsgov-components',
-                    file: "dist/dsgov-components/ancine-dsgov-components-${packageJSONVersion}.tgz",
+                    [file: "dist/dsgov-components/ancine-dsgov-components-${packageJSONVersion}.tgz",
                     type: 'tgz']
                 ]
         )
