@@ -41,19 +41,10 @@ node {
       script {
         def packageJSON = readJSON file: 'package.json'
         def packageJSONVersion = packageJSON.version
-        nexusArtifactUploader(
-                nexusVersion: "${NEXUS_VERSION}",
-                protocol: "${NEXUS_PROTOCOL}",
-                nexusUrl: "${NEXUS_URL}",
-                groupId: '@ancine',
-                version: "${env.BRANCH_NAME}",
-                repository: "${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}",
-                credentialsId: "${NEXUS_CREDENTIAL_ID}",
-                artifacts: [
-                    [file: "dist/dsgov-components/ancine-dsgov-components-${packageJSONVersion}.tgz",
-                    type: 'tgz']
-                ]
-        )
+        withNPM(npmrcConfig:'.npmrc') {
+            echo "Performing npm build..."
+            sh "npm publish dist/dsgov-components/ancine-dsgov-components-${packageJSONVersion}.tgz --registry=${NEXUS_URL}/repository/${NEXUS_NPM_ANCINE_RELEASE_REPOSITORY}/"
+        }
       }
     }
     stage('Limpeza do Workspace') {
